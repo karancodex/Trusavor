@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1A4D2E;
-  --color-secondary: #E8DFCA;
-  --color-wellness-main: #1A4D2E;
-  --color-wellness-accent: #A3B18A;
-  --color-cosmetics-main: #4A1D1F;
-  --color-cosmetics-accent: #D4A373;
-  --color-cosmetics-gold: #C5A059;
-  
-  --font-serif: "Space Grotesk", sans-serif;
-  --font-sans: "Manrope", sans-serif;
-  
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
+    --color-primary: #1A4D2E;
+    --color-secondary: #E8DFCA;
+    --color-wellness-main: #1A4D2E;
+    --color-wellness-accent: #A3B18A;
+    --color-cosmetics-main: #4A1D1F;
+    --color-cosmetics-accent: #D4A373;
+    --color-cosmetics-gold: #C5A059;
+
+    --font-serif: "Space Grotesk", sans-serif;
+    --font-sans: "Manrope", sans-serif;
+
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
 }
 
 :root {
@@ -87,6 +87,26 @@
     .backface-hidden {
         backface-visibility: hidden;
     }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    33% {
+        transform: translateY(-20px) translateX(10px);
+    }
+
+    66% {
+        transform: translateY(10px) translateX(-15px);
+    }
+}
+
+.animate-float {
+    animation: float 20s ease-in-out infinite;
 }
 
 /* Custom Scrollbar */

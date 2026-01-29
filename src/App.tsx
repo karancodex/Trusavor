@@ -18,6 +18,8 @@ import TrackOrder from './pages/TrackOrder';
 import Contact from './pages/Contact';
 import Wishlist from './pages/Wishlist';
 import ForgotPassword from './pages/ForgotPassword';
+import RefinedLanding from './pages/RefinedLanding';
+
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -37,7 +39,8 @@ function App() {
                     <Header />
                     <main className="flex-grow">
                         <Routes>
-                            <Route path="/" element={<Home />} />
+                            <Route path="/v2" element={<Home />} />
+                            <Route path="/" element={<RefinedLanding />} />
 
                             {/* Specialized Ritual Categories */}
                             <Route path="/wellness" element={<CategoryListing category="wellness" />} />
