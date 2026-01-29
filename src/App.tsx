@@ -17,6 +17,7 @@ import Account from './pages/Account';
 import TrackOrder from './pages/TrackOrder';
 import Contact from './pages/Contact';
 import Wishlist from './pages/Wishlist';
+import ForgotPassword from './pages/ForgotPassword';
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -52,6 +53,7 @@ function App() {
 
                             <Route path="/login" element={<Login />} />
                             <Route path="/signup" element={<Signup />} />
+                            <Route path="/forgot-password" element={<ForgotPassword />} />
                             <Route path="/account" element={<Account />} />
 
                             <Route path="/track-order" element={<TrackOrder />} />

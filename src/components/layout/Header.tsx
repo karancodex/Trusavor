@@ -86,6 +86,10 @@ const Header = () => {
                                     )}
                                 </Link>
 
+                                <Link to="/account" className="hidden md:block group">
+                                    <User className="w-5 h-5 text-white/40 group-hover:text-white transition-all duration-500" />
+                                </Link>
+
                                 <Link to="/cart">
                                     <motion.div
                                         whileHover={{ scale: 1.05, y: -2 }}
@@ -154,6 +158,13 @@ const Header = () => {
                                         {link.name}
                                     </Link>
                                 ))}
+                                <Link
+                                    to="/account"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="text-4xl font-serif font-black italic text-white/20 hover:text-white transition-all transform hover:translate-x-4"
+                                >
+                                    Profile
+                                </Link>
                             </nav>
                         </motion.div>
                     </>
