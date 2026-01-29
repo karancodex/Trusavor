@@ -12,18 +12,10 @@ const DiscoveryGrid: React.FC<DiscoveryGridProps> = ({ products }) => {
     return (
         <section className="pt-0 pb-40 bg-black">
             <div className="container mx-auto px-6">
-                <div className="flex items-center justify-center mb-24 px-2">
-                    <div className="hidden md:block h-px w-20 bg-gradient-to-l from-white/5 to-transparent" />
-                    <div className="flex items-center gap-4 mx-12">
-                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                            <Layers className="w-4 h-4 text-wellness-accent" />
-                        </div>
-                        <div className="text-center">
-                            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/30 block mb-1">Discovery</span>
-                            <h2 className="text-3xl font-serif italic text-white leading-none">Functional Essentials</h2>
-                        </div>
-                    </div>
-                    <div className="hidden md:block h-px w-20 bg-gradient-to-r from-white/5 to-transparent" />
+                <div className="text-center mb-24">
+                    <span className="text-[9px] font-black uppercase tracking-[0.6em] text-white/30 block mb-6">Discovery</span>
+                    <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-8">Functional <span className="text-wellness-accent">Essentials</span></h2>
+                    <p className="text-sm text-white/40 max-w-md mx-auto font-light">Pursue uncompromising purity with our foundational collection of molecularly precise offerings.</p>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">

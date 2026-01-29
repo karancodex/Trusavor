@@ -27,7 +27,9 @@ const RefinedLanding: React.FC = () => {
             <HeroSplitscreen />
 
             {/* 2. Wellness Focus */}
-            <section className="py-40 relative">
+            <section className="py-40 relative overflow-hidden">
+                {/* Background Glow Effect */}
+                <div className="absolute top-0 left-0 w-[80vw] h-[80vw] bg-wellness-accent/10 blur-[100px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 opacity-50 z-0" />
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
                         <motion.div
@@ -78,7 +80,9 @@ const RefinedLanding: React.FC = () => {
             <InteractiveRecommendations />
 
             {/* 5. Cosmetics Focus */}
-            <section className="py-40 relative bg-[#080808]">
+            <section className="py-40 relative bg-[#080808] overflow-hidden">
+                {/* Background Glow Effect */}
+                <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-cosmetics-accent/10 blur-[150px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2 opacity-50 z-0" />
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
                         <div className="relative aspect-square max-w-xl mx-auto rounded-[32px] overflow-hidden group order-2 lg:order-1 shadow-2xl">

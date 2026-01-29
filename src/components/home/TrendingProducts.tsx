@@ -11,17 +11,10 @@ const TrendingProducts: React.FC<TrendingProductsProps> = ({ products }) => {
     return (
         <section className="py-24 bg-[#050505]">
             <div className="container mx-auto px-6">
-                <div className="flex items-center justify-between mb-16 px-2">
-                    <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                            <Sparkles className="w-4 h-4 text-cosmetics-accent" />
-                        </div>
-                        <div>
-                            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/30 block mb-1">Live Edits</span>
-                            <h2 className="text-3xl font-serif italic text-white leading-none">Trending Now</h2>
-                        </div>
-                    </div>
-                    <div className="hidden md:block h-px flex-grow mx-20 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+                <div className="text-center mb-24">
+                    <span className="text-[9px] font-black uppercase tracking-[0.6em] text-white/30 block mb-6">Live Edits</span>
+                    <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-8">Trending <span className="text-cosmetics-accent">Now</span></h2>
+                    <p className="text-sm text-white/40 max-w-md mx-auto font-light">The most sought-after rituals currently resonating within our collective.</p>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">

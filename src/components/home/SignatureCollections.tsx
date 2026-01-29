@@ -20,7 +20,7 @@ const SignatureCollections: React.FC<SignatureCollectionsProps> = ({ wellnessPro
         <section ref={containerRef} className="py-40 relative overflow-hidden bg-black">
             <div className="container mx-auto px-6 relative z-10">
                 {/* Minimalist Section Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-8">
+                {/* <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-8">
                     <div className="max-w-xl">
                         <motion.span
                             initial={{ opacity: 0, y: 10 }}
@@ -46,21 +46,26 @@ const SignatureCollections: React.FC<SignatureCollectionsProps> = ({ wellnessPro
                     >
                         A meticulously selected collection of essentials designed for the conscious modern ritual.
                     </motion.p>
-                </div>
+                </div> */}
 
                 {/* Wellness Horizontal Scroll */}
-                <div className="mb-48 group/row">
-                    <div className="flex items-center justify-between mb-12">
-                        <div className="flex items-center gap-6">
-                            <span className="w-12 h-px bg-wellness-accent/30" />
-                            <h3 className="text-xl font-serif italic text-white/80">Wellness Essentials</h3>
+                <div className="mb-48 group/row relative">
+                    {/* Background Glow Effect */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] bg-wellness-accent/10 blur-[150px] rounded-full pointer-events-none -translate-y-1/3 z-0" />
+
+                    <div className="text-center mb-20 relative z-10">
+                        <span className="text-[9px] font-black uppercase tracking-[0.6em] text-white/30 block mb-6">Biological Rituals</span>
+                        <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-8">Wellness <span className="text-wellness-accent">Essentials</span></h2>
+                        <div className="flex flex-col items-center gap-6">
+                            <p className="text-sm text-white/40 font-light">Ancestral wisdom meets modern molecular science for peak biological performance.</p>
+
                         </div>
-                        <Link to="/wellness" className="group flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-white/40 hover:text-white transition-all">
-                            View All <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                        <Link to="/wellness" className="group flex justify-end items-center gap-3 text-[9px] font-black uppercase tracking-widest text-white/40 hover:text-white transition-all">
+                            View Full Collection <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
 
-                    <div className="overflow-x-auto hide-scrollbar -mx-6 px-6">
+                    <div className="overflow-x-auto hide-scrollbar -mx-6 px-6 relative z-10">
                         <div className="flex gap-8 pb-8 min-w-max">
                             {wellnessProducts.map((product, i) => (
                                 <div key={product.id} className="w-[240px] md:w-[280px]">
@@ -79,14 +84,19 @@ const SignatureCollections: React.FC<SignatureCollectionsProps> = ({ wellnessPro
                 </div>
 
                 {/* Cosmetics Horizontal Scroll */}
-                <div className="group/row">
-                    <div className="flex items-center justify-between mb-12">
-                        <div className="flex items-center gap-6">
-                            <span className="w-12 h-px bg-cosmetics-accent/30" />
-                            <h3 className="text-xl font-serif italic text-white/80">Cosmetic Radiance</h3>
+                <div className="group/row relative">
+                    {/* Background Glow Effect */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] bg-cosmetics-accent/10 blur-[150px] rounded-full pointer-events-none -translate-y-1/3 z-0" />
+
+                    <div className="text-center mb-20 relative z-10">
+                        <span className="text-[9px] font-black uppercase tracking-[0.6em] text-white/30 block mb-6">Aesthetic Edits</span>
+                        <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-8">Cosmetic <span className="text-cosmetics-accent">Radiance</span></h2>
+                        <div className="flex flex-col items-center gap-6">
+                            <p className="text-sm text-white/40  font-light">Ethereal foundations designed to reveal your inner luminosity and refined grace.</p>
+
                         </div>
-                        <Link to="/cosmetics" className="group flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-white/40 hover:text-white transition-all">
-                            View All <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                        <Link to="/cosmetics" className="group flex justify-end items-center gap-3 text-[9px] font-black uppercase tracking-widest text-white/40 hover:text-white transition-all">
+                            View Full Edit <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
 
