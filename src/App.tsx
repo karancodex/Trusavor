@@ -32,7 +32,7 @@ function App() {
             <ScrollToTop />
             <div className="grain" />
             <SmoothScroll>
-                <div className="min-h-screen flex flex-col">
+                <div className="bg-black min-h-screen flex flex-col">
                     <Header />
                     <main className="flex-grow">
                         <Routes>

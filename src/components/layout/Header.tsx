@@ -45,8 +45,8 @@ const Header = () => {
                         className={clsx(
                             "relative transition-all duration-700 preserve-3d",
                             isScrolled
-                                ? "bg-black/80 backdrop-blur-3xl rounded-[24px] border border-white/20 shadow-[0_32px_64px_rgba(0,0,0,0.6)]"
-                                : "bg-black/40 backdrop-blur-2xl rounded-[40px] border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                                ? "bg-black backdrop-blur-3xl rounded-[24px] border border-white/20 shadow-[0_32px_64px_rgba(0,0,0,0.6)]"
+                                : "bg-black backdrop-blur-2xl rounded-[40px] border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
                         )}
                     >
                         {/* Interactive Content */}
