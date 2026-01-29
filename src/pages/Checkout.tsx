@@ -63,32 +63,32 @@ const Checkout = () => {
                             <AnimatePresence mode='wait'>
                                 {step === 1 && (
                                     <motion.div key="step1" initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -15 }} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div className="md:col-span-2 text-[9px] font-black uppercase tracking-[0.2em] text-white/30 mb-2 flex items-center gap-3">
-                                            <ShieldCheck className="w-3.5 h-3.5" /> Secure Destination
+                                        <div className="md:col-span-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-2 flex items-center gap-3">
+                                            <ShieldCheck className="w-4 h-4" /> Shipping Information
                                         </div>
                                         <div className="space-y-3">
-                                            <label className="text-[8px] font-black uppercase tracking-[0.2em] text-white/15 ml-4">Given Name</label>
-                                            <input type="text" required className="w-full bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
+                                            <label className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20 ml-4">First Name</label>
+                                            <input type="text" required placeholder="John" className="w-full bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/5" />
                                         </div>
                                         <div className="space-y-3">
-                                            <label className="text-[8px] font-black uppercase tracking-[0.2em] text-white/15 ml-4">Family Name</label>
-                                            <input type="text" required className="w-full bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
+                                            <label className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20 ml-4">Last Name</label>
+                                            <input type="text" required placeholder="Doe" className="w-full bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/5" />
                                         </div>
                                         <div className="md:col-span-2 space-y-3">
-                                            <label className="text-[8px] font-black uppercase tracking-[0.2em] text-white/15 ml-4">Email Portal</label>
-                                            <input type="email" required className="w-full bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
+                                            <label className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20 ml-4">Email Address</label>
+                                            <input type="email" required placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/5" />
                                         </div>
                                         <div className="md:col-span-2 space-y-3">
-                                            <label className="text-[8px] font-black uppercase tracking-[0.2em] text-white/15 ml-4">Coordinates (Address)</label>
-                                            <input type="text" required className="w-full bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
+                                            <label className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20 ml-4">Street Address</label>
+                                            <input type="text" required placeholder="123 Ritual Street" className="w-full bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/5" />
                                         </div>
                                         <div className="space-y-3">
-                                            <label className="text-[8px] font-black uppercase tracking-[0.2em] text-white/15 ml-4">City Ritual</label>
-                                            <input type="text" required className="w-full bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
+                                            <label className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20 ml-4">City</label>
+                                            <input type="text" required placeholder="Himalayas" className="w-full bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/5" />
                                         </div>
                                         <div className="space-y-3">
-                                            <label className="text-[8px] font-black uppercase tracking-[0.2em] text-white/15 ml-4">Portal Code</label>
-                                            <input type="text" required className="w-full bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
+                                            <label className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20 ml-4">Postal Code</label>
+                                            <input type="text" required placeholder="123456" className="w-full bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/5" />
                                         </div>
 
                                         <div className="md:col-span-2 mt-8">
@@ -116,10 +116,10 @@ const Checkout = () => {
                                         </div>
 
                                         <div className="space-y-6">
-                                            <input type="text" required placeholder="MAGICAL NUMBER" className="w-full bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
+                                            <input type="text" required placeholder="Card Number" className="w-full bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/10" />
                                             <div className="grid grid-cols-2 gap-6">
-                                                <input type="text" required placeholder="MM / YY" className="bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
-                                                <input type="text" required placeholder="CVC" className="bg-white/5 border border-white/5 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/10" />
+                                                <input type="text" required placeholder="MM / YY" className="bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/10" />
+                                                <input type="text" required placeholder="CVC" className="bg-white/5 border border-white/10 rounded-[22px] px-8 py-5 text-white text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-white/10" />
                                             </div>
                                         </div>
 

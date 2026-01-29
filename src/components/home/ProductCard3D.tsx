@@ -71,10 +71,13 @@ const ProductCard3D = ({ product, index, variant = 'organic' }: ProductCard3DPro
                 index % 2 === 0 ? "lg:mt-0" : "lg:mt-24"
             )}
         >
-            <div className={clsx(
-                "relative bg-[#0a0a0a]/80 backdrop-blur-3xl border border-white/10 rounded-[40px] p-8 transition-all duration-700 hover:border-white/20 shadow-[0_30px_60px_rgba(0,0,0,0.5)] preserve-3d",
-                isWellness ? "hover:shadow-wellness-main/10" : "hover:shadow-cosmetics-main/10"
-            )}>
+            <Link
+                to={`/product/${product.slug}`}
+                className={clsx(
+                    "block relative bg-[#0a0a0a]/80 backdrop-blur-3xl border border-white/10 rounded-[40px] p-8 transition-all duration-700 hover:border-white/20 shadow-[0_30px_60px_rgba(0,0,0,0.5)] preserve-3d cursor-pointer",
+                    isWellness ? "hover:shadow-wellness-main/10" : "hover:shadow-cosmetics-main/10"
+                )}
+            >
                 {/* Product Image Stage */}
                 <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden mb-8 transition-all duration-1000 group-hover:scale-[1.02] transform-gpu preserve-3d">
                     <div className={clsx(
@@ -97,7 +100,7 @@ const ProductCard3D = ({ product, index, variant = 'organic' }: ProductCard3DPro
                     </div>
 
                     <button
-                        onClick={(e) => { e.preventDefault(); toggleWishlist(product.id); }}
+                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleWishlist(product.id); }}
                         className="absolute top-6 right-6 z-10 p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white/40 hover:text-red-500 transition-all duration-500"
                         style={{ transform: "translateZ(60px)" }}
                     >
@@ -125,7 +128,7 @@ const ProductCard3D = ({ product, index, variant = 'organic' }: ProductCard3DPro
                         <span className="text-2xl font-black text-white tracking-widest">${product.price}</span>
 
                         <button
-                            onClick={() => addToCart(product)}
+                            onClick={(e) => { e.preventDefault(); e.stopPropagation(); addToCart(product); }}
                             className={clsx(
                                 "flex items-center gap-3 px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-700",
                                 isWellness
@@ -141,7 +144,7 @@ const ProductCard3D = ({ product, index, variant = 'organic' }: ProductCard3DPro
 
                 {/* Subtle Refractive Beam */}
                 <div className="absolute top-0 -left-[100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/[0.05] to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-[1.5s] ease-in-out pointer-events-none" />
-            </div>
+            </Link>
         </motion.div>
     );
 };

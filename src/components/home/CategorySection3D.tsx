@@ -56,8 +56,10 @@ const CategorySection3D = ({ title, subtitle, theme, products }: CategorySection
                 </motion.div>
             </div>
 
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
             <div className="container mx-auto px-6 lg:px-20 relative z-10">
-                <div className="flex flex-col lg:flex-row items-end justify-between mb-32 lg:mb-56 gap-16">
+                <div className="flex flex-col lg:flex-row items-end justify-between mb-24 lg:mb-40 gap-16">
                     <div className="max-w-4xl">
                         <motion.div
                             style={{ opacity: titleOpacity, y: titleY }}
@@ -74,7 +76,7 @@ const CategorySection3D = ({ title, subtitle, theme, products }: CategorySection
 
                         <motion.h2
                             style={{ opacity: titleOpacity, y: titleY }}
-                            className="text-6xl md:text-[8rem] font-serif font-black text-white leading-[0.9] tracking-tighter"
+                            className="text-5xl md:text-[6rem] font-serif font-black text-white leading-[0.9] tracking-tighter"
                         >
                             {title}
                         </motion.h2>
