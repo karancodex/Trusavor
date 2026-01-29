@@ -1,0 +1,257 @@
+[
+    {
+        "id": "prod_1",
+        "name": "Ceremonial Matcha Premium",
+        "slug": "ceremonial-matcha-premium",
+        "categoryId": "cat_wellness",
+        "price": 34.99,
+        "oldPrice": 45.00,
+        "description": "High-grade ceremonial matcha from Uji, Japan. Vibrant green with a smooth, sweet finish.",
+        "images": [
+            "/src/assets/matcha_premium.jpg"
+        ],
+        "rating": 4.9,
+        "reviews": 1250,
+        "stock": 45,
+        "isBestSeller": true,
+        "isTrending": true,
+        "discount": 22
+    },
+    {
+        "id": "prod_2",
+        "name": "Himalayan Shilajit Resin",
+        "slug": "himalayan-shilajit-resin",
+        "categoryId": "cat_wellness",
+        "price": 54.00,
+        "oldPrice": 65.00,
+        "description": "Pure Himalayan Shilajit resin, rich in fulvic acid and 84+ minerals for natural energy.",
+        "images": [
+            "/src/assets/shilajit.jpg"
+        ],
+        "rating": 4.8,
+        "reviews": 850,
+        "stock": 20,
+        "isBestSeller": true,
+        "isTrending": true,
+        "discount": 15
+    },
+    {
+        "id": "prod_3",
+        "name": "Organic Moringa Powder",
+        "slug": "organic-moringa-powder",
+        "categoryId": "cat_wellness",
+        "price": 19.99,
+        "oldPrice": 24.99,
+        "description": "Premium organic Moringa Oleifera powder. A nutrient-dense superfood for daily wellness.",
+        "images": [
+            "/src/assets/moringa.jpg"
+        ],
+        "rating": 4.7,
+        "reviews": 540,
+        "stock": 100,
+        "isBestSeller": true,
+        "isTrending": true,
+        "discount": 20
+    },
+    {
+        "id": "prod_4",
+        "name": "Matcha Tea Pouch (Daily)",
+        "slug": "matcha-tea-pouch",
+        "categoryId": "cat_wellness",
+        "price": 24.00,
+        "description": "Perfect for lattes and daily smoothies. Bold green tea flavor.",
+        "images": [
+            "/src/assets/hero_product_1.png"
+        ],
+        "rating": 4.6,
+        "reviews": 320,
+        "stock": 75,
+        "isBestSeller": true,
+        "isTrending": true
+    },
+    {
+        "id": "prod_5",
+        "name": "Hydrating Face Serum",
+        "slug": "hydrating-face-serum",
+        "categoryId": "cat_cosmetics",
+        "price": 35.00,
+        "oldPrice": 42.00,
+        "description": "Infused with botanical extracts for a youthful radiant glow.",
+        "images": [
+            "/src/assets/serum.jpg"
+        ],
+        "rating": 4.9,
+        "reviews": 210,
+        "stock": 15,
+        "isBestSeller": true,
+        "isTrending": true,
+        "discount": 16
+    },
+    {
+        "id": "prod_6",
+        "name": "Shilajit Capsules",
+        "slug": "shilajit-capsules",
+        "categoryId": "cat_wellness",
+        "price": 39.00,
+        "description": "The same high-quality Shilajit in convenient capsule form.",
+        "images": [
+            "/src/assets/shilajit.jpg"
+        ],
+        "rating": 4.7,
+        "reviews": 150,
+        "stock": 50,
+        "isBestSeller": true,
+        "isTrending": true
+    },
+    {
+        "id": "prod_7",
+        "name": "Zen Meditation Tea",
+        "slug": "zen-meditation-tea",
+        "categoryId": "cat_wellness",
+        "price": 29.00,
+        "description": "Calming blend of herbs and green tea for deep focus.",
+        "images": [
+            "/src/assets/matcha_tin.jpg"
+        ],
+        "rating": 4.8,
+        "reviews": 95,
+        "isBestSeller": false,
+        "isTrending": true
+    },
+    {
+        "id": "prod_8",
+        "name": "Vitality Booster Pack",
+        "slug": "vitality-booster",
+        "categoryId": "cat_wellness",
+        "price": 49.00,
+        "description": "A mix of Moringa and Ashwagandha for peak performance.",
+        "images": [
+            "/src/assets/category_health.jpg"
+        ],
+        "rating": 4.9,
+        "reviews": 310,
+        "isBestSeller": false,
+        "isTrending": true
+    },
+    {
+        "id": "prod_9",
+        "name": "Ancient Herb Shilajit Cream",
+        "slug": "shilajit-cream",
+        "categoryId": "cat_cosmetics",
+        "price": 44.00,
+        "description": "Targeted skin recovery cream with Shilajit extracts.",
+        "images": [
+            "/src/assets/mask.jpg"
+        ],
+        "rating": 4.6,
+        "reviews": 180,
+        "isBestSeller": false,
+        "isTrending": false
+    },
+    {
+        "id": "prod_10",
+        "name": "Lion Mane Focus Blend",
+        "slug": "lion-mane-focus",
+        "categoryId": "cat_wellness",
+        "price": 38.00,
+        "description": "Mushroom extract for cognitive clarity and long term brain health.",
+        "images": [
+            "/src/assets/vitamins.jpg"
+        ],
+        "rating": 4.7,
+        "reviews": 225,
+        "isBestSeller": false,
+        "isTrending": false
+    },
+    {
+        "id": "prod_11",
+        "name": "Rosehip Anti-Aging Oil",
+        "slug": "rosehip-aging-oil",
+        "categoryId": "cat_cosmetics",
+        "price": 48.00,
+        "oldPrice": 59.00,
+        "description": "Pure cold-pressed rosehip oil for fine lines and skin repair.",
+        "images": [
+            "/src/assets/cosmetic_rosehip_oil.png"
+        ],
+        "rating": 4.9,
+        "reviews": 142,
+        "isBestSeller": true,
+        "isTrending": true
+    },
+    {
+        "id": "prod_12",
+        "name": "Botanical Night Cream",
+        "slug": "botanical-night-cream",
+        "categoryId": "cat_cosmetics",
+        "price": 52.00,
+        "description": "Overnight deep hydration with jasmine and lavender extracts.",
+        "images": [
+            "/src/assets/category_care.jpg"
+        ],
+        "rating": 4.8,
+        "reviews": 89,
+        "isBestSeller": false,
+        "isTrending": true
+    },
+    {
+        "id": "prod_13",
+        "name": "Vit C Brightening Serum",
+        "slug": "vit-c-serum",
+        "categoryId": "cat_cosmetics",
+        "price": 42.00,
+        "description": "15% Vitamin C complex for immediate radiance and glow.",
+        "images": [
+            "/src/assets/product_1.png"
+        ],
+        "rating": 4.7,
+        "reviews": 230,
+        "isBestSeller": true,
+        "isTrending": false
+    },
+    {
+        "id": "prod_14",
+        "name": "Mineral Clay Mask",
+        "slug": "mineral-clay-mask",
+        "categoryId": "cat_cosmetics",
+        "price": 32.00,
+        "description": "Deep pore cleansing with volcanic clay and matcha extracts.",
+        "images": [
+            "/src/assets/product_2.png"
+        ],
+        "rating": 4.6,
+        "reviews": 175,
+        "isBestSeller": false,
+        "isTrending": true
+    },
+    {
+        "id": "prod_15",
+        "name": "Natural Glow Body Butter",
+        "slug": "glow-body-butter",
+        "categoryId": "cat_cosmetics",
+        "price": 38.00,
+        "description": "Whipped shea butter for silky smooth skin all day long.",
+        "images": [
+            "/src/assets/product_3.png"
+        ],
+        "rating": 4.9,
+        "reviews": 312,
+        "isBestSeller": true,
+        "isTrending": true
+    },
+    {
+        "id": "prod_16",
+        "name": "Lavender Sleep Mist",
+        "slug": "lavender-sleep-mist",
+        "categoryId": "cat_cosmetics",
+        "price": 26.00,
+        "description": "A calming aromatherapy mist for restful night's sleep.",
+        "images": [
+            "/src/assets/serum.jpg"
+        ],
+        "rating": 4.8,
+        "reviews": 204,
+        "isBestSeller": false,
+        "isTrending": false
+    }
+]
