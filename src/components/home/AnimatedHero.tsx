@@ -32,7 +32,7 @@ const AnimatedHero = () => {
             >
                 <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-transparent to-[#050505] z-10" />
                 <img
-                    src="/hero_banner.png"
+                    src="/assets/hero_banner.png"
                     alt="Hero Banner"
                     className="w-full h-full object-cover opacity-60 mix-blend-lighten"
                 />
@@ -49,7 +49,7 @@ const AnimatedHero = () => {
                     }}
                     className="absolute top-[30%] left-[10%] w-[30vw] max-w-sm blur-[2px] transition-all duration-1000"
                 >
-                    <img src="/shilajit_hero.png" alt="Wellness Origins" className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]" />
+                    <img src="/assets/shilajit_hero.png" alt="Wellness Origins" className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]" />
                 </motion.div>
 
                 {/* Cosmetics Element - Right */}
@@ -61,7 +61,7 @@ const AnimatedHero = () => {
                     }}
                     className="absolute bottom-[20%] right-[10%] w-[25vw] max-w-sm blur-[1px]"
                 >
-                    <img src="/cosmetic_hero.png" alt="Cosmetic Radiance" className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]" />
+                    <img src="/assets/cosmetic_hero.png" alt="Cosmetic Radiance" className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]" />
                 </motion.div>
 
                 {/* Depth Particles */}

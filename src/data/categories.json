@@ -4,7 +4,7 @@
         "name": "Wellness",
         "slug": "wellness",
         "description": "Earth's most potent treasures for holistic well-being. From pure Himalayan Shilajit to ceremonial grade Matcha.",
-        "image": "/src/assets/hero_product_2.png",
+        "image": "/assets/hero_product_2.png",
         "theme": "wellness",
         "accent": "#C5A358"
     },
@@ -13,7 +13,7 @@
         "name": "Cosmetics",
         "slug": "cosmetics",
         "description": "Nature-infused beauty rituals. Potent botanical extracts for radiant, healthy skin and timeless elegance.",
-        "image": "/src/assets/serum.jpg",
+        "image": "/assets/serum.jpg",
         "theme": "cosmetics",
         "accent": "#E2B4BD"
     }

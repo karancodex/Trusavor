@@ -57,7 +57,7 @@ const RefinedLanding: React.FC = () => {
 
                         <div className="relative aspect-square max-w-xl mx-auto rounded-[32px] overflow-hidden group shadow-2xl">
                             <img
-                                src="/wellness_hero.png"
+                                src="/assets/wellness_hero.png"
                                 alt="Wellness"
                                 className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                             />
@@ -87,7 +87,7 @@ const RefinedLanding: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
                         <div className="relative aspect-square max-w-xl mx-auto rounded-[32px] overflow-hidden group order-2 lg:order-1 shadow-2xl">
                             <img
-                                src="/cosmetics_hero.png"
+                                src="/assets/cosmetics_hero.png"
                                 alt="Cosmetics"
                                 className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                             />

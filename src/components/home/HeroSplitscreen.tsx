@@ -18,7 +18,7 @@ const HeroSplitscreen: React.FC = () => {
             >
                 <div className="absolute inset-0 z-0 scale-110">
                     <img
-                        src="/wellness_hero.png"
+                        src="/assets/wellness_hero.png"
                         alt="Wellness"
                         className="w-full h-full object-cover opacity-60 grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000"
                     />
@@ -55,7 +55,7 @@ const HeroSplitscreen: React.FC = () => {
             >
                 <div className="absolute inset-0 z-0 scale-110">
                     <img
-                        src="/cosmetics_hero.png"
+                        src="/assets/cosmetics_hero.png"
                         alt="Cosmetics"
                         className="w-full h-full object-cover opacity-60 grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000"
                     />

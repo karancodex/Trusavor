@@ -8,7 +8,7 @@
         "oldPrice": 45.00,
         "description": "High-grade ceremonial matcha from Uji, Japan. Vibrant green with a smooth, sweet finish.",
         "images": [
-            "/src/assets/matcha_premium.jpg"
+            "/assets/matcha_premium.jpg"
         ],
         "rating": 4.9,
         "reviews": 1250,
@@ -26,7 +26,7 @@
         "oldPrice": 65.00,
         "description": "Pure Himalayan Shilajit resin, rich in fulvic acid and 84+ minerals for natural energy.",
         "images": [
-            "/src/assets/shilajit.jpg"
+            "/assets/shilajit.jpg"
         ],
         "rating": 4.8,
         "reviews": 850,
@@ -44,7 +44,7 @@
         "oldPrice": 24.99,
         "description": "Premium organic Moringa Oleifera powder. A nutrient-dense superfood for daily wellness.",
         "images": [
-            "/src/assets/moringa.jpg"
+            "/assets/moringa.jpg"
         ],
         "rating": 4.7,
         "reviews": 540,
@@ -61,7 +61,7 @@
         "price": 24.00,
         "description": "Perfect for lattes and daily smoothies. Bold green tea flavor.",
         "images": [
-            "/src/assets/hero_product_1.png"
+            "/assets/hero_product_1.png"
         ],
         "rating": 4.6,
         "reviews": 320,
@@ -78,7 +78,7 @@
         "oldPrice": 42.00,
         "description": "Infused with botanical extracts for a youthful radiant glow.",
         "images": [
-            "/src/assets/serum.jpg"
+            "/assets/serum.jpg"
         ],
         "rating": 4.9,
         "reviews": 210,
@@ -95,7 +95,7 @@
         "price": 39.00,
         "description": "The same high-quality Shilajit in convenient capsule form.",
         "images": [
-            "/src/assets/shilajit.jpg"
+            "/assets/shilajit.jpg"
         ],
         "rating": 4.7,
         "reviews": 150,
@@ -111,7 +111,7 @@
         "price": 29.00,
         "description": "Calming blend of herbs and green tea for deep focus.",
         "images": [
-            "/src/assets/matcha_tin.jpg"
+            "/assets/matcha_tin.jpg"
         ],
         "rating": 4.8,
         "reviews": 95,
@@ -126,7 +126,7 @@
         "price": 49.00,
         "description": "A mix of Moringa and Ashwagandha for peak performance.",
         "images": [
-            "/src/assets/category_health.jpg"
+            "/assets/category_health.jpg"
         ],
         "rating": 4.9,
         "reviews": 310,
@@ -141,7 +141,7 @@
         "price": 44.00,
         "description": "Targeted skin recovery cream with Shilajit extracts.",
         "images": [
-            "/src/assets/mask.jpg"
+            "/assets/mask.jpg"
         ],
         "rating": 4.6,
         "reviews": 180,
@@ -156,7 +156,7 @@
         "price": 38.00,
         "description": "Mushroom extract for cognitive clarity and long term brain health.",
         "images": [
-            "/src/assets/vitamins.jpg"
+            "/assets/vitamins.jpg"
         ],
         "rating": 4.7,
         "reviews": 225,
@@ -172,7 +172,7 @@
         "oldPrice": 59.00,
         "description": "Pure cold-pressed rosehip oil for fine lines and skin repair.",
         "images": [
-            "/src/assets/cosmetic_rosehip_oil.png"
+            "/assets/cosmetic_rosehip_oil.png"
         ],
         "rating": 4.9,
         "reviews": 142,
@@ -187,7 +187,7 @@
         "price": 52.00,
         "description": "Overnight deep hydration with jasmine and lavender extracts.",
         "images": [
-            "/src/assets/category_care.jpg"
+            "/assets/category_care.jpg"
         ],
         "rating": 4.8,
         "reviews": 89,
@@ -202,7 +202,7 @@
         "price": 42.00,
         "description": "15% Vitamin C complex for immediate radiance and glow.",
         "images": [
-            "/src/assets/product_1.png"
+            "/assets/product_1.png"
         ],
         "rating": 4.7,
         "reviews": 230,
@@ -217,7 +217,7 @@
         "price": 32.00,
         "description": "Deep pore cleansing with volcanic clay and matcha extracts.",
         "images": [
-            "/src/assets/product_2.png"
+            "/assets/product_2.png"
         ],
         "rating": 4.6,
         "reviews": 175,
@@ -232,7 +232,7 @@
         "price": 38.00,
         "description": "Whipped shea butter for silky smooth skin all day long.",
         "images": [
-            "/src/assets/product_3.png"
+            "/assets/product_3.png"
         ],
         "rating": 4.9,
         "reviews": 312,
@@ -247,7 +247,7 @@
         "price": 26.00,
         "description": "A calming aromatherapy mist for restful night's sleep.",
         "images": [
-            "/src/assets/serum.jpg"
+            "/assets/serum.jpg"
         ],
         "rating": 4.8,
         "reviews": 204,

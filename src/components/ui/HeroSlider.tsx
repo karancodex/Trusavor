@@ -14,8 +14,8 @@ const HeroSlider = () => {
             description: "From the peaks of the Himalayas to your morning cup. Pure Shilajit and Ceremonial Matcha for holistic vitality.",
             buttonText: "EXPLORE WELLNESS",
             link: "/wellness",
-            bgImage: "/src/assets/hero_bg_1.png",
-            productImage: "/src/assets/hero_product_2.png",
+            bgImage: "/assets/hero_bg_1.png",
+            productImage: "/assets/hero_product_2.png",
             theme: "wellness",
             icon: <Leaf className="w-6 h-6" />
         },
@@ -26,8 +26,8 @@ const HeroSlider = () => {
             description: "Infused with botanical secrets for a radiant glow. Premium skincare designed for the modern beauty ritual.",
             buttonText: "EXPLORE COSMETICS",
             link: "/cosmetics",
-            bgImage: "/src/assets/hero_bg_2.png",
-            productImage: "/src/assets/serum.jpg",
+            bgImage: "/assets/hero_bg_2.png",
+            productImage: "/assets/serum.jpg",
             theme: "cosmetics",
             icon: <Sparkles className="w-6 h-6" />
         },
@@ -38,8 +38,8 @@ const HeroSlider = () => {
             description: "Experience the transformative power of 85+ minerals. The ultimate foundation for your wellness journey.",
             buttonText: "SHOP THE RITUAL",
             link: "/all-collections",
-            bgImage: "/src/assets/hero_bg_3.png",
-            productImage: "/src/assets/hero_product_3.png",
+            bgImage: "/assets/hero_bg_3.png",
+            productImage: "/assets/hero_product_3.png",
             theme: "wellness",
             icon: <Leaf className="w-6 h-6" />
         }

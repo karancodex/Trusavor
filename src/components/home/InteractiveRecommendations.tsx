@@ -14,10 +14,10 @@ const InteractiveRecommendations: React.FC = () => {
     ];
 
     const recommendations = {
-        vitality: { name: 'Pure Himalayan Shilajit', type: 'Biological Ritual', img: '/shilajit_hero.png' },
-        radiance: { name: 'Ethereal Serum No. 5', type: 'Radiance Edit', img: '/cosmetic_hero.png' },
-        balance: { name: 'Ashwagandha Complex', type: 'Resonant Adaptogen', img: '/shilajit_hero.png' },
-        renewal: { name: 'Obsidian Night Cream', type: 'Cellular Foundation', img: '/cosmetic_hero.png' }
+        vitality: { name: 'Pure Himalayan Shilajit', type: 'Biological Ritual', img: '/assets/shilajit_hero.png' },
+        radiance: { name: 'Ethereal Serum No. 5', type: 'Radiance Edit', img: '/assets/cosmetic_hero.png' },
+        balance: { name: 'Ashwagandha Complex', type: 'Resonant Adaptogen', img: '/assets/shilajit_hero.png' },
+        renewal: { name: 'Obsidian Night Cream', type: 'Cellular Foundation', img: '/assets/cosmetic_hero.png' }
     };
 
     return (
@@ -116,7 +116,7 @@ const InteractiveRecommendations: React.FC = () => {
 
             {/* Background Texture */}
             <div className="absolute inset-0 pointer-events-none opacity-5">
-                <img src="/refined_bg.png" alt="Overlay" className="w-full h-full object-cover" />
+                <img src="/assets/refined_bg.png" alt="Overlay" className="w-full h-full object-cover" />
             </div>
         </section>
     );
