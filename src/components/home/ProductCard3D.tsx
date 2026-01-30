@@ -9,9 +9,10 @@ interface ProductCard3DProps {
     product: any;
     index: number;
     variant?: 'organic' | 'minimal';
+    disableStagger?: boolean;
 }
 
-const ProductCard3D = ({ product, index, variant = 'organic' }: ProductCard3DProps) => {
+const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = false }: ProductCard3DProps) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const addToCart = useStore(state => state.addToCart);
     const toggleWishlist = useStore(state => state.toggleWishlist);
@@ -68,40 +69,40 @@ const ProductCard3D = ({ product, index, variant = 'organic' }: ProductCard3DPro
             transition={{ duration: 0.8, delay: index * 0.1 }}
             className={clsx(
                 "group relative w-full perspective-2000",
-                index % 2 === 0 ? "lg:mt-0" : "lg:mt-24"
+                !disableStagger && index % 2 !== 0 ? "lg:mt-24" : "lg:mt-0"
             )}
         >
             <Link
                 to={`/product/${product.slug}`}
                 className={clsx(
-                    "block relative bg-[#0a0a0a]/80 backdrop-blur-3xl border border-white/10 rounded-[40px] p-8 transition-all duration-700 hover:border-white/20 shadow-[0_30px_60px_rgba(0,0,0,0.5)] preserve-3d cursor-pointer",
+                    "block relative bg-white/80 backdrop-blur-3xl border border-stone-200 rounded-[40px] p-8 transition-all duration-700 hover:border-premium-gold/30 shadow-lg hover:shadow-2xl preserve-3d cursor-pointer",
                     isWellness ? "hover:shadow-wellness-main/10" : "hover:shadow-cosmetics-main/10"
                 )}
             >
                 {/* Product Image Stage */}
-                <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden mb-8 transition-all duration-1000 group-hover:scale-[1.02] transform-gpu preserve-3d">
+                <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden mb-8 transition-all duration-1000 group-hover:scale-[1.02] transform-gpu preserve-3d border border-stone-100">
                     <div className={clsx(
-                        "absolute inset-0 opacity-10 transition-opacity group-hover:opacity-20",
+                        "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity",
                         isWellness ? "bg-wellness-main" : "bg-cosmetics-main"
                     )} />
 
                     <motion.img
                         src={product.images[0]}
                         alt={product.name}
-                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
+                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                         style={{ transform: "translateZ(50px)" }}
                     />
 
                     {/* Quick Labels */}
                     <div className="absolute top-6 left-6 z-10" style={{ transform: "translateZ(60px)" }}>
-                        <div className="bg-black/40 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full text-[8px] font-black uppercase tracking-widest text-white/60">
+                        <div className="bg-white/80 backdrop-blur-md border border-stone-200 px-4 py-1.5 rounded-full text-[8px] font-black uppercase tracking-widest text-premium-text-secondary">
                             {isWellness ? "Wellness" : "Cosmetics"}
                         </div>
                     </div>
 
                     <button
                         onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleWishlist(product.id); }}
-                        className="absolute top-6 right-6 z-10 p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white/40 hover:text-red-500 transition-all duration-500"
+                        className="absolute top-6 right-6 z-10 p-4 rounded-full bg-white/80 backdrop-blur-md border border-stone-200 text-premium-text-muted hover:text-red-500 transition-all duration-500"
                         style={{ transform: "translateZ(60px)" }}
                     >
                         <Heart className={clsx("w-4 h-4", isWishlisted && "fill-current text-red-500")} />
@@ -110,30 +111,30 @@ const ProductCard3D = ({ product, index, variant = 'organic' }: ProductCard3DPro
 
                 {/* Content Area */}
                 <div className="space-y-6" style={{ transform: "translateZ(30px)" }}>
-                    <div className="flex items-center gap-1 opacity-40">
+                    <div className="flex items-center gap-1 opacity-60">
                         {[...Array(5)].map((_, i) => (
-                            <Star key={i} className={clsx("w-3 h-3", i < Math.floor(product.rating) && "fill-current")} />
+                            <Star key={i} className={clsx("w-3 h-3 text-premium-text-primary", i < Math.floor(product.rating) && "fill-current")} />
                         ))}
                     </div>
 
-                    <h3 className="text-2xl font-serif font-black text-white italic tracking-tight leading-none group-hover:text-glow transition-all duration-500">
+                    <h3 className="text-2xl font-serif font-black text-premium-text-primary italic tracking-tight leading-none group-hover:text-premium-gold transition-all duration-500">
                         {product.name}
                     </h3>
 
-                    <p className="text-white/30 text-sm line-clamp-2 font-medium leading-relaxed">
+                    <p className="text-premium-text-secondary text-sm line-clamp-2 font-medium leading-relaxed">
                         {product.description || "Experimental biological ritual for the modern consciousness."}
                     </p>
 
-                    <div className="flex items-center justify-between pt-8 border-t border-white/5">
-                        <span className="text-2xl font-black text-white tracking-widest">${product.price}</span>
+                    <div className="flex items-center justify-between pt-8 border-t border-stone-200">
+                        <span className="text-2xl font-black text-premium-text-primary tracking-widest">${product.price}</span>
 
                         <button
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); addToCart(product); }}
                             className={clsx(
-                                "flex items-center gap-3 px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-700",
+                                "flex items-center gap-3 px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-700 shadow-md",
                                 isWellness
-                                    ? "bg-wellness-main text-white hover:bg-white hover:text-black"
-                                    : "bg-cosmetics-main text-white hover:bg-white hover:text-black"
+                                    ? "bg-wellness-main text-white hover:bg-premium-text-primary hover:text-white"
+                                    : "bg-cosmetics-main text-white hover:bg-premium-text-primary hover:text-white"
                             )}
                         >
                             <ShoppingBag className="w-4 h-4" />
@@ -143,7 +144,7 @@ const ProductCard3D = ({ product, index, variant = 'organic' }: ProductCard3DPro
                 </div>
 
                 {/* Subtle Refractive Beam */}
-                <div className="absolute top-0 -left-[100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/[0.05] to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-[1.5s] ease-in-out pointer-events-none" />
+                <div className="absolute top-0 -left-[100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/[0.4] to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-[1.5s] ease-in-out pointer-events-none mix-blend-soft-light" />
             </Link>
         </motion.div>
     );

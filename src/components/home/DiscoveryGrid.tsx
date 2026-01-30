@@ -10,12 +10,12 @@ interface DiscoveryGridProps {
 
 const DiscoveryGrid: React.FC<DiscoveryGridProps> = ({ products }) => {
     return (
-        <section className="pt-0 pb-40 bg-black">
+        <section className="py-20 bg-premium-light">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-24">
-                    <span className="text-[9px] font-black uppercase tracking-[0.6em] text-white/30 block mb-6">Discovery</span>
-                    <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-8">Functional <span className="text-wellness-accent">Essentials</span></h2>
-                    <p className="text-sm text-white/40 max-w-md mx-auto font-light">Pursue uncompromising purity with our foundational collection of molecularly precise offerings.</p>
+                <div className="text-center mb-16">
+                    <span className="text-[9px] font-black uppercase tracking-[0.6em] text-premium-gold block mb-6">Discovery</span>
+                    <h2 className="text-4xl md:text-6xl font-serif italic text-premium-text-primary mb-8">Functional <span className="text-wellness-accent font-serif italic">Essentials</span></h2>
+                    <p className="text-sm text-premium-text-secondary max-w-md mx-auto font-light">Pursue uncompromising purity with our foundational collection of molecularly precise offerings.</p>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -35,10 +35,10 @@ const DiscoveryGrid: React.FC<DiscoveryGridProps> = ({ products }) => {
                     ))}
                 </div>
 
-                <div className="mt-32 flex justify-center">
+                <div className="mt-20 flex justify-center">
                     <Link to="/all-collections" className="group flex items-center gap-10 hover:gap-16 transition-all duration-700">
-                        <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/40 group-hover:text-white transition-colors">Explore All Collections</span>
-                        <div className="w-16 h-16 rounded-full border border-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                        <span className="text-[10px] font-black uppercase tracking-[0.5em] text-premium-text-muted group-hover:text-premium-text-primary transition-colors">Explore All Collections</span>
+                        <div className="w-16 h-16 rounded-full border border-stone-200 flex items-center justify-center group-hover:bg-premium-text-primary group-hover:text-white transition-all shadow-sm group-hover:shadow-xl">
                             <ArrowRight className="w-5 h-5" />
                         </div>
                     </Link>

@@ -9,12 +9,12 @@ interface TrendingProductsProps {
 
 const TrendingProducts: React.FC<TrendingProductsProps> = ({ products }) => {
     return (
-        <section className="py-24 bg-[#050505]">
+        <section className="py-20 bg-premium-light">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-24">
-                    <span className="text-[9px] font-black uppercase tracking-[0.6em] text-white/30 block mb-6">Live Edits</span>
-                    <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-8">Trending <span className="text-cosmetics-accent">Now</span></h2>
-                    <p className="text-sm text-white/40 max-w-md mx-auto font-light">The most sought-after rituals currently resonating within our collective.</p>
+                <div className="text-center mb-16">
+                    <span className="text-[9px] font-black uppercase tracking-[0.6em] text-premium-gold block mb-6">Live Edits</span>
+                    <h2 className="text-4xl md:text-6xl font-serif italic text-premium-text-primary mb-8">Trending <span className="text-cosmetics-accent font-serif italic">Now</span></h2>
+                    <p className="text-sm text-premium-text-secondary max-w-md mx-auto font-light">The most sought-after rituals currently resonating within our collective.</p>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
