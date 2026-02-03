@@ -32,7 +32,7 @@ const ScrollToTop = () => {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     const location = useLocation();
-    const isV3 = location.pathname === '/v3' || location.pathname === '/v3/'; // Check for V3 route
+    const isV3 = location.pathname === '/v3' || location.pathname === '/v3/' || location.pathname === '/'; // Check for V3 route
 
     return (
         <div className="bg-premium-light text-premium-text-primary min-h-screen flex flex-col font-serif">
@@ -54,9 +54,9 @@ function App() {
             <SmoothScroll>
                 <Layout>
                     <Routes>
-                        <Route path="/v3" element={<HomeV3 />} />
-                        <Route path="/v2" element={<Home />} />
-                        <Route path="/" element={<RefinedLanding />} />
+                        <Route path="/" element={<HomeV3 />} />
+                        <Route path="/v1" element={<Home />} />
+                        <Route path="/v2" element={<RefinedLanding />} />
 
                         {/* Specialized Ritual Categories */}
                         <Route path="/wellness" element={<CategoryListing category="wellness" />} />

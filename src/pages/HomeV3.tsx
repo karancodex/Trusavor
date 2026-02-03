@@ -45,14 +45,13 @@ const HomeV3: React.FC = () => {
 
                 <MarqueeSection />
 
-                <ScienceStory />
-
                 <BrandsV3 />
 
                 <CollectionsV3
                     wellnessProducts={finalWellness}
                     cosmeticsProducts={finalCosmetics}
                 />
+                <ScienceStory />
 
                 {/* Visual Interlude 1 */}
                 <VideoManifesto />
