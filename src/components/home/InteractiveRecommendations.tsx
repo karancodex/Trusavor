@@ -40,13 +40,13 @@ const InteractiveRecommendations: React.FC = () => {
                                     "p-6 md:p-8 rounded-[28px] text-left transition-all duration-700 border group relative overflow-hidden h-full flex flex-col justify-center shadow-sm hover:shadow-xl",
                                     selectedGoal === goal.id
                                         ? "bg-premium-text-primary border-premium-text-primary text-white"
-                                        : "bg-white border-stone-200 text-premium-text-secondary hover:border-premium-gold/50"
+                                        : "bg-premium-surface border border-premium-text-muted/10 text-premium-text-secondary hover:border-premium-gold/50"
                                 )}
                             >
                                 <div className="relative z-10">
                                     <div className={clsx(
                                         "w-9 h-9 rounded-full mb-5 flex items-center justify-center transition-colors",
-                                        selectedGoal === goal.id ? "bg-white text-premium-text-primary" : "bg-stone-100 text-premium-text-muted"
+                                        selectedGoal === goal.id ? "bg-white text-premium-text-primary" : "bg-premium-light text-premium-text-muted"
                                     )}>
                                         {selectedGoal === goal.id ? <Check className="w-4 h-4" /> : <Sparkles className="w-4 h-4" />}
                                     </div>
@@ -73,7 +73,7 @@ const InteractiveRecommendations: React.FC = () => {
                                     animate={{ opacity: 1, rotateY: 0, x: 0 }}
                                     exit={{ opacity: 0, rotateY: -45, x: -50 }}
                                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                                    className="absolute inset-0 bg-white rounded-[40px] border border-stone-200 p-10 md:p-12 flex flex-col justify-between group shadow-2xl overflow-hidden"
+                                    className="absolute inset-0 bg-premium-surface rounded-[40px] border border-premium-text-muted/10 p-10 md:p-12 flex flex-col justify-between group shadow-2xl overflow-hidden"
                                 >
                                     <div>
                                         <span className={clsx(
@@ -96,15 +96,15 @@ const InteractiveRecommendations: React.FC = () => {
                                         />
                                     </div>
 
-                                    <button className="flex items-center justify-between w-full group/btn pt-6 border-t border-stone-100">
+                                    <button className="flex items-center justify-between w-full group/btn pt-6 border-t border-premium-text-muted/10">
                                         <span className="text-[9px] font-black uppercase tracking-widest text-premium-text-muted group-hover/btn:text-premium-text-primary transition-colors">Start Your Journey</span>
-                                        <div className="w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center group-hover/btn:bg-premium-text-primary group-hover/btn:text-white transition-all shadow-sm">
+                                        <div className="w-12 h-12 rounded-full border border-premium-text-muted/10 flex items-center justify-center group-hover/btn:bg-premium-text-primary group-hover/btn:text-white transition-all shadow-sm">
                                             <ArrowRight className="w-4 h-4" />
                                         </div>
                                     </button>
                                 </motion.div>
                             ) : (
-                                <div className="absolute inset-0 rounded-[40px] border border-dashed border-stone-200 flex flex-col items-center justify-center text-center p-12 bg-white">
+                                <div className="absolute inset-0 rounded-[40px] border border-dashed border-premium-text-muted/20 flex flex-col items-center justify-center text-center p-12 bg-premium-surface">
                                     <Sparkles className="w-10 h-10 text-premium-gold/50 mb-6 animate-pulse" />
                                     <p className="text-premium-text-muted font-serif italic text-xl">Awaiting your selection...</p>
                                 </div>

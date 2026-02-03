@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, Search, Menu, X } from 'lucide-react';
+import { ThemeToggle } from '../../ui/ThemeToggle';
 
 const HeaderV3: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -24,17 +25,17 @@ const HeaderV3: React.FC = () => {
                     <div className={`
                         relative flex items-center justify-between transition-all duration-500
                         ${scrolled
-                            ? 'w-full max-w-5xl bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg border border-white/40'
+                            ? 'w-full max-w-5xl bg-premium-surface/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg border border-premium-text-muted/40'
                             : 'w-full bg-transparent px-0'
                         }
                     `}>
 
                         {/* Logo */}
                         <Link to="/v3" className="flex items-center gap-2 group">
-                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${scrolled ? 'bg-stone-900 text-white' : 'bg-white text-stone-900'}`}>
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${scrolled ? 'bg-premium-text-primary text-premium-surface' : 'bg-premium-surface text-premium-text-primary'}`}>
                                 <span className="font-serif italic font-black text-sm">T</span>
                             </div>
-                            <span className={`text-xl font-serif tracking-tight transition-colors ${scrolled ? 'text-stone-900' : 'text-stone-900'}`}>
+                            <span className={`text-xl font-serif tracking-tight transition-colors text-premium-text-primary`}>
                                 trusavor
                             </span>
                         </Link>
@@ -45,7 +46,7 @@ const HeaderV3: React.FC = () => {
                                 <Link
                                     key={item}
                                     to={`/${item.toLowerCase()}`}
-                                    className={`text-xs font-bold uppercase tracking-widest hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}
+                                    className={`text-xs font-bold uppercase tracking-widest hover:text-premium-accent transition-colors ${scrolled ? 'text-premium-text-secondary' : 'text-premium-text-primary'}`}
                                 >
                                     {item}
                                 </Link>
@@ -54,15 +55,16 @@ const HeaderV3: React.FC = () => {
 
                         {/* Icons */}
                         <div className="flex items-center gap-6">
-                            <button className={`hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
+                            <ThemeToggle className={scrolled ? 'text-premium-text-secondary' : 'text-premium-text-primary'} />
+                            <button className={`hover:text-premium-accent transition-colors ${scrolled ? 'text-premium-text-secondary' : 'text-premium-text-primary'}`}>
                                 <Search className="w-5 h-5" />
                             </button>
-                            <Link to="/cart" className={`hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
+                            <Link to="/cart" className={`hover:text-premium-accent transition-colors ${scrolled ? 'text-premium-text-secondary' : 'text-premium-text-primary'}`}>
                                 <ShoppingBag className="w-5 h-5" />
                             </Link>
                             <button
                                 onClick={() => setMenuOpen(true)}
-                                className={`md:hidden hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}
+                                className={`md:hidden hover:text-premium-accent transition-colors ${scrolled ? 'text-premium-text-secondary' : 'text-premium-text-primary'}`}
                             >
                                 <Menu className="w-6 h-6" />
                             </button>
@@ -81,17 +83,20 @@ const HeaderV3: React.FC = () => {
                         className="fixed inset-0 z-[60] bg-[#fafaf9] flex flex-col p-10"
                     >
                         <div className="flex justify-between items-center mb-16">
-                            <span className="text-2xl font-serif font-black">trusavor</span>
-                            <button onClick={() => setMenuOpen(false)}>
-                                <X className="w-8 h-8 text-stone-800" />
-                            </button>
+                            <span className="text-2xl font-serif font-black text-premium-text-primary">trusavor</span>
+                            <div className="flex gap-4 items-center">
+                                <ThemeToggle />
+                                <button onClick={() => setMenuOpen(false)}>
+                                    <X className="w-8 h-8 text-premium-text-primary" />
+                                </button>
+                            </div>
                         </div>
                         <nav className="flex flex-col gap-8">
                             {['Wellness', 'Cosmetics', 'Rituals', 'Journal', 'Account'].map((item, i) => (
                                 <Link
                                     key={item}
                                     to={`/${item.toLowerCase()}`}
-                                    className="text-4xl font-serif text-stone-900"
+                                    className="text-4xl font-serif text-premium-text-primary"
                                 >
                                     {item}
                                 </Link>

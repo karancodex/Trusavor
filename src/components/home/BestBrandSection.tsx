@@ -20,7 +20,7 @@ const BestBrandSection: React.FC = () => {
                         transition={{ duration: 1 }}
                         className="mb-8"
                     >
-                        <span className="text-[10px] font-black tracking-[1em] uppercase text-premium-gold ml-[1em] bg-white px-4 py-1 rounded-full border border-premium-gold/20">The Definitive Choice</span>
+                        <span className="text-[10px] font-black tracking-[1em] uppercase text-premium-gold ml-[1em] bg-premium-surface px-4 py-1 rounded-full border border-premium-gold/20">The Definitive Choice</span>
                     </motion.div>
                     <h2 className="text-5xl md:text-8xl font-serif italic mb-12">
                         Trusavor: <span className="text-premium-gold">Best in Class</span>
@@ -38,7 +38,7 @@ const BestBrandSection: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
-                            className="group p-10 bg-white border border-stone-200 rounded-[32px] hover:border-premium-gold/50 hover:shadow-xl transition-all duration-700"
+                            className="group p-10 bg-premium-surface border border-premium-text-muted/10 rounded-[32px] hover:border-premium-gold/50 hover:shadow-xl transition-all duration-700"
                         >
                             <item.icon className="w-10 h-10 text-premium-gold mb-8 group-hover:scale-110 transition-transform duration-500" />
                             <h3 className="text-2xl font-serif italic text-premium-text-primary mb-4">{item.label}</h3>
@@ -50,7 +50,7 @@ const BestBrandSection: React.FC = () => {
                 </div>
 
                 {/* Popular Brand Banner */}
-                <div className="mt-20 relative h-[500px] rounded-[48px] overflow-hidden group border border-stone-200 shadow-2xl">
+                <div className="mt-20 relative h-[500px] rounded-[48px] overflow-hidden group border border-premium-text-muted/10 shadow-2xl">
                     <img
                         src="/assets/wellness_hero.png"
                         alt="Best Brand"
@@ -70,7 +70,7 @@ const BestBrandSection: React.FC = () => {
                             <span className="text-white text-xs font-black uppercase tracking-[0.5em]">Most Popular 2024</span>
                         </motion.div>
                         <h3 className="text-4xl md:text-7xl font-serif italic text-white mb-8 drop-shadow-lg">Trusted by thousands of <br /> conscious ritualists.</h3>
-                        <button className="bg-white text-premium-text-primary px-12 py-5 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-premium-gold hover:text-white transition-colors duration-500 shadow-xl">
+                        <button className="bg-premium-surface text-premium-text-primary px-12 py-5 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-premium-gold hover:text-white transition-colors duration-500 shadow-xl">
                             Join The Collective
                         </button>
                     </div>

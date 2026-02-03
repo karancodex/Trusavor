@@ -10,7 +10,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-premium-light text-premium-text-primary pt-32 pb-16 border-t border-stone-200 relative overflow-hidden">
+        <footer className="bg-premium-light text-premium-text-primary pt-32 pb-16 border-t border-premium-text-muted/20 relative overflow-hidden">
             {/* Ambient Depth Background */}
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-premium-gold/20 to-transparent" />
             <div className="absolute bottom-0 right-0 w-[80vw] h-[80vw] bg-premium-gold/5 blur-[250px] rounded-full translate-y-1/2 translate-x-1/2 pointer-events-none" />
@@ -29,7 +29,7 @@ const Footer = () => {
                         </div>
                         <div className="flex gap-8">
                             {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                                <a key={i} href="#" className="w-12 h-12 rounded-full border border-stone-200 bg-white flex items-center justify-center text-premium-text-muted hover:text-white hover:bg-premium-gold hover:border-premium-gold transition-all duration-500 hover:-translate-y-1 shadow-sm">
+                                <a key={i} href="#" className="w-12 h-12 rounded-full border border-premium-text-muted/20 bg-premium-surface flex items-center justify-center text-premium-text-muted hover:text-white hover:bg-premium-gold hover:border-premium-gold transition-all duration-500 hover:-translate-y-1 shadow-sm">
                                     <Icon className="w-5 h-5" />
                                 </a>
                             ))}
@@ -69,7 +69,7 @@ const Footer = () => {
                             <input
                                 type="email"
                                 placeholder="Enter coordinates (Email)"
-                                className="w-full bg-white border border-stone-200 py-5 px-8 text-sm focus:outline-none focus:border-premium-gold/50 transition-all placeholder:text-stone-300 italic text-premium-text-primary"
+                                className="w-full bg-premium-surface border border-premium-text-muted/20 py-5 px-8 text-sm focus:outline-none focus:border-premium-gold/50 transition-all placeholder:text-premium-text-muted/50 italic text-premium-text-primary"
                             />
                             <button className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-premium-gold text-white rounded-full flex items-center justify-center hover:scale-105 transition-all shadow-xl hover:bg-premium-text-primary">
                                 <Send className="w-4 h-4" />
@@ -79,7 +79,7 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Legal Section */}
-                <div className="pt-16 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-10">
+                <div className="pt-16 border-t border-premium-text-muted/20 flex flex-col md:flex-row justify-between items-center gap-10">
                     <div className="text-[9px] font-black uppercase tracking-[0.4em] text-premium-text-muted/50 text-center md:text-left">
                         © 2026 TRUSAVOR INC. ALL RITUALS SECURED.
                     </div>

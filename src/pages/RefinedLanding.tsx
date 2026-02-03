@@ -65,7 +65,7 @@ const RefinedLanding: React.FC = () => {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={sectionVariants}
-                        className="bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[550px] border border-stone-100"
+                        className="bg-premium-surface rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[550px] border border-premium-text-muted/10"
                     >
                         {/* Image Side */}
                         <div className="w-full lg:w-1/2 relative h-[300px] lg:h-full overflow-hidden group">
@@ -81,7 +81,7 @@ const RefinedLanding: React.FC = () => {
                         </div>
 
                         {/* Content Side */}
-                        <div className="w-full lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center bg-white relative">
+                        <div className="w-full lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center bg-premium-surface relative">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-cosmetics-accent/5 blur-[80px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
                             <div className="relative z-10">
@@ -104,14 +104,14 @@ const RefinedLanding: React.FC = () => {
                 </div>
             </section>
             {/* 3. Wellness Focus */}
-            <section className="py-10 relative bg-gradient-to-b from-premium-light to-white overflow-hidden">
+            <section className="py-10 relative bg-gradient-to-b from-premium-light to-premium-surface overflow-hidden">
                 <div className="container mx-auto px-6 relative z-10">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={sectionVariants}
-                        className="bg-stone-50 rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row-reverse h-auto lg:h-[550px] border border-stone-200"
+                        className="bg-premium-surface rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row-reverse h-auto lg:h-[550px] border border-premium-text-muted/10"
                     >
                         {/* Image Side */}
                         <div className="w-full lg:w-1/2 relative h-[300px] lg:h-full overflow-hidden group">
@@ -127,7 +127,7 @@ const RefinedLanding: React.FC = () => {
                         </div>
 
                         {/* Content Side */}
-                        <div className="w-full lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center bg-stone-50 relative">
+                        <div className="w-full lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center bg-premium-surface relative">
                             <div className="absolute top-0 left-0 w-64 h-64 bg-wellness-accent/5 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2" />
 
                             <div className="relative z-10">
@@ -160,9 +160,9 @@ const RefinedLanding: React.FC = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h3 className="text-[18vw] font-serif italic text-black/[0.02] select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap tracking-tighter">
+                    {/* <h3 className="text-[18vw] font-serif italic text-premium-text-primary/[0.02] select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap tracking-tighter">
                         Trusavor Era
-                    </h3>
+                    </h3> */}
                     <div className="relative z-10">
                         <p className="text-[12px] font-black tracking-[1.5em] uppercase text-premium-gold mb-16 ml-[1.5em]">The Future of Self-Care</p>
                         <h2 className="text-5xl md:text-7xl font-light mb-24 max-w-5xl mx-auto leading-tight text-premium-text-primary">
@@ -173,7 +173,7 @@ const RefinedLanding: React.FC = () => {
                                 <span className="text-wellness-accent font-black tracking-[0.4em] uppercase text-[11px] hover:text-premium-text-primary transition-colors">Start Wellness Ritual</span>
                                 <div className="absolute -bottom-6 left-0 w-8 h-[2px] bg-wellness-accent group-hover:w-full transition-all duration-500" />
                             </a>
-                            <span className="w-px h-12 bg-stone-200 hidden md:block" />
+                            <span className="w-px h-12 bg-premium-text-muted/20 hidden md:block" />
                             <a href="/cosmetics" className="group relative">
                                 <span className="text-cosmetics-accent font-black tracking-[0.4em] uppercase text-[11px] hover:text-premium-text-primary transition-colors">Begin Beauty Journey</span>
                                 <div className="absolute -bottom-6 left-0 w-8 h-[2px] bg-cosmetics-accent group-hover:w-full transition-all duration-500" />

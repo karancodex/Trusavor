@@ -30,12 +30,12 @@ const Signup = () => {
                 transition={{ duration: 0.8 }}
                 className="w-full max-w-lg relative z-10"
             >
-                <div className="bg-white/80 backdrop-blur-3xl border border-stone-200 rounded-[60px] p-12 lg:p-16 shadow-2xl relative overflow-hidden">
+                <div className="bg-premium-surface/80 backdrop-blur-3xl border border-premium-text-muted/10 rounded-[60px] p-12 lg:p-16 shadow-2xl relative overflow-hidden">
                     {/* Decorative Corner */}
-                    <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-white to-transparent pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-premium-light/50 to-transparent pointer-events-none" />
 
                     <div className="text-center mb-16">
-                        <div className="w-16 h-16 rounded-2xl bg-white border border-stone-100 flex items-center justify-center mx-auto mb-8 shadow-xl">
+                        <div className="w-16 h-16 rounded-2xl bg-premium-surface border border-premium-text-muted/10 flex items-center justify-center mx-auto mb-8 shadow-xl">
                             <ShieldCheck className="w-8 h-8 text-premium-text-muted" />
                         </div>
                         <h1 className="text-4xl md:text-5xl font-serif font-black italic text-premium-text-primary tracking-tighter mb-4">Join Ritual</h1>
@@ -50,7 +50,7 @@ const Signup = () => {
                                 <input
                                     type="text"
                                     required
-                                    className="w-full bg-white border border-stone-200 rounded-[28px] pl-16 pr-8 py-6 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30 italic font-medium"
+                                    className="w-full bg-premium-light border border-premium-text-muted/20 rounded-[28px] pl-16 pr-8 py-6 text-premium-text-primary text-sm focus:outline-none focus:border-premium-gold transition-all placeholder:text-premium-text-muted/30 italic font-medium"
                                     placeholder="Enter full name"
                                 />
                             </div>
@@ -63,7 +63,7 @@ const Signup = () => {
                                 <input
                                     type="email"
                                     required
-                                    className="w-full bg-white border border-stone-200 rounded-[28px] pl-16 pr-8 py-6 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30 italic font-medium"
+                                    className="w-full bg-premium-light border border-premium-text-muted/20 rounded-[28px] pl-16 pr-8 py-6 text-premium-text-primary text-sm focus:outline-none focus:border-premium-gold transition-all placeholder:text-premium-text-muted/30 italic font-medium"
                                     placeholder="name@example.com"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
@@ -78,7 +78,7 @@ const Signup = () => {
                                 <input
                                     type="password"
                                     required
-                                    className="w-full bg-white border border-stone-200 rounded-[28px] pl-16 pr-8 py-6 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30 italic font-medium"
+                                    className="w-full bg-premium-light border border-premium-text-muted/20 rounded-[28px] pl-16 pr-8 py-6 text-premium-text-primary text-sm focus:outline-none focus:border-premium-gold transition-all placeholder:text-premium-text-muted/30 italic font-medium"
                                     placeholder="••••••••"
                                 />
                             </div>
@@ -91,7 +91,7 @@ const Signup = () => {
 
                         <button
                             type="submit"
-                            className="w-full bg-premium-text-primary text-white py-6 rounded-[28px] font-black uppercase tracking-[0.4em] text-[10px] hover:scale-[1.02] active:scale-98 transition-all flex items-center justify-center gap-4 group shadow-xl"
+                            className="w-full bg-premium-text-primary text-premium-surface py-6 rounded-[28px] font-black uppercase tracking-[0.4em] text-[10px] hover:scale-[1.02] active:scale-98 transition-all flex items-center justify-center gap-4 group shadow-xl"
                         >
                             Initiate Account <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                         </button>

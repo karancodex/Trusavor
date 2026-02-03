@@ -11,10 +11,10 @@ const SocialGrid: React.FC = () => {
     ];
 
     return (
-        <section className="py-24 bg-[#fafaf9] overflow-hidden">
+        <section className="py-24 bg-premium-light overflow-hidden">
             <div className="container mx-auto px-6 mb-12 text-center">
-                <h2 className="text-3xl font-serif text-stone-900 mb-2">@trusavor</h2>
-                <p className="text-stone-500 text-sm font-bold uppercase tracking-widest">Join the collective</p>
+                <h2 className="text-3xl font-serif text-premium-text-primary mb-2">@trusavor</h2>
+                <p className="text-premium-text-muted text-sm font-bold uppercase tracking-widest">Join the collective</p>
             </div>
 
             <div className="w-full overflow-hidden">

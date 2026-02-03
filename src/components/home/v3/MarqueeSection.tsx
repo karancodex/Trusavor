@@ -5,7 +5,7 @@ const MarqueeSection: React.FC = () => {
     const text = "PURE MOLECULAR SCIENCE • ETHEREAL AESTHETICS • BIOLOGICAL HARMONY • ";
 
     return (
-        <div className="bg-stone-900 text-[#E8DFCA] py-6 overflow-hidden border-y border-[#E8DFCA]/20">
+        <div className="bg-premium-dark text-premium-gold py-6 overflow-hidden border-y border-premium-gold/20">
             <div className="flex whitespace-nowrap">
                 <motion.div
                     initial={{ x: 0 }}

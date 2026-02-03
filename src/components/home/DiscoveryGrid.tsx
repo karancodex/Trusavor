@@ -38,7 +38,7 @@ const DiscoveryGrid: React.FC<DiscoveryGridProps> = ({ products }) => {
                 <div className="mt-20 flex justify-center">
                     <Link to="/all-collections" className="group flex items-center gap-10 hover:gap-16 transition-all duration-700">
                         <span className="text-[10px] font-black uppercase tracking-[0.5em] text-premium-text-muted group-hover:text-premium-text-primary transition-colors">Explore All Collections</span>
-                        <div className="w-16 h-16 rounded-full border border-stone-200 flex items-center justify-center group-hover:bg-premium-text-primary group-hover:text-white transition-all shadow-sm group-hover:shadow-xl">
+                        <div className="w-16 h-16 rounded-full border border-premium-text-muted/20 flex items-center justify-center group-hover:bg-premium-text-primary group-hover:text-premium-surface transition-all shadow-sm group-hover:shadow-xl">
                             <ArrowRight className="w-5 h-5" />
                         </div>
                     </Link>

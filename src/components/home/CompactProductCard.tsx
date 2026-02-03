@@ -24,7 +24,7 @@ const CompactProductCard: React.FC<CompactProductCardProps> = ({ product, theme 
         >
             <Link to={`/product/${product.slug}`} className="block">
                 <div className={clsx(
-                    "relative aspect-[4/5] rounded-[32px] overflow-hidden bg-white border border-stone-200 transition-all duration-700 group-hover:border-premium-gold/50",
+                    "relative aspect-[4/5] rounded-[32px] overflow-hidden bg-premium-surface/80 backdrop-blur-md border border-premium-text-muted/10 transition-all duration-700 group-hover:border-premium-gold/50",
                     isWellness ? "group-hover:shadow-[0_20px_40px_-12px_#a3b18a]" : "group-hover:shadow-[0_20px_40px_-12px_#d4a373]"
                 )}>
                     <img
@@ -38,7 +38,7 @@ const CompactProductCard: React.FC<CompactProductCardProps> = ({ product, theme 
                         <button
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleWishlist(product.id); }}
                             className={clsx(
-                                "p-3 rounded-full bg-white/80 backdrop-blur-md border border-stone-200 text-premium-text-muted transition-all hover:bg-white shadow-sm",
+                                "p-3 rounded-full bg-premium-surface/80 backdrop-blur-md border border-premium-text-muted/20 text-premium-text-muted transition-all hover:bg-premium-surface shadow-sm",
                                 isWellness ? "hover:text-[#a3b18a]" : "hover:text-[#d4a373]"
                             )}
                         >
@@ -57,7 +57,7 @@ const CompactProductCard: React.FC<CompactProductCardProps> = ({ product, theme 
                         <ShoppingBag className="w-4 h-4" />
                     </button>
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-premium-surface/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
 
                 <div className="mt-6 space-y-2 px-1">

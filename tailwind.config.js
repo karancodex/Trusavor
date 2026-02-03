@@ -4,6 +4,7 @@ export default {
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
+    darkMode: 'class',
     theme: {
         extend: {
             colors: {
@@ -26,20 +27,20 @@ export default {
                 },
                 premium: {
                     // Light Luxury Theme Palette
-                    light: "#FAFAF9", // Stone-50 (Main Background)
-                    surface: "#FFFFFF", // White (Cards/Surfaces)
+                    light: "var(--color-premium-light)", // Main Background
+                    surface: "var(--color-premium-surface)", // Surfaces
                     text: {
-                        primary: "#1C1917", // Stone-900 (Main Text)
-                        secondary: "#57534E", // Stone-600 (Subtitles)
-                        muted: "#A8A29E", // Stone-400 (Low priority)
+                        primary: "var(--color-premium-text-primary)", // Main Text
+                        secondary: "var(--color-premium-text-secondary)", // Subtitles
+                        muted: "var(--color-premium-text-muted)", // Low priority
                     },
                     gold: {
-                        DEFAULT: "#B08D55", // Muted Gold
-                        hover: "#9A7B4F",
-                        light: "#F3EFE9", // Light Gold Wash
+                        DEFAULT: "var(--color-premium-gold)", // Muted Gold
+                        hover: "var(--color-premium-gold-hover)",
+                        light: "var(--color-premium-gold-light)", // Gold Wash
                     },
-                    accent: "#D4A373", // Warm accent
-                    dark: "#292524", // Stone-800
+                    accent: "var(--color-premium-accent)", // Warm accent
+                    dark: "var(--color-premium-dark)", // Inverted/Contrast
                 }
             },
             fontFamily: {

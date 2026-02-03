@@ -44,7 +44,7 @@ const TrustConsensus: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white border border-stone-200 rounded-[40px] p-10 relative group hover:shadow-xl hover:border-premium-gold/30 transition-all"
+                            className="bg-premium-surface border border-premium-text-muted/10 rounded-[40px] p-10 relative group hover:shadow-xl hover:border-premium-gold/30 transition-all"
                         >
                             <Quote className={clsx(
                                 "absolute top-8 right-10 w-12 h-12 opacity-10 transition-opacity group-hover:opacity-20",
@@ -64,7 +64,7 @@ const TrustConsensus: React.FC = () => {
                                 "{t.text}"
                             </p>
 
-                            <div className="pt-8 border-t border-stone-100">
+                            <div className="pt-8 border-t border-premium-text-muted/10">
                                 <h4 className="text-sm font-bold text-premium-text-primary tracking-widest">{t.name}</h4>
                                 <p className="text-[10px] uppercase font-black tracking-widest text-premium-text-muted mt-1">{t.role}</p>
                             </div>

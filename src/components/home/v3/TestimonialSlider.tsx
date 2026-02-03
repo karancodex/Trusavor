@@ -36,13 +36,13 @@ const TestimonialSlider: React.FC = () => {
     const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
     return (
-        <section className="py-16 bg-[#fafaf9] overflow-hidden">
+        <section className="py-16 bg-premium-light overflow-hidden">
             <div className="container mx-auto px-6 relative">
 
                 {/* Header */}
                 <div className="flex flex-col items-center text-center mb-12">
-                    <span className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-4">Consensus</span>
-                    <h2 className="text-4xl md:text-5xl font-serif text-stone-900">Voice of the <i className="text-stone-400">Collective</i></h2>
+                    <span className="text-xs font-black uppercase tracking-[0.3em] text-premium-text-muted mb-4">Consensus</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-premium-text-primary">Voice of the <i className="text-premium-text-muted">Collective</i></h2>
                 </div>
 
                 <div className="relative max-w-5xl mx-auto min-h-[400px]">
@@ -63,9 +63,9 @@ const TestimonialSlider: React.FC = () => {
                                         alt={testimonials[activeIndex].author}
                                         className="w-full h-full object-cover"
                                     />
-                                    <div className="absolute inset-0 bg-stone-900/10" />
+                                    <div className="absolute inset-0 bg-premium-dark/10" />
                                 </div>
-                                <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-full shadow-lg text-stone-900">
+                                <div className="absolute -bottom-6 -right-6 bg-premium-surface p-4 rounded-full shadow-lg text-premium-text-primary">
                                     <Quote className="w-8 h-8 fill-current opacity-20" />
                                 </div>
                             </div>
@@ -74,15 +74,15 @@ const TestimonialSlider: React.FC = () => {
                             <div className="w-full md:w-2/3 text-center md:text-left">
                                 <div className="flex justify-center md:justify-start gap-1 mb-6">
                                     {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 fill-stone-900 text-stone-900" />
+                                        <Star key={i} className="w-5 h-5 fill-premium-text-primary text-premium-text-primary" />
                                     ))}
                                 </div>
-                                <h3 className="text-2xl md:text-4xl font-serif leading-tight text-stone-800 mb-8 italic">
+                                <h3 className="text-2xl md:text-4xl font-serif leading-tight text-premium-text-primary mb-8 italic">
                                     "{testimonials[activeIndex].text}"
                                 </h3>
                                 <div>
-                                    <h4 className="text-sm font-black uppercase tracking-widest text-stone-900">{testimonials[activeIndex].author}</h4>
-                                    <span className="text-xs font-bold uppercase tracking-wider text-stone-500">{testimonials[activeIndex].role}</span>
+                                    <h4 className="text-sm font-black uppercase tracking-widest text-premium-text-primary">{testimonials[activeIndex].author}</h4>
+                                    <span className="text-xs font-bold uppercase tracking-wider text-premium-text-muted">{testimonials[activeIndex].role}</span>
                                 </div>
                             </div>
                         </motion.div>
@@ -90,10 +90,10 @@ const TestimonialSlider: React.FC = () => {
 
                     {/* Controls */}
                     <div className="absolute bottom-0 right-0 md:translate-y-1/2 flex gap-4 mt-8 md:mt-0 justify-center w-full md:w-auto">
-                        <button onClick={prev} className="w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-900 hover:text-white transition-all">
+                        <button onClick={prev} className="w-12 h-12 rounded-full border border-premium-text-muted/20 text-premium-text-primary flex items-center justify-center hover:bg-premium-text-primary hover:text-premium-surface transition-all">
                             <ChevronLeft className="w-5 h-5" />
                         </button>
-                        <button onClick={next} className="w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-900 hover:text-white transition-all">
+                        <button onClick={next} className="w-12 h-12 rounded-full border border-premium-text-muted/20 text-premium-text-primary flex items-center justify-center hover:bg-premium-text-primary hover:text-premium-surface transition-all">
                             <ChevronRight className="w-5 h-5" />
                         </button>
                     </div>

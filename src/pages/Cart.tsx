@@ -23,7 +23,7 @@ const Cart = () => {
                     <ShoppingCart className="w-16 h-16 text-premium-text-muted/30 mx-auto mb-8" />
                     <h1 className="text-4xl md:text-5xl font-serif font-black text-premium-text-primary italic mb-6 tracking-tighter">Cart is Vacant</h1>
                     <p className="text-premium-text-secondary text-lg font-light italic mb-12">The vessel of your transformation awaits its essence.</p>
-                    <Link to="/" className="inline-flex items-center gap-4 px-10 py-4 bg-white/80 backdrop-blur-xl border border-stone-200 text-premium-text-primary rounded-full font-black uppercase text-[9px] tracking-widest hover:bg-white hover:scale-105 transition-all shadow-xl">
+                    <Link to="/" className="inline-flex items-center gap-4 px-10 py-4 bg-premium-surface/80 backdrop-blur-xl border border-premium-text-muted/10 text-premium-text-primary rounded-full font-black uppercase text-[9px] tracking-widest hover:bg-premium-surface hover:scale-105 transition-all shadow-xl">
                         Explore Collections <ArrowRight className="w-4 h-4" />
                     </Link>
                 </motion.div>
@@ -54,9 +54,9 @@ const Cart = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, x: -30 }}
                                     key={item.id}
-                                    className="group relative bg-white backdrop-blur-3xl rounded-[32px] p-6 border border-stone-200 flex flex-col sm:flex-row items-center gap-8 hover:shadow-lg hover:border-premium-gold/30 transition-all duration-500"
+                                    className="group relative bg-premium-surface backdrop-blur-3xl rounded-[32px] p-6 border border-premium-text-muted/10 flex flex-col sm:flex-row items-center gap-8 hover:shadow-lg hover:border-premium-gold/30 transition-all duration-500"
                                 >
-                                    <div className="w-24 h-24 bg-stone-50 rounded-2xl overflow-hidden flex-shrink-0 p-3 border border-stone-100">
+                                    <div className="w-24 h-24 bg-premium-light rounded-2xl overflow-hidden flex-shrink-0 p-3 border border-premium-text-muted/10">
                                         <img src={item.images[0]} alt={item.name} className="w-full h-full object-contain drop-shadow-xl" />
                                     </div>
 
@@ -66,12 +66,12 @@ const Cart = () => {
                                     </div>
 
                                     <div className="flex items-center gap-6">
-                                        <div className="flex items-center bg-stone-100/50 rounded-xl px-3 py-2 border border-stone-200">
+                                        <div className="flex items-center bg-premium-surface/50 rounded-xl px-3 py-2 border border-premium-text-muted/10">
                                             <button onClick={() => updateCartQuantity(item.id, Math.max(1, item.quantity - 1))} className="p-1.5 text-premium-text-muted hover:text-premium-text-primary transition-colors"><Minus className="w-4 h-4" /></button>
                                             <span className="w-8 text-center text-base font-black text-premium-text-primary">{item.quantity}</span>
                                             <button onClick={() => updateCartQuantity(item.id, item.quantity + 1)} className="p-1.5 text-premium-text-muted hover:text-premium-text-primary transition-colors"><Plus className="w-4 h-4" /></button>
                                         </div>
-                                        <button onClick={() => removeFromCart(item.id)} className="w-10 h-10 rounded-lg bg-stone-50 flex items-center justify-center text-premium-text-muted hover:text-red-500 transition-all duration-500">
+                                        <button onClick={() => removeFromCart(item.id)} className="w-10 h-10 rounded-lg bg-premium-light flex items-center justify-center text-premium-text-muted hover:text-red-500 transition-all duration-500">
                                             <Trash2 className="w-4 h-4" />
                                         </button>
                                     </div>
@@ -88,7 +88,7 @@ const Cart = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="bg-white/80 backdrop-blur-3xl rounded-[40px] p-10 border border-stone-200 sticky top-32 shadow-2xl"
+                            className="bg-premium-surface/80 backdrop-blur-3xl rounded-[40px] p-10 border border-premium-text-muted/10 sticky top-32 shadow-2xl"
                         >
                             <h2 className="text-xl font-serif font-black text-premium-text-primary mb-8 italic tracking-tight">Order Insight</h2>
 
@@ -101,7 +101,7 @@ const Cart = () => {
                                     <span>Delivery Flow</span>
                                     <span className="text-premium-text-primary">{shipping === 0 ? 'FREE' : `$${shipping}`}</span>
                                 </div>
-                                <div className="h-[1px] bg-stone-200 my-6" />
+                                <div className="h-[1px] bg-premium-text-muted/10 my-6" />
                                 <div className="flex justify-between items-end">
                                     <span className="text-[8px] font-black uppercase tracking-[0.3em] text-premium-text-secondary mb-1.5">Total Resonance</span>
                                     <span className="text-4xl font-black text-premium-text-primary tracking-tighter">${total.toFixed(0)}</span>
@@ -110,7 +110,7 @@ const Cart = () => {
 
                             <button
                                 onClick={() => navigate('/checkout')}
-                                className="w-full bg-white/90 backdrop-blur-xl border border-stone-200 text-premium-text-primary py-5 rounded-[24px] font-black uppercase text-[9px] tracking-[0.4em] transition-all hover:bg-white hover:scale-[1.02] shadow-xl flex items-center justify-center gap-4 group"
+                                className="w-full bg-premium-text-primary text-premium-surface py-5 rounded-[24px] font-black uppercase text-[9px] tracking-[0.4em] transition-all hover:scale-[1.02] shadow-xl flex items-center justify-center gap-4 group"
                             >
                                 Checkout <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                             </button>

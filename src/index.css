@@ -22,11 +22,43 @@
 }
 
 :root {
-    --dark: #FAFAF9;
-    /* Light background similar to Stone-50 */
-    --text-primary: #1C1917;
+    /* Base Variables (Light Mode Defaults) */
+    --color-premium-light: #FAFAF9;
+    --color-premium-surface: #FFFFFF;
+    --color-premium-text-primary: #1C1917;
+    --color-premium-text-secondary: #57534E;
+    --color-premium-text-muted: #A8A29E;
+    --color-premium-gold: #B08D55;
+    --color-premium-gold-hover: #9A7B4F;
+    --color-premium-gold-light: #F3EFE9;
+    --color-premium-accent: #D4A373;
+    --color-premium-dark: #292524;
+
+    /* Legacy/Direct mappings */
+    --dark: var(--color-premium-light); /* Background */
+    --text-primary: var(--color-premium-text-primary);
     --glass: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+    /* Dark Mode Overrides */
+    --color-premium-light: #1C1917; /* Main background becomes dark */
+    --color-premium-surface: #292524; /* Surface becomes dark grey */
+    --color-premium-text-primary: #FAFAF9; /* Text becomes light */
+    --color-premium-text-secondary: #D6D3D1; /* Secondary text lighter */
+    --color-premium-text-muted: #A8A29E;
+    
+    --color-premium-gold: #C5A059;
+    --color-premium-gold-hover: #D4A373;
+    --color-premium-gold-light: #4A1D1F; /* Darker accent wash */
+    --color-premium-accent: #D4A373;
+    --color-premium-dark: #FAFAF9; /* Inverted to light if needed */
+
+    --dark: var(--color-premium-light);
+    --text-primary: var(--color-premium-text-primary);
+    --glass: rgba(0, 0, 0, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 @layer base {

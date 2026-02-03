@@ -5,7 +5,7 @@ import { Leaf, Sparkles, ArrowRight } from 'lucide-react';
 
 const HeroV3: React.FC = () => {
     return (
-        <section className="relative h-screen w-full bg-[#f8f7f4] overflow-hidden pt-[80px]"> {/* Coping with fixed header */}
+        <section className="relative h-screen w-full bg-premium-light overflow-hidden pt-[80px]"> {/* Coping with fixed header */}
             <div className="container mx-auto px-6 h-full flex flex-col md:flex-row gap-4 pb-4">
 
                 {/* Left Card: Wellness */}

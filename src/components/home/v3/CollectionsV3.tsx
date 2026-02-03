@@ -32,7 +32,7 @@ const ProductCard: React.FC<{ product: any, theme: 'wellness' | 'cosmetics' }> =
             className="group relative w-[280px] md:w-[320px] flex-shrink-0"
         >
             <Link to={`/product/${slug}`} className="block">
-                <div className="relative aspect-[3/4] rounded-[24px] overflow-hidden bg-white border border-stone-100 mb-5 shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
+                <div className="relative aspect-[3/4] rounded-[24px] overflow-hidden bg-premium-surface border border-premium-text-muted/10 mb-5 shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
                     <img
                         src={image}
                         alt={name}
@@ -52,7 +52,7 @@ const ProductCard: React.FC<{ product: any, theme: 'wellness' | 'cosmetics' }> =
 
                     <div className="absolute top-4 left-4">
                         <span className={clsx(
-                            "text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm border",
+                            "text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-premium-surface/90 backdrop-blur-sm border",
                             isWellness ? "text-emerald-800 border-emerald-100" : "text-rose-800 border-rose-100"
                         )}>
                             {isWellness ? 'Ritual' : 'Edit'}
@@ -61,10 +61,10 @@ const ProductCard: React.FC<{ product: any, theme: 'wellness' | 'cosmetics' }> =
                 </div>
 
                 <div>
-                    <h3 className="text-xl font-serif text-stone-900 group-hover:text-stone-600 transition-colors mb-1 truncate">{name}</h3>
+                    <h3 className="text-xl font-serif text-premium-text-primary group-hover:text-premium-text-secondary transition-colors mb-1 truncate">{name}</h3>
                     <div className="flex justify-between items-center text-sm">
-                        <span className="font-bold text-stone-500">${price}</span>
-                        <span className="text-stone-400 text-xs uppercase tracking-wider font-medium">View Details</span>
+                        <span className="font-bold text-premium-text-muted">${price}</span>
+                        <span className="text-premium-text-muted text-xs uppercase tracking-wider font-medium">View Details</span>
                     </div>
                 </div>
             </Link>
@@ -74,14 +74,14 @@ const ProductCard: React.FC<{ product: any, theme: 'wellness' | 'cosmetics' }> =
 
 const CollectionsV3: React.FC<CollectionsV3Props> = ({ wellnessProducts, cosmeticsProducts }) => {
     return (
-        <section className="py-16 bg-white relative overflow-hidden">
+        <section className="py-16 bg-premium-surface relative overflow-hidden">
 
             {/* Wellness Section */}
             <div className="mb-16">
                 <div className="container mx-auto px-6 mb-12 flex items-end justify-between">
                     <div>
-                        <h2 className="text-5xl font-serif text-stone-900 mb-4">Wellness <i className="text-emerald-800 font-serif">Originals</i></h2>
-                        <p className="text-stone-500 text-lg max-w-md">Foundational supplements for biological harmony.</p>
+                        <h2 className="text-5xl font-serif text-premium-text-primary mb-4">Wellness <i className="text-emerald-800 font-serif">Originals</i></h2>
+                        <p className="text-premium-text-secondary text-lg max-w-md">Foundational supplements for biological harmony.</p>
                     </div>
                     <Link to="/wellness" className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-900 hover:text-emerald-600 border-b border-emerald-900/20 pb-1">
                         View Collection <ArrowRight className="w-4 h-4" />
@@ -99,8 +99,8 @@ const CollectionsV3: React.FC<CollectionsV3Props> = ({ wellnessProducts, cosmeti
             <div>
                 <div className="container mx-auto px-6 mb-12 flex items-end justify-between">
                     <div>
-                        <h2 className="text-5xl font-serif text-stone-900 mb-4">Cosmetic <i className="text-rose-800 font-serif">Refinements</i></h2>
-                        <p className="text-stone-500 text-lg max-w-md">Ethereal textures for a luminous finish.</p>
+                        <h2 className="text-5xl font-serif text-premium-text-primary mb-4">Cosmetic <i className="text-rose-800 font-serif">Refinements</i></h2>
+                        <p className="text-premium-text-secondary text-lg max-w-md">Ethereal textures for a luminous finish.</p>
                     </div>
                     <Link to="/cosmetics" className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rose-900 hover:text-rose-600 border-b border-rose-900/20 pb-1">
                         View Edit <ArrowRight className="w-4 h-4" />

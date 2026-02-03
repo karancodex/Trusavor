@@ -4,6 +4,7 @@ import { Search, Heart, ShoppingBag, Menu, X, User } from 'lucide-react';
 import { useStore } from '../../context/store';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
+import { ThemeToggle } from '../ui/ThemeToggle';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -39,8 +40,8 @@ const Header = () => {
                 className={clsx(
                     "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
                     isHome
-                        ? (isScrolled ? "bg-white/90 backdrop-blur-md py-4 border-stone-200 shadow-sm" : "bg-transparent py-6 border-transparent")
-                        : "bg-white/90 backdrop-blur-md py-4 border-stone-200 shadow-sm"
+                        ? (isScrolled ? "bg-premium-surface/90 backdrop-blur-md py-4 border-premium-text-muted/20 shadow-sm" : "bg-transparent py-6 border-transparent")
+                        : "bg-premium-surface/90 backdrop-blur-md py-4 border-premium-text-muted/20 shadow-sm"
                 )}
             >
                 <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -78,7 +79,7 @@ const Header = () => {
                     <div className="flex items-center gap-6 md:gap-8 z-50">
                         <div className={clsx(
                             "hidden md:flex items-center gap-6 border-r pr-6 mr-2",
-                            isHome && !isScrolled ? "border-white/20" : "border-stone-200"
+                            isHome && !isScrolled ? "border-white/20" : "border-premium-text-muted/20"
                         )}>
                             <button className="group relative">
                                 <Search className={clsx("w-5 h-5 transition-colors", isHome && !isScrolled ? "text-white/80 group-hover:text-white" : "text-premium-text-muted group-hover:text-premium-text-primary")} />
@@ -93,7 +94,7 @@ const Header = () => {
                                     <span className={clsx(
                                         "absolute -top-1.5 -right-1.5 w-3.5 h-3.5 text-[8px] font-black rounded-full flex items-center justify-center",
                                         isHome && !isScrolled
-                                            ? "bg-white text-premium-text-primary"
+                                            ? "bg-premium-surface text-premium-text-primary"
                                             : "bg-premium-gold text-white"
                                     )}>
                                         {wishlist.length}
@@ -103,6 +104,7 @@ const Header = () => {
                             <Link to="/account" className="group relative">
                                 <User className={clsx("w-5 h-5 transition-colors", isHome && !isScrolled ? "text-white/80 group-hover:text-white" : "text-premium-text-muted group-hover:text-premium-text-primary")} />
                             </Link>
+                            <ThemeToggle className={clsx("transition-colors", isHome && !isScrolled ? "text-white/80 hover:text-white" : "text-premium-text-muted hover:text-premium-text-primary")} />
                         </div>
 
                         <Link to="/cart" className="relative group">
@@ -113,7 +115,7 @@ const Header = () => {
                                         <span className={clsx(
                                             "absolute -top-2 -right-2 w-4 h-4 rounded-full text-[8px] font-black flex items-center justify-center",
                                             isHome && !isScrolled
-                                                ? "bg-white text-premium-text-primary"
+                                                ? "bg-premium-surface text-premium-text-primary"
                                                 : "bg-premium-text-primary text-white"
                                         )}>
                                             {totalItems}
@@ -155,11 +157,14 @@ const Header = () => {
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ type: 'spring', damping: 30, stiffness: 200 }}
-                            className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-premium-light border-l border-stone-200 z-[70] p-12 flex flex-col"
+                            className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-premium-light border-l border-premium-text-muted/20 z-[70] p-12 flex flex-col"
                         >
-                            <button onClick={() => setMobileMenuOpen(false)} className="self-end mb-16 text-premium-text-secondary hover:text-premium-text-primary">
-                                <X className="w-8 h-8" />
-                            </button>
+                            <div className="flex items-center justify-between w-full mb-16">
+                                <ThemeToggle className="text-premium-text-secondary hover:text-premium-text-primary" />
+                                <button onClick={() => setMobileMenuOpen(false)} className="text-premium-text-secondary hover:text-premium-text-primary">
+                                    <X className="w-8 h-8" />
+                                </button>
+                            </div>
                             <nav className="flex flex-col gap-8">
                                 {navLinks.map((link) => (
                                     <Link

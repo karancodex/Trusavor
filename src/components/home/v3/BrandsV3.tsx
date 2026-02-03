@@ -5,11 +5,11 @@ const BrandsV3: React.FC = () => {
     const brands = ["Vogue", "Allure", "Elle", "Vanity Fair", "Harper's Bazaar"];
 
     return (
-        <section className="py-12 bg-[#fafaf9] border-b border-stone-200/50">
+        <section className="py-12 bg-premium-light border-b border-premium-text-muted/20">
             <div className="container mx-auto px-6 overflow-hidden">
                 <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-between gap-8 md:gap-12 opacity-50 hover:opacity-80 transition-opacity duration-700 select-none">
                     {brands.map((brand, i) => (
-                        <span key={i} className="font-serif italic text-3xl md:text-4xl text-stone-400 hover:text-stone-800 transition-colors cursor-help mix-blend-multiply">
+                        <span key={i} className="font-serif italic text-3xl md:text-4xl text-premium-text-muted hover:text-premium-text-primary transition-colors cursor-help mix-blend-multiply">
                             {brand}
                         </span>
                     ))}

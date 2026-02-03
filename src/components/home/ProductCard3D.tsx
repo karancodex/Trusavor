@@ -75,12 +75,12 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
             <Link
                 to={`/product/${product.slug}`}
                 className={clsx(
-                    "block relative bg-white/80 backdrop-blur-3xl border border-stone-200 rounded-[40px] p-8 transition-all duration-700 hover:border-premium-gold/30 shadow-lg hover:shadow-2xl preserve-3d cursor-pointer",
+                    "block relative bg-premium-surface/80 backdrop-blur-3xl border border-premium-text-muted/10 rounded-[40px] p-8 transition-all duration-700 hover:border-premium-gold/30 shadow-lg hover:shadow-2xl preserve-3d cursor-pointer",
                     isWellness ? "hover:shadow-wellness-main/10" : "hover:shadow-cosmetics-main/10"
                 )}
             >
                 {/* Product Image Stage */}
-                <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden mb-8 transition-all duration-1000 group-hover:scale-[1.02] transform-gpu preserve-3d border border-stone-100">
+                <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden mb-8 transition-all duration-1000 group-hover:scale-[1.02] transform-gpu preserve-3d border border-premium-text-muted/10">
                     <div className={clsx(
                         "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity",
                         isWellness ? "bg-wellness-main" : "bg-cosmetics-main"
@@ -95,14 +95,14 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
 
                     {/* Quick Labels */}
                     <div className="absolute top-6 left-6 z-10" style={{ transform: "translateZ(60px)" }}>
-                        <div className="bg-white/80 backdrop-blur-md border border-stone-200 px-4 py-1.5 rounded-full text-[8px] font-black uppercase tracking-widest text-premium-text-secondary">
+                        <div className="bg-premium-surface/80 backdrop-blur-md border border-premium-text-muted/20 px-4 py-1.5 rounded-full text-[8px] font-black uppercase tracking-widest text-premium-text-secondary">
                             {isWellness ? "Wellness" : "Cosmetics"}
                         </div>
                     </div>
 
                     <button
                         onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleWishlist(product.id); }}
-                        className="absolute top-6 right-6 z-10 p-4 rounded-full bg-white/80 backdrop-blur-md border border-stone-200 text-premium-text-muted hover:text-red-500 transition-all duration-500"
+                        className="absolute top-6 right-6 z-10 p-4 rounded-full bg-premium-surface/80 backdrop-blur-md border border-premium-text-muted/20 text-premium-text-muted hover:text-red-500 transition-all duration-500"
                         style={{ transform: "translateZ(60px)" }}
                     >
                         <Heart className={clsx("w-4 h-4", isWishlisted && "fill-current text-red-500")} />
@@ -125,7 +125,7 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
                         {product.description || "Experimental biological ritual for the modern consciousness."}
                     </p>
 
-                    <div className="flex items-center justify-between pt-8 border-t border-stone-200">
+                    <div className="flex items-center justify-between pt-8 border-t border-premium-text-muted/10">
                         <span className="text-2xl font-black text-premium-text-primary tracking-widest">${product.price}</span>
 
                         <button

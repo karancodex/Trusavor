@@ -94,7 +94,7 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                     <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="bg-white/80 backdrop-blur-3xl rounded-[24px] border border-stone-200 h-16 px-6 lg:px-10 flex items-center justify-between shadow-sm"
+                        className="bg-premium-surface/80 backdrop-blur-3xl rounded-[24px] border border-premium-text-muted/10 h-16 px-6 lg:px-10 flex items-center justify-between shadow-sm"
                     >
                         <div className="flex items-center gap-6 flex-grow">
                             {/* Search - Smaller font */}
@@ -114,7 +114,7 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                                 )}
                             </div>
 
-                            <div className="h-6 w-px bg-stone-200 hidden md:block" />
+                            <div className="h-6 w-px bg-premium-text-muted/20 hidden md:block" />
 
                             <div className="hidden lg:flex items-center gap-3">
                                 <TrendingUp className="w-3.5 h-3.5 text-premium-text-muted" />
@@ -123,18 +123,18 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                         </div>
 
                         <div className="flex items-center gap-8">
-                            <div className="relative group/sort cursor-pointer flex items-center gap-3 bg-stone-100/50 px-5 py-2 rounded-full border border-stone-200 transition-all hover:bg-stone-100">
+                            <div className="relative group/sort cursor-pointer flex items-center gap-3 bg-premium-surface/50 px-5 py-2 rounded-full border border-premium-text-muted/10 transition-all hover:bg-premium-surface">
                                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-premium-text-muted">
                                     Sort: <span className="text-premium-text-primary">{sortBy}</span>
                                 </span>
                                 <ChevronDown className="w-3.5 h-3.5 text-premium-text-muted group-hover/sort:rotate-180 transition-transform" />
 
-                                <div className="absolute top-[calc(100%+8px)] right-0 bg-white backdrop-blur-3xl shadow-xl rounded-2xl p-2 opacity-0 invisible group-hover/sort:opacity-100 group-hover/sort:visible transition-all min-w-[180px] border border-stone-100 z-50">
+                                <div className="absolute top-[calc(100%+8px)] right-0 bg-premium-surface backdrop-blur-3xl shadow-xl rounded-2xl p-2 opacity-0 invisible group-hover/sort:opacity-100 group-hover/sort:visible transition-all min-w-[180px] border border-premium-text-muted/10 z-50">
                                     {['Featured', 'Price: Low to High', 'Price: High to Low', 'Top Rated'].map(s => (
                                         <button
                                             key={s}
                                             onClick={() => setSortBy(s)}
-                                            className="w-full text-left px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.1em] hover:bg-stone-50 rounded-xl transition-all text-premium-text-secondary hover:text-premium-text-primary"
+                                            className="w-full text-left px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.1em] hover:bg-premium-light rounded-xl transition-all text-premium-text-secondary hover:text-premium-text-primary"
                                         >
                                             {s}
                                         </button>
@@ -161,9 +161,9 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        className="py-32 text-center border border-dashed border-stone-200 rounded-[40px]"
+                        className="py-32 text-center border border-dashed border-premium-text-muted/20 rounded-[40px]"
                     >
-                        <Search className="w-12 h-12 text-stone-300 mx-auto mb-6" />
+                        <Search className="w-12 h-12 text-premium-text-muted mx-auto mb-6" />
                         <h3 className="text-2xl font-serif font-bold text-premium-text-primary uppercase italic mb-6">No matching rituals</h3>
                         <button
                             onClick={() => { setSearchQuery(''); setSortBy('Featured') }}
