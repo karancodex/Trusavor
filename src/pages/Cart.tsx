@@ -4,12 +4,16 @@ import { useStore } from '../context/store';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingCart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
+import { useCurrency } from '../hooks/useCurrency';
+import { useTranslation } from 'react-i18next';
 
 const Cart = () => {
     const cart = useStore((state) => state.cart);
     const updateCartQuantity = useStore((state) => state.updateCartQuantity);
     const removeFromCart = useStore((state) => state.removeFromCart);
     const navigate = useNavigate();
+    const { formatPrice } = useCurrency();
+    const { t } = useTranslation();
 
     const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
     const shipping = subtotal > 50 ? 0 : 10;
@@ -21,10 +25,10 @@ const Cart = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-wellness-main/5 blur-[150px] rounded-full" />
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="relative z-10">
                     <ShoppingCart className="w-16 h-16 text-premium-text-muted/30 mx-auto mb-8" />
-                    <h1 className="text-4xl md:text-5xl font-serif font-black text-premium-text-primary italic mb-6 tracking-tighter">Cart is Vacant</h1>
-                    <p className="text-premium-text-secondary text-lg font-light italic mb-12">The vessel of your transformation awaits its essence.</p>
+                    <h1 className="text-4xl md:text-5xl font-serif font-black text-premium-text-primary italic mb-6 tracking-tighter">{t('cart.empty')}</h1>
+                    <p className="text-premium-text-secondary text-lg font-light italic mb-12">{t('cart.emptyDesc')}</p>
                     <Link to="/" className="inline-flex items-center gap-4 px-10 py-4 bg-white/80 backdrop-blur-xl border border-stone-200 text-premium-text-primary rounded-full font-black uppercase text-[9px] tracking-widest hover:bg-white hover:scale-105 transition-all shadow-xl">
-                        Explore Collections <ArrowRight className="w-4 h-4" />
+                        {t('cart.explore')} <ArrowRight className="w-4 h-4" />
                     </Link>
                 </motion.div>
             </div>
@@ -41,7 +45,7 @@ const Cart = () => {
                     animate={{ opacity: 1, x: 0 }}
                     className="text-6xl md:text-7xl font-serif font-black text-premium-text-primary italic mb-20 tracking-tighter"
                 >
-                    Shopping Cart
+                    {t('cart.title')}
                 </motion.h1>
 
                 <div className="flex flex-col lg:flex-row gap-16">
@@ -62,7 +66,7 @@ const Cart = () => {
 
                                     <div className="flex-1 text-center sm:text-left">
                                         <h3 className="text-lg font-serif font-black text-premium-text-primary mb-1 italic tracking-tight">{item.name}</h3>
-                                        <span className="text-premium-text-muted font-black uppercase text-[8px] tracking-[0.2em]">Ritual: ${item.price}</span>
+                                        <span className="text-premium-text-muted font-black uppercase text-[8px] tracking-[0.2em]">{t('cart.ritual')}: {formatPrice(item.price)}</span>
                                     </div>
 
                                     <div className="flex items-center gap-6">
@@ -77,7 +81,7 @@ const Cart = () => {
                                     </div>
 
                                     <div className="text-2xl font-black text-premium-text-primary tracking-widest min-w-[100px] text-right">
-                                        ${(item.price * item.quantity).toFixed(0)}
+                                        {formatPrice(item.price * item.quantity)}
                                     </div>
                                 </motion.div>
                             ))}
@@ -94,17 +98,17 @@ const Cart = () => {
 
                             <div className="space-y-4 mb-10">
                                 <div className="flex justify-between text-premium-text-muted text-[9px] font-black uppercase tracking-widest">
-                                    <span>Subtotal</span>
-                                    <span className="text-premium-text-primary">${subtotal.toFixed(0)}</span>
+                                    <span>{t('cart.subtotal')}</span>
+                                    <span className="text-premium-text-primary">{formatPrice(subtotal)}</span>
                                 </div>
                                 <div className="flex justify-between text-premium-text-muted text-[9px] font-black uppercase tracking-widest">
-                                    <span>Delivery Flow</span>
-                                    <span className="text-premium-text-primary">{shipping === 0 ? 'FREE' : `$${shipping}`}</span>
+                                    <span>{t('cart.delivery')}</span>
+                                    <span className="text-premium-text-primary">{shipping === 0 ? t('cart.free') : formatPrice(shipping)}</span>
                                 </div>
                                 <div className="h-[1px] bg-stone-200 my-6" />
                                 <div className="flex justify-between items-end">
-                                    <span className="text-[8px] font-black uppercase tracking-[0.3em] text-premium-text-secondary mb-1.5">Total Resonance</span>
-                                    <span className="text-4xl font-black text-premium-text-primary tracking-tighter">${total.toFixed(0)}</span>
+                                    <span className="text-[8px] font-black uppercase tracking-[0.3em] text-premium-text-secondary mb-1.5">{t('cart.total')}</span>
+                                    <span className="text-4xl font-black text-premium-text-primary tracking-tighter">{formatPrice(total)}</span>
                                 </div>
                             </div>
 
@@ -112,7 +116,7 @@ const Cart = () => {
                                 onClick={() => navigate('/checkout')}
                                 className="w-full bg-white/90 backdrop-blur-xl border border-stone-200 text-premium-text-primary py-5 rounded-[24px] font-black uppercase text-[9px] tracking-[0.4em] transition-all hover:bg-white hover:scale-[1.02] shadow-xl flex items-center justify-center gap-4 group"
                             >
-                                Checkout <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                                {t('cart.checkout')} <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                             </button>
                         </motion.div>
                     </div>

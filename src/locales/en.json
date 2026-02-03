@@ -1,0 +1,34 @@
+{
+    "header": {
+        "wellness": "Wellness",
+        "cosmetics": "Cosmetics",
+        "collections": "Collections",
+        "search": "Search",
+        "cart": "Cart",
+        "account": "Profile"
+    },
+    "cart": {
+        "title": "Shopping Cart",
+        "empty": "Cart is Vacant",
+        "emptyDesc": "The vessel of your transformation awaits its essence.",
+        "explore": "Explore Collections",
+        "subtotal": "Subtotal",
+        "delivery": "Delivery Flow",
+        "free": "FREE",
+        "total": "Total Resonance",
+        "checkout": "Checkout",
+        "ritual": "Ritual"
+    },
+    "product": {
+        "acquire": "Acquire Ritual",
+        "authenticity": "Authenticity",
+        "transit": "Transit Flow",
+        "interaction": "Interaction",
+        "still": "Still",
+        "verifiedPure": "Verified Pure.",
+        "carbonNeutral": "Carbon Neutral."
+    },
+    "common": {
+        "loading": "Loading..."
+    }
+}

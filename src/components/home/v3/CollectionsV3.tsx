@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ShoppingBag, ArrowRight } from 'lucide-react';
 import clsx from 'clsx';
 import { useStore } from '../../../context/store';
+import { useCurrency } from '../../../hooks/useCurrency';
 
 interface CollectionsV3Props {
     wellnessProducts: any[];
@@ -12,6 +13,7 @@ interface CollectionsV3Props {
 
 const ProductCard: React.FC<{ product: any, theme: 'wellness' | 'cosmetics' }> = ({ product, theme }) => {
     const addToCart = useStore(state => state.addToCart);
+    const { formatPrice } = useCurrency();
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "0px 0px -50px 0px" });
 
@@ -63,7 +65,7 @@ const ProductCard: React.FC<{ product: any, theme: 'wellness' | 'cosmetics' }> =
                 <div>
                     <h3 className="text-xl font-serif text-stone-900 group-hover:text-stone-600 transition-colors mb-1 truncate">{name}</h3>
                     <div className="flex justify-between items-center text-sm">
-                        <span className="font-bold text-stone-500">${price}</span>
+                        <span className="font-bold text-stone-500">{formatPrice(price)}</span>
                         <span className="text-stone-400 text-xs uppercase tracking-wider font-medium">View Details</span>
                     </div>
                 </div>

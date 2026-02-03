@@ -16,6 +16,7 @@ import JournalSection from '../components/home/v3/JournalSection';
 import VideoManifesto from '../components/home/v3/VideoManifesto';
 import SocialGrid from '../components/home/v3/SocialGrid';
 import TestimonialSlider from '../components/home/v3/TestimonialSlider'; // New Component
+import Header from '../components/layout/Header';
 
 const HomeV3: React.FC = () => {
     const products = useStore((state) => state.products);
@@ -38,7 +39,7 @@ const HomeV3: React.FC = () => {
     return (
         <div className="bg-[#fafaf9] min-h-screen text-stone-800 font-sans overflow-x-hidden selection:bg-rose-100 selection:text-rose-900">
             {/* Custom V3 Header */}
-            <HeaderV3 />
+            <Header />
 
             <main>
                 <HeroV3 />

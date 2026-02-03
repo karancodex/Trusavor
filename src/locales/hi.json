@@ -1,0 +1,15 @@
+{
+    "header": {
+        "wellness": "वेलनेस",
+        "cosmetics": "कॉस्मेटिक्स",
+        "collections": "संग्रह",
+        "search": "खोज",
+        "cart": "कार्ट",
+        "account": "प्रोफ़ाइल"
+    },
+    "common": {
+        "loading": "लोड हो रहा है...",
+        "price": "कीमत",
+        "addToCart": "कार्ट में जोड़ें"
+    }
+}

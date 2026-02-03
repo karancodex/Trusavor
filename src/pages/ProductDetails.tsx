@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useStore } from '../context/store';
+import { useCurrency } from '../hooks/useCurrency';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Minus, Plus, Heart, ShoppingBag, Star, ShieldCheck, Leaf, Truck, Sparkles } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
@@ -42,6 +44,8 @@ const ProductDetails = () => {
     const addToCart = useStore((state) => state.addToCart);
     const toggleWishlist = useStore((state) => state.toggleWishlist);
     const wishlist = useStore((state) => state.wishlist);
+    const { formatPrice } = useCurrency();
+    const { t } = useTranslation();
 
     const [quantity, setQuantity] = useState(1);
     const [activeTab, setActiveTab] = useState('description');
@@ -102,7 +106,7 @@ const ProductDetails = () => {
                                         !view3D ? "bg-black text-white" : "text-black/40 hover:text-black"
                                     )}
                                 >
-                                    Still
+                                    {t('product.still')}
                                 </button>
                                 <button
                                     onClick={() => setView3D(true)}
@@ -111,7 +115,7 @@ const ProductDetails = () => {
                                         view3D ? "bg-black text-white" : "text-black/40 hover:text-black"
                                     )}
                                 >
-                                    Interaction
+                                    {t('product.interaction')}
                                 </button>
                             </div>
                         </motion.div>
@@ -150,8 +154,8 @@ const ProductDetails = () => {
                             </h1>
 
                             <div className="flex items-baseline gap-6 mb-12">
-                                <span className="text-3xl font-bold text-black tracking-tight leading-none">${product.price}</span>
-                                {product.oldPrice && <span className="text-lg text-black/20 line-through font-light leading-none">${product.oldPrice}</span>}
+                                <span className="text-3xl font-bold text-black tracking-tight leading-none">{formatPrice(product.price)}</span>
+                                {product.oldPrice && <span className="text-lg text-black/20 line-through font-light leading-none">{formatPrice(product.oldPrice)}</span>}
                             </div>
 
                             <p className="text-black/60 text-sm md:text-base font-light italic leading-relaxed mb-16 max-w-lg border-l-2 border-black/5 pl-8 py-2">
@@ -183,7 +187,7 @@ const ProductDetails = () => {
                                         isWellness ? "bg-wellness-main text-white hover:bg-wellness-accent" : "bg-cosmetics-main text-white hover:bg-cosmetics-accent"
                                     )}
                                 >
-                                    <ShoppingBag className="w-5 h-5" /> Acquire Ritual
+                                    <ShoppingBag className="w-5 h-5" /> {t('product.acquire')}
                                 </button>
                             </div>
 
@@ -193,8 +197,8 @@ const ProductDetails = () => {
                                         <ShieldCheck className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <span className="block font-black uppercase text-black/40 text-[9px] tracking-[0.2em] mb-1">Authenticity</span>
-                                        <span className="text-black/20 text-[10px] italic">Verified Pure.</span>
+                                        <span className="block font-black uppercase text-black/40 text-[9px] tracking-[0.2em] mb-1">{t('product.authenticity')}</span>
+                                        <span className="text-black/20 text-[10px] italic">{t('product.verifiedPure')}</span>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-6 group">
@@ -202,8 +206,8 @@ const ProductDetails = () => {
                                         <Truck className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <span className="block font-black uppercase text-black/40 text-[9px] tracking-[0.2em] mb-1">Transit Flow</span>
-                                        <span className="text-black/20 text-[10px] italic">Carbon Neutral.</span>
+                                        <span className="block font-black uppercase text-black/40 text-[9px] tracking-[0.2em] mb-1">{t('product.transit')}</span>
+                                        <span className="text-black/20 text-[10px] italic">{t('product.carbonNeutral')}</span>
                                     </div>
                                 </div>
                             </div>

@@ -4,6 +4,7 @@ import { ShoppingBag, ArrowRight, Heart, Sparkles, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../../context/store';
 import clsx from 'clsx';
+import { useCurrency } from '../../hooks/useCurrency';
 
 interface ProductCard3DProps {
     product: any;
@@ -17,6 +18,7 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
     const addToCart = useStore(state => state.addToCart);
     const toggleWishlist = useStore(state => state.toggleWishlist);
     const wishlist = useStore(state => state.wishlist);
+    const { formatPrice } = useCurrency();
 
     const isWishlisted = wishlist.includes(product.id);
     const isWellness = product.categoryId === 'cat_wellness';
@@ -126,7 +128,7 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
                     </p>
 
                     <div className="flex items-center justify-between pt-8 border-t border-stone-200">
-                        <span className="text-2xl font-black text-premium-text-primary tracking-widest">${product.price}</span>
+                        <span className="text-2xl font-black text-premium-text-primary tracking-widest">{formatPrice(product.price)}</span>
 
                         <button
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); addToCart(product); }}

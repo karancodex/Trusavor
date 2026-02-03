@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star } from 'lucide-react';
+import { useCurrency } from '../../../hooks/useCurrency';
 
 interface TrendingV3Props {
     products: any[];
@@ -10,6 +11,7 @@ interface TrendingV3Props {
 const TrendingV3: React.FC<TrendingV3Props> = ({ products }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const { formatPrice } = useCurrency();
 
     return (
         <section ref={ref} className="py-16 bg-[#fafaf9] border-t border-stone-200/60">
@@ -57,7 +59,7 @@ const TrendingV3: React.FC<TrendingV3Props> = ({ products }) => {
                                         {product.categoryId === 'cat_wellness' ? 'Wellness Series' : 'Cosmetic Series'}
                                     </p>
                                     <div className="flex items-center justify-between border-t border-stone-100 pt-4">
-                                        <span className="text-lg font-medium text-stone-800">${price}</span>
+                                        <span className="text-lg font-medium text-stone-800">{formatPrice(price)}</span>
                                         <span className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center group-hover:bg-stone-900 group-hover:text-white transition-colors">
                                             <ArrowRight className="w-4 h-4" />
                                         </span>
