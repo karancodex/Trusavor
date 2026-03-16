@@ -5,7 +5,7 @@ import { Leaf, Sparkles, ArrowRight } from 'lucide-react';
 
 const HeroV3: React.FC = () => {
     return (
-        <section className="relative h-screen w-full bg-[#f8f7f4] overflow-hidden pt-[80px]"> {/* Coping with fixed header */}
+        <section className="relative h-[80vh] w-full bg-[#f8f7f4] overflow-hidden pt-[80px]"> {/* Reduced height to 80% */}
             <div className="container mx-auto px-6 h-full flex flex-col md:flex-row gap-4 pb-4">
 
                 {/* Left Card: Wellness */}
@@ -18,7 +18,7 @@ const HeroV3: React.FC = () => {
                             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                         >
                             <img
-                                src="/assets/wellness_hero.png"
+                                src="/website/moringa/1.png"
                                 alt="Biological Wellness"
                                 className="w-full h-full object-cover"
                             />
@@ -53,7 +53,7 @@ const HeroV3: React.FC = () => {
                             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                         >
                             <img
-                                src="/assets/cosmetics_hero.png"
+                                src="/website/dummy face serum/1.png"
                                 alt="Ethereal Cosmetics"
                                 className="w-full h-full object-cover"
                             />

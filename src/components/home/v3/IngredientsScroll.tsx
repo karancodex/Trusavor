@@ -12,14 +12,14 @@ const IngredientsScroll: React.FC = () => {
     const x = useTransform(scrollYProgress, [0, 1], ["10%", "-85%"]);
 
     const ingredients = [
-        { name: "Himalayan Shilajit", desc: "Mineral Density", img: "/assets/shilajit_hero.png" },
-        { name: "Saffron Extract", desc: "Radiance Boost", img: "/assets/cosmetics_hero.png" },
-        { name: "Ashwagandha", desc: "Stress Adept", img: "/assets/wellness_hero.png" },
-        { name: "Blue Lotus", desc: "Deep Calm", img: "/assets/cosmetics_hero.png" },
-        { name: "Cordyceps", desc: "Energy Flow", img: "/assets/wellness_hero.png" }, // Added
-        { name: "Moringa", desc: "Nutrient Rich", img: "/assets/cosmetics_hero.png" }, // Added
-        { name: "Reishi", desc: "Immune Shield", img: "/assets/wellness_hero.png" }, // Added
-        { name: "Pearl Powder", desc: "Luminous Skin", img: "/assets/cosmetics_hero.png" }, // Added
+        { name: "Himalayan Shilajit", desc: "Mineral Density", img: "/website/shilajit/1.png" },
+        { name: "Saffron Extract", desc: "Radiance Boost", img: "/website/argan oil/1.png" },
+        { name: "Ashwagandha", desc: "Stress Adept", img: "/website/moringa/3.png" },
+        { name: "Blue Lotus", desc: "Deep Calm", img: "/website/matcha ceremonial/trusavor CEM.png" },
+        { name: "Cordyceps", desc: "Energy Flow", img: "/website/matcha culinary/1.png" },
+        { name: "Moringa", desc: "Nutrient Rich", img: "/website/moringa/6.png" },
+        { name: "Reishi", desc: "Immune Shield", img: "/website/matcha imperial/1.png" },
+        { name: "Pearl Powder", desc: "Luminous Skin", img: "/website/organic matcha/1.png" },
     ];
 
     return (

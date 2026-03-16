@@ -6,74 +6,7 @@ import { useStore, CountryCode } from '../../context/store';
 import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';
 
-const CountrySelector = ({ scrolled }: { scrolled: boolean }) => {
-    const { country, setCountry } = useStore();
-    const [isOpen, setIsOpen] = useState(false);
-    const dropdownRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
-
-    const countries: { code: CountryCode; name: string; flag: string }[] = [
-        { code: 'US', name: 'United States', flag: '🇺🇸' },
-        { code: 'IN', name: 'India', flag: '🇮🇳' },
-        { code: 'AE', name: 'UAE', flag: '🇦🇪' },
-        { code: 'SA', name: 'Saudi Arabia', flag: '🇸🇦' },
-    ];
-
-    const currentCountry = countries.find(c => c.code === country) || countries[0];
-
-    return (
-        <div className="relative z-50" ref={dropdownRef}>
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className={clsx(
-                    "flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider transition-colors",
-                    scrolled ? "text-stone-600 hover:text-stone-900" : "text-stone-800 hover:text-stone-600"
-                )}
-            >
-                <span className="text-sm">{currentCountry.flag}</span>
-                <span className="hidden sm:inline">{currentCountry.code}</span>
-                <ChevronDown className="w-3 h-3" />
-            </button>
-
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="absolute right-0 mt-3 w-40 bg-white rounded-xl shadow-xl border border-stone-100 overflow-hidden py-1"
-                    >
-                        {countries.map((c) => (
-                            <button
-                                key={c.code}
-                                onClick={() => {
-                                    setCountry(c.code);
-                                    setIsOpen(false);
-                                }}
-                                className={clsx(
-                                    "w-full text-left px-4 py-2 text-xs font-bold uppercase flex items-center gap-3 hover:bg-stone-50 transition-colors",
-                                    country === c.code ? "text-rose-500 bg-rose-50/50" : "text-stone-600"
-                                )}
-                            >
-                                <span className="text-lg">{c.flag}</span>
-                                {c.name}
-                            </button>
-                        ))}
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
-};
+import { LanguageSelector, CurrencySelector } from './Selectors';
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -114,10 +47,7 @@ const Header = () => {
 
                         {/* Logo */}
                         <Link to="/" className="flex items-center gap-2 group mr-4">
-                            <span className={`text-xl md:text-2xl font-serif font-black italic tracking-tighter transition-colors ${scrolled ? 'text-stone-900' : 'text-stone-900'}`}>
-                                trusavor
-                            </span>
-                            <div className="h-1.5 w-1.5 rounded-full bg-[#D4AF37] group-hover:scale-125 transition-transform" />
+                            <img src="/logo.png" alt="Trusavor Logo" className="h-10 md:h-14 w-[120px] object-contain" />
                         </Link>
 
                         {/* Desktop Nav */}
@@ -135,7 +65,11 @@ const Header = () => {
 
                         {/* Icons */}
                         <div className="flex items-center gap-3 md:gap-5">
-                            <CountrySelector scrolled={scrolled} />
+                            <div className="flex items-center gap-2">
+                                <LanguageSelector scrolled={scrolled} />
+                                <div className="w-px h-3 bg-stone-300 hidden sm:block"></div>
+                                <CurrencySelector scrolled={scrolled} />
+                            </div>
 
                             <div className="w-px h-4 bg-stone-300 hidden md:block mx-1"></div>
 
@@ -186,16 +120,23 @@ const Header = () => {
                         className="fixed inset-0 z-[60] bg-[#fafaf9] flex flex-col p-8"
                     >
                         <div className="flex justify-between items-center mb-12">
-                            <span className="text-2xl font-serif font-black italic">trusavor</span>
+                            <img src="/logo.png" alt="Trusavor Logo" className="h-10 w-auto object-contain" />
                             <button onClick={() => setMenuOpen(false)}>
                                 <X className="w-8 h-8 text-stone-800" />
                             </button>
                         </div>
 
-                        <div className="mb-10 flex flex-col gap-4">
-                            <h3 className="text-xs font-black uppercase tracking-widest text-stone-400">Region</h3>
-                            <div className="flex gap-4">
-                                <CountrySelector scrolled={true} />
+                        <div className="mb-10 flex flex-col gap-6">
+                            <h3 className="text-xs font-black uppercase tracking-widest text-stone-400">Preferences</h3>
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400">Language</span>
+                                    <LanguageSelector scrolled={true} />
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400">Currency</span>
+                                    <CurrencySelector scrolled={true} />
+                                </div>
                             </div>
                         </div>
 

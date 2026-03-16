@@ -45,9 +45,11 @@ const FooterV3: React.FC = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-end border-t border-stone-800/10 pt-10">
                     <div className="mb-6 md:mb-0">
-                        <h1 className="text-[12vw] leading-[0.8] font-serif italic text-stone-800 tracking-tighter mix-blend-multiply opacity-20 select-none">
-                            trusavor
-                        </h1>
+                        <img
+                            src="/logo.png"
+                            alt="Trusavor"
+                            className="w-[60vw] md:w-[30vw] h-auto opacity-10 grayscale brightness-0 pointer-events-none select-none"
+                        />
                     </div>
                     <div className="flex gap-6 text-xs text-stone-600 font-medium uppercase tracking-wider">
                         <a href="#">Privacy</a>

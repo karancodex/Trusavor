@@ -3,11 +3,12 @@ import React from 'react';
 const SocialGrid: React.FC = () => {
     // Mock social images
     const images = [
-        "/assets/cosmetics_hero.png",
-        "/assets/wellness_hero.png",
-        "/assets/shilajit_hero.png",
-        "/assets/cosmetics_hero.png",
-        "/assets/wellness_hero.png",
+        "/website/matcha ceremonial pouch/2.png",
+        "/website/shilajit/4.png",
+        "/website/argan oil/4.png",
+        "/website/moringa/7.png",
+        "/website/matcha imperial/2.png",
+        "/website/organic matcha/3.png",
     ];
 
     return (

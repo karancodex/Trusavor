@@ -47,6 +47,7 @@ const ProductDetails = () => {
     const { formatPrice } = useCurrency();
     const { t } = useTranslation();
 
+    const [selectedImage, setSelectedImage] = useState(0);
     const [quantity, setQuantity] = useState(1);
     const [activeTab, setActiveTab] = useState('description');
     const [view3D, setView3D] = useState(false);
@@ -92,8 +93,8 @@ const ProductDetails = () => {
                                         <Product3D color={isWellness ? '#1A4D2E' : '#4A1D1F'} />
                                     </motion.div>
                                 ) : (
-                                    <motion.div key="img" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full p-16 md:p-24">
-                                        <img src={product.images[0]} className="w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)]" alt={product.name} />
+                                    <motion.div key={selectedImage} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full p-16 md:p-24 flex items-center justify-center">
+                                        <img src={product.images[selectedImage]} className="max-w-full max-h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)]" alt={product.name} />
                                     </motion.div>
                                 )}
                             </AnimatePresence>
@@ -120,10 +121,20 @@ const ProductDetails = () => {
                             </div>
                         </motion.div>
 
-                        <div className="grid grid-cols-4 gap-8 px-4">
-                            {[...Array(4)].map((_, i) => (
-                                <div key={i} className="aspect-square bg-gray-50 rounded-3xl overflow-hidden border border-black/5 p-4 group cursor-pointer transition-all hover:border-black/20">
-                                    <img src={product.images[0]} className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110" />
+                        <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4 px-4 overflow-x-auto hide-scrollbar">
+                            {product.images.map((img: string, i: number) => (
+                                <div
+                                    key={i}
+                                    onClick={() => {
+                                        setSelectedImage(i);
+                                        setView3D(false);
+                                    }}
+                                    className={clsx(
+                                        "aspect-square bg-gray-50 rounded-2xl overflow-hidden border p-2 group cursor-pointer transition-all hover:border-black",
+                                        selectedImage === i ? "border-black ring-2 ring-black/5" : "border-black/5"
+                                    )}
+                                >
+                                    <img src={img} className={clsx("w-full h-full object-contain transition-all duration-700 group-hover:scale-110", selectedImage === i ? "opacity-100" : "opacity-40 group-hover:opacity-100")} />
                                 </div>
                             ))}
                         </div>

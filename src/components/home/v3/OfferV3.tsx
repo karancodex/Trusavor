@@ -35,7 +35,7 @@ const OfferV3: React.FC = () => {
                     {/* Image Panel */}
                     <div className="w-full lg:w-1/2 relative min-h-[400px]">
                         <img
-                            src="/assets/cosmetics_hero.png"
+                            src="/website/matcha ceremonial pouch/1.png"
                             alt="Summer Kit"
                             className="absolute inset-0 w-full h-full object-cover"
                         />

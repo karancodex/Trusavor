@@ -12,7 +12,7 @@ const TestimonialSlider: React.FC = () => {
             author: "Elena R.",
             role: "Aesthetician",
             rating: 5,
-            image: "/assets/cosmetics_hero.png" // Placeholder
+            image: "/website/dummy face serum/1.png" // Real product image
         },
         {
             id: 2,
@@ -20,7 +20,7 @@ const TestimonialSlider: React.FC = () => {
             author: "Marcus T.",
             role: "Performance Coach",
             rating: 5,
-            image: "/assets/wellness_hero.png" // Placeholder
+            image: "/website/shilajit/2.png" // Real product image
         },
         {
             id: 3,
@@ -28,7 +28,7 @@ const TestimonialSlider: React.FC = () => {
             author: "Sophia L.",
             role: "Wellness Editor",
             rating: 5,
-            image: "/assets/cosmetics_hero.png" // Placeholder
+            image: "/website/matcha ceremonial/trusavor CEM.png" // Real product image
         }
     ];
 

@@ -7,19 +7,19 @@ const JournalSection: React.FC = () => {
             category: "Ritual",
             title: "The Molecular Science of Shilajit",
             excerpt: "Understanding fulvic acid and mountain-blood minerals.",
-            image: "/assets/wellness_hero.png"
+            image: "/website/shilajit/1.png"
         },
         {
             category: "Aesthetics",
             title: "Achieving the 'Glass Skin' Look",
             excerpt: "Why hydration layering is more effective than exfoliation.",
-            image: "/assets/cosmetics_hero.png"
+            image: "/website/dummy face serum/1.png"
         },
         {
             category: "Mind",
             title: "Circadian Rhythms & Recovery",
             excerpt: "How to align your sleep cycle with solar biology.",
-            image: "/assets/wellness_hero.png"
+            image: "/website/argan oil/2.png"
         }
     ];
 

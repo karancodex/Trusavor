@@ -16,7 +16,7 @@ const RitualSelector: React.FC = () => {
             icon: Sun,
             description: "Awaken your cellular engines with high-altitude mineral density.",
             product: "Himalayan Shilajit",
-            image: "/assets/wellness_hero.png",
+            image: "/website/shilajit/3.png",
             color: "bg-emerald-900",
             textColor: "text-emerald-100"
         },
@@ -27,7 +27,7 @@ const RitualSelector: React.FC = () => {
             icon: Sparkles,
             description: "Achieve a translucent, luminous glow with ethereal hydration.",
             product: "Luminous Serum",
-            image: "/assets/cosmetics_hero.png",
+            image: "/website/dummy face serum/1.png",
             color: "bg-rose-900",
             textColor: "text-rose-100"
         },
@@ -38,7 +38,7 @@ const RitualSelector: React.FC = () => {
             icon: Activity,
             description: "Stabilize cortisol and harmonize biological rhythms.",
             product: "Ashwagandha Complex",
-            image: "/assets/wellness_hero.png",
+            image: "/website/moringa/1.png",
             color: "bg-stone-900",
             textColor: "text-stone-100"
         },
@@ -49,7 +49,7 @@ const RitualSelector: React.FC = () => {
             icon: Moon,
             description: "Deep cellular regeneration while you sleep.",
             product: "Obsidian Night Cream",
-            image: "/assets/cosmetics_hero.png",
+            image: "/website/dummy face cream/face cream 1.png",
             color: "bg-indigo-950",
             textColor: "text-indigo-100"
         }
@@ -129,7 +129,7 @@ const RitualSelector: React.FC = () => {
 
                                                 {/* Product Recommendation Card */}
                                                 <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 flex flex-col md:flex-row items-center gap-6 max-w-lg">
-                                                    <div className="w-16 h-16 bg-white/20 rounded-full flex-shrink-0" />
+                                                    <img src={ritual.image} alt={ritual.product} className="w-16 h-16 object-cover rounded-full flex-shrink-0" />
                                                     <div className="flex-grow text-center md:text-left">
                                                         <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">Recommended</p>
                                                         <h4 className="text-xl font-serif text-white">{ritual.product}</h4>

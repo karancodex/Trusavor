@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ShoppingBag, Search, Menu, X, Heart, User } from 'lucide-react';
 import { useStore } from '../../../context/store';
 import clsx from 'clsx';
+import { LanguageSelector, CurrencySelector } from '../../layout/Selectors';
 
 const HeaderV3: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -34,19 +35,16 @@ const HeaderV3: React.FC = () => {
             >
                 <div className="container mx-auto px-6 flex justify-center">
                     <div className={`
-                        relative flex items-center justify-between transition-all duration-500
-                        ${scrolled
-                            ? 'w-full max-w-6xl bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg border border-white/40' // Increased width for more items
+                         relative flex items-center justify-between transition-all duration-500
+                         ${scrolled
+                            ? 'w-full max-w-7xl bg-white/100 backdrop-blur-md rounded-full px-8 py-3 shadow-lg border border-white/40' // Increased width and opacity
                             : 'w-full bg-transparent px-0'
                         }
                     `}>
 
                         {/* Logo */}
                         <Link to="/" className="flex items-center gap-2 group">
-                            <span className={`text-xl md:text-2xl font-serif font-black italic tracking-tighter transition-colors ${scrolled ? 'text-stone-900' : 'text-stone-900'}`}>
-                                trusavor
-                            </span>
-                            <div className="h-1.5 w-1.5 rounded-full bg-[#D4AF37] group-hover:scale-125 transition-transform" />
+                            <img src="/logo.png" alt="Trusavor Logo" className="h-10 md:h-12 w-auto object-contain" />
                         </Link>
 
                         {/* Desktop Nav */}
@@ -63,7 +61,15 @@ const HeaderV3: React.FC = () => {
                         </nav>
 
                         {/* Icons */}
-                        <div className="flex items-center gap-4 md:gap-6">
+                        <div className="flex items-center gap-3 md:gap-5">
+                            <div className="flex items-center gap-2">
+                                <LanguageSelector scrolled={scrolled} />
+                                <div className="w-px h-3 bg-stone-300 hidden sm:block"></div>
+                                <CurrencySelector scrolled={scrolled} />
+                            </div>
+
+                            <div className="w-px h-4 bg-stone-300 hidden md:block mx-1"></div>
+
                             <button className={`hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
                                 <Search className="w-5 h-5" />
                             </button>
@@ -108,15 +114,30 @@ const HeaderV3: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[60] bg-[#fafaf9] flex flex-col p-10"
+                        className="fixed inset-0 z-[60] bg-[#fafaf9] flex flex-col p-8"
                     >
-                        <div className="flex justify-between items-center mb-16">
-                            <span className="text-2xl font-serif font-black italic">trusavor</span>
+                        <div className="flex justify-between items-center mb-12">
+                            <img src="/logo.png" alt="Trusavor Logo" className="h-10 w-auto object-contain" />
                             <button onClick={() => setMenuOpen(false)}>
                                 <X className="w-8 h-8 text-stone-800" />
                             </button>
                         </div>
-                        <nav className="flex flex-col gap-8">
+
+                        <div className="mb-10 flex flex-col gap-6">
+                            <h3 className="text-xs font-black uppercase tracking-widest text-stone-400">Preferences</h3>
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400">Language</span>
+                                    <LanguageSelector scrolled={true} />
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400">Currency</span>
+                                    <CurrencySelector scrolled={true} />
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav className="flex flex-col gap-6">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
@@ -132,7 +153,7 @@ const HeaderV3: React.FC = () => {
                                 onClick={() => setMenuOpen(false)}
                                 className="text-4xl font-serif text-stone-900 hover:text-rose-500 transition-colors"
                             >
-                                Profile
+                                Account
                             </Link>
                         </nav>
                     </motion.div>
@@ -141,5 +162,6 @@ const HeaderV3: React.FC = () => {
         </>
     );
 };
+
 
 export default HeaderV3;

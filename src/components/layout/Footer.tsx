@@ -20,8 +20,8 @@ const Footer = () => {
                     {/* Brand Meta */}
                     <div className="lg:col-span-5 flex flex-col gap-10">
                         <div>
-                            <Link to="/" className="text-6xl font-serif font-black tracking-[-0.05em] text-premium-text-primary italic mb-8 block transition-all hover:text-premium-gold hover:scale-105 origin-left duration-500 text-shadow-sm">
-                                trusavor
+                            <Link to="/" className="mb-8 block transition-all hover:scale-105 origin-left duration-500">
+                                <img src="/logo.png" alt="Trusavor Logo" className="h-12 w-auto object-contain" />
                             </Link>
                             <p className="text-premium-text-secondary text-xl font-light italic leading-relaxed max-w-md">
                                 Redefining the intersection of ancient molecular wisdom and modern lifestyle luxury. Engineered for resonance.

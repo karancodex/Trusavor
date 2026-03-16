@@ -11,7 +11,7 @@ const ScienceStory: React.FC = () => {
                     <div className="w-full lg:w-1/2 relative">
                         <div className="aspect-[4/5] rounded-t-full rounded-b-[200px] overflow-hidden bg-stone-100 relative shadow-2xl">
                             <img
-                                src="/assets/wellness_hero.png"
+                                src="/website/argan oil/3.png"
                                 alt="Laboratory"
                                 className="w-full h-full object-cover transition-all duration-1000"
                             />
