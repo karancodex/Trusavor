@@ -1,0 +1,15 @@
+{
+    "header": {
+        "wellness": "عافية",
+        "cosmetics": "تجميل",
+        "collections": "مجموعات",
+        "search": "بحث",
+        "cart": "السلة",
+        "account": "حسابي"
+    },
+    "common": {
+        "loading": "تحميل...",
+        "price": "السعر",
+        "addToCart": "أضف إلى السلة"
+    }
+}

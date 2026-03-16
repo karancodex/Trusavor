@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useStore } from '../context/store';
+import { useCurrency } from '../hooks/useCurrency';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Minus, Plus, Heart, ShoppingBag, Star, ShieldCheck, Leaf, Truck, Sparkles } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
@@ -42,7 +44,10 @@ const ProductDetails = () => {
     const addToCart = useStore((state) => state.addToCart);
     const toggleWishlist = useStore((state) => state.toggleWishlist);
     const wishlist = useStore((state) => state.wishlist);
+    const { formatPrice } = useCurrency();
+    const { t } = useTranslation();
 
+    const [selectedImage, setSelectedImage] = useState(0);
     const [quantity, setQuantity] = useState(1);
     const [activeTab, setActiveTab] = useState('description');
     const [view3D, setView3D] = useState(false);
@@ -53,7 +58,7 @@ const ProductDetails = () => {
     const isWellness = product.categoryId === 'cat_wellness';
 
     return (
-        <div className="pt-48 pb-40 min-h-screen bg-[#050505]">
+        <div className="pt-48 pb-40 min-h-screen bg-white">
             {/* Atmospheric Backgrounds */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-30">
                 <div className={clsx("absolute top-0 right-0 w-[100vw] h-[100vw] blur-[250px] rounded-full -translate-y-1/2 translate-x-1/2", isWellness ? "bg-wellness-main/10" : "bg-cosmetics-main/10")} />
@@ -61,14 +66,14 @@ const ProductDetails = () => {
             </div>
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
-                <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-white/20 mb-16">
-                    <Link to="/" className="hover:text-white transition-colors">Home</Link>
-                    <span className="text-white/5">/</span>
-                    <Link to={isWellness ? "/wellness" : "/cosmetics"} className="hover:text-white transition-colors">
+                <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-black/40 mb-16">
+                    <Link to="/" className="hover:text-black transition-colors">Home</Link>
+                    <span className="text-black/10">/</span>
+                    <Link to={isWellness ? "/wellness" : "/cosmetics"} className="hover:text-black transition-colors">
                         {isWellness ? "Wellness" : "Cosmetics"}
                     </Link>
-                    <span className="text-white/5">/</span>
-                    <span className={clsx("transition-colors", isWellness ? "text-wellness-accent/60" : "text-cosmetics-accent/60")}>{product.name}</span>
+                    <span className="text-black/10">/</span>
+                    <span className={clsx("transition-colors", isWellness ? "text-wellness-accent/80" : "text-cosmetics-accent/80")}>{product.name}</span>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start mb-40">
@@ -77,7 +82,7 @@ const ProductDetails = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="relative aspect-square bg-[#0a0a0a] rounded-[48px] border border-white/5 overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]"
+                            className="relative aspect-square bg-gray-50 rounded-[48px] border border-black/5 overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)]"
                         >
                             <AnimatePresence mode='wait'>
                                 {view3D ? (
@@ -88,38 +93,48 @@ const ProductDetails = () => {
                                         <Product3D color={isWellness ? '#1A4D2E' : '#4A1D1F'} />
                                     </motion.div>
                                 ) : (
-                                    <motion.div key="img" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full p-16 md:p-24">
-                                        <img src={product.images[0]} className="w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.8)]" alt={product.name} />
+                                    <motion.div key={selectedImage} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full p-16 md:p-24 flex items-center justify-center">
+                                        <img src={product.images[selectedImage]} className="max-w-full max-h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)]" alt={product.name} />
                                     </motion.div>
                                 )}
                             </AnimatePresence>
 
-                            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex bg-black/40 backdrop-blur-2xl p-1 rounded-full border border-white/10 gap-1">
+                            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex bg-white/80 backdrop-blur-2xl p-1 rounded-full border border-black/10 gap-1 shadow-lg">
                                 <button
                                     onClick={() => setView3D(false)}
                                     className={clsx(
                                         "px-10 py-3 rounded-full font-black text-[9px] uppercase tracking-widest transition-all",
-                                        !view3D ? "bg-white text-black" : "text-white/30 hover:text-white"
+                                        !view3D ? "bg-black text-white" : "text-black/40 hover:text-black"
                                     )}
                                 >
-                                    Still
+                                    {t('product.still')}
                                 </button>
                                 <button
                                     onClick={() => setView3D(true)}
                                     className={clsx(
                                         "px-10 py-3 rounded-full font-black text-[9px] uppercase tracking-widest transition-all",
-                                        view3D ? "bg-white text-black" : "text-white/30 hover:text-white"
+                                        view3D ? "bg-black text-white" : "text-black/40 hover:text-black"
                                     )}
                                 >
-                                    Interaction
+                                    {t('product.interaction')}
                                 </button>
                             </div>
                         </motion.div>
 
-                        <div className="grid grid-cols-4 gap-8 px-4">
-                            {[...Array(4)].map((_, i) => (
-                                <div key={i} className="aspect-square bg-white/[0.02] rounded-3xl overflow-hidden border border-white/5 p-4 group cursor-pointer transition-all hover:border-white/20">
-                                    <img src={product.images[0]} className="w-full h-full object-contain opacity-30 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110" />
+                        <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4 px-4 overflow-x-auto hide-scrollbar">
+                            {product.images.map((img: string, i: number) => (
+                                <div
+                                    key={i}
+                                    onClick={() => {
+                                        setSelectedImage(i);
+                                        setView3D(false);
+                                    }}
+                                    className={clsx(
+                                        "aspect-square bg-gray-50 rounded-2xl overflow-hidden border p-2 group cursor-pointer transition-all hover:border-black",
+                                        selectedImage === i ? "border-black ring-2 ring-black/5" : "border-black/5"
+                                    )}
+                                >
+                                    <img src={img} className={clsx("w-full h-full object-contain transition-all duration-700 group-hover:scale-110", selectedImage === i ? "opacity-100" : "opacity-40 group-hover:opacity-100")} />
                                 </div>
                             ))}
                         </div>
@@ -138,37 +153,36 @@ const ProductDetails = () => {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className={clsx("w-3 h-3", i < Math.floor(product.rating) ? (isWellness ? 'fill-wellness-accent text-wellness-accent' : 'fill-cosmetics-accent text-cosmetics-accent') : 'text-white/5')} />
+                                        <Star key={i} className={clsx("w-3 h-3", i < Math.floor(product.rating) ? (isWellness ? 'fill-wellness-accent text-wellness-accent' : 'fill-cosmetics-accent text-cosmetics-accent') : 'text-black/10')} />
                                     ))}
-                                    <span className="text-[9px] font-black text-white/20 ml-4 uppercase tracking-widest leading-none">{product.reviews} VERIFICATIONS</span>
+                                    <span className="text-[9px] font-black text-black/40 ml-4 uppercase tracking-widest leading-none">{product.reviews} VERIFICATIONS</span>
                                 </div>
                             </div>
 
-                            <h1 className="text-4xl md:text-5xl font-serif font-black text-white italic leading-[1.1] tracking-tighter mb-10">
+
+                            <h1 className="text-4xl md:text-5xl font-serif font-black text-black italic leading-[1.1] tracking-tighter mb-10">
                                 {product.name}
                             </h1>
 
                             <div className="flex items-baseline gap-6 mb-12">
-                                <span className="text-3xl font-bold text-white tracking-tight leading-none">${product.price}</span>
-                                {product.oldPrice && <span className="text-lg text-white/20 line-through font-light leading-none">${product.oldPrice}</span>}
+                                <span className="text-3xl font-bold text-black tracking-tight leading-none">{formatPrice(product.price)}</span>
+                                {product.oldPrice && <span className="text-lg text-black/20 line-through font-light leading-none">{formatPrice(product.oldPrice)}</span>}
                             </div>
 
-                            <p className="text-white/40 text-sm md:text-base font-light italic leading-relaxed mb-16 max-w-lg border-l-2 border-white/5 pl-8 py-2">
-                                {product.description}
-                            </p>
+
 
                             <div className="space-y-12">
                                 <div className="flex items-center gap-8">
-                                    <div className="flex-grow flex items-center bg-white/[0.03] border border-white/5 rounded-3xl p-2 h-20 group transition-all hover:border-white/20">
-                                        <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="w-16 h-full flex items-center justify-center text-white/30 hover:text-white transition-colors"><Minus className="w-4 h-4" /></button>
-                                        <span className="flex-grow text-center font-black text-xl text-white">{quantity}</span>
-                                        <button onClick={() => setQuantity(quantity + 1)} className="w-16 h-full flex items-center justify-center text-white/30 hover:text-white transition-colors"><Plus className="w-4 h-4" /></button>
+                                    <div className="flex-grow flex items-center bg-gray-50 border border-black/5 rounded-3xl p-2 h-20 group transition-all hover:border-black/20">
+                                        <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="w-16 h-full flex items-center justify-center text-black/30 hover:text-black transition-colors"><Minus className="w-4 h-4" /></button>
+                                        <span className="flex-grow text-center font-black text-xl text-black">{quantity}</span>
+                                        <button onClick={() => setQuantity(quantity + 1)} className="w-16 h-full flex items-center justify-center text-black/30 hover:text-black transition-colors"><Plus className="w-4 h-4" /></button>
                                     </div>
                                     <button
                                         onClick={() => toggleWishlist(product.id)}
                                         className={clsx(
-                                            "w-20 h-20 rounded-3xl flex items-center justify-center transition-all bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] group",
-                                            isWishlisted ? "text-red-500" : "text-white/20"
+                                            "w-20 h-20 rounded-3xl flex items-center justify-center transition-all bg-gray-50 border border-black/5 hover:bg-black/5 group",
+                                            isWishlisted ? "text-red-500" : "text-black/20"
                                         )}
                                     >
                                         <Heart className={clsx("w-6 h-6 transition-all group-hover:scale-110", isWishlisted && "fill-current")} />
@@ -182,27 +196,27 @@ const ProductDetails = () => {
                                         isWellness ? "bg-wellness-main text-white hover:bg-wellness-accent" : "bg-cosmetics-main text-white hover:bg-cosmetics-accent"
                                     )}
                                 >
-                                    <ShoppingBag className="w-5 h-5" /> Acquire Ritual
+                                    <ShoppingBag className="w-5 h-5" /> {t('product.acquire')}
                                 </button>
                             </div>
 
-                            <div className="mt-20 grid grid-cols-2 gap-10 pt-16 border-t border-white/5">
+                            <div className="mt-20 grid grid-cols-2 gap-10 pt-16 border-t border-black/5">
                                 <div className="flex items-center gap-6 group">
-                                    <div className="p-4 rounded-3xl bg-white/[0.03] text-white/20 transition-all border border-white/5 group-hover:bg-white group-hover:text-black">
+                                    <div className="p-4 rounded-3xl bg-gray-50 text-black/20 transition-all border border-black/5 group-hover:bg-black group-hover:text-white">
                                         <ShieldCheck className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <span className="block font-black uppercase text-white/40 text-[9px] tracking-[0.2em] mb-1">Authenticity</span>
-                                        <span className="text-white/15 text-[10px] italic">Verified Pure.</span>
+                                        <span className="block font-black uppercase text-black/40 text-[9px] tracking-[0.2em] mb-1">{t('product.authenticity')}</span>
+                                        <span className="text-black/20 text-[10px] italic">{t('product.verifiedPure')}</span>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-6 group">
-                                    <div className="p-4 rounded-3xl bg-white/[0.03] text-white/20 transition-all border border-white/5 group-hover:bg-white group-hover:text-black">
+                                    <div className="p-4 rounded-3xl bg-gray-50 text-black/20 transition-all border border-black/5 group-hover:bg-black group-hover:text-white">
                                         <Truck className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <span className="block font-black uppercase text-white/40 text-[9px] tracking-[0.2em] mb-1">Transit Flow</span>
-                                        <span className="text-white/15 text-[10px] italic">Carbon Neutral.</span>
+                                        <span className="block font-black uppercase text-black/40 text-[9px] tracking-[0.2em] mb-1">{t('product.transit')}</span>
+                                        <span className="text-black/20 text-[10px] italic">{t('product.carbonNeutral')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -211,20 +225,20 @@ const ProductDetails = () => {
                 </div>
 
                 {/* Intellectual Tabs - Refined Scale */}
-                <div className="bg-[#0a0a0a] rounded-[48px] p-12 md:p-20 relative overflow-hidden border border-white/5 shadow-2xl">
-                    <div className="flex flex-wrap gap-16 mb-16 border-b border-white/5 pb-8">
+                <div className="bg-white rounded-[48px] p-12 md:p-20 relative overflow-hidden border border-black/5 shadow-2xl">
+                    <div className="flex flex-wrap gap-16 mb-16 border-b border-black/5 pb-8">
                         {['description', 'usage', 'resonance'].map((tab) => (
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={clsx(
                                     "text-lg md:text-xl font-serif font-black uppercase tracking-tighter transition-all relative pb-6",
-                                    activeTab === tab ? "text-white italic" : "text-white/10 hover:text-white/30"
+                                    activeTab === tab ? "text-black italic" : "text-black/20 hover:text-black/40"
                                 )}
                             >
                                 {tab}
                                 {activeTab === tab && (
-                                    <motion.div layoutId="tabLineDetail" className={clsx("absolute bottom-0 left-0 w-full h-0.5 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.2)]", isWellness ? "bg-wellness-accent" : "bg-cosmetics-accent")} />
+                                    <motion.div layoutId="tabLineDetail" className={clsx("absolute bottom-0 left-0 w-full h-0.5 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.1)]", isWellness ? "bg-wellness-accent" : "bg-cosmetics-accent")} />
                                 )}
                             </button>
                         ))}
@@ -233,7 +247,7 @@ const ProductDetails = () => {
                     <div className="max-w-3xl">
                         <AnimatePresence mode='wait'>
                             {activeTab === 'description' && (
-                                <motion.div key="desc" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="text-lg md:text-xl italic text-white/30 font-light leading-relaxed">
+                                <motion.div key="desc" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="text-lg md:text-xl italic text-black/60 font-light leading-relaxed">
                                     <p className="mb-10">Meticulously curated to represent the peak of functional purity. This ritual offering bridges the space between ancestral wisdom and contemporary excellence, engineered for those who seek uncompromising quality.</p>
                                 </motion.div>
                             )}
@@ -245,23 +259,23 @@ const ProductDetails = () => {
                                         { s: "03", t: "Transcend", d: "Experience the lasting molecular resonance." }
                                     ].map((step, i) => (
                                         <div key={i} className="group">
-                                            <span className="text-4xl font-serif font-black text-white/5 block mb-6 italic transition-all group-hover:text-wellness-accent/20">{step.s}</span>
-                                            <h5 className="text-[9px] font-black text-white/80 uppercase mb-3 tracking-[0.3em]">{step.t}</h5>
-                                            <p className="text-white/20 italic text-sm leading-relaxed">{step.d}</p>
+                                            <span className="text-4xl font-serif font-black text-black/10 block mb-6 italic transition-all group-hover:text-wellness-accent/20">{step.s}</span>
+                                            <h5 className="text-[9px] font-black text-black/80 uppercase mb-3 tracking-[0.3em]">{step.t}</h5>
+                                            <p className="text-black/40 italic text-sm leading-relaxed">{step.d}</p>
                                         </div>
                                     ))}
                                 </motion.div>
                             )}
                             {activeTab === 'resonance' && (
                                 <motion.div key="res" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col md:flex-row items-center gap-20">
-                                    <div className="shrink-0 p-12 bg-white/[0.02] rounded-[40px] border border-white/5 text-center shadow-inner">
-                                        <div className="text-6xl font-black text-white mb-3">4.9</div>
+                                    <div className="shrink-0 p-12 bg-gray-50 rounded-[40px] border border-black/5 text-center shadow-inner">
+                                        <div className="text-6xl font-black text-black mb-3">4.9</div>
                                         <div className="flex gap-1.5 justify-center mb-6">
                                             {[...Array(5)].map((_, i) => <Star key={i} className={clsx("w-3.5 h-3.5", isWellness ? "fill-wellness-accent text-wellness-accent" : "fill-cosmetics-accent text-cosmetics-accent")} />)}
                                         </div>
-                                        <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/10">Biological Consensus</span>
+                                        <span className="text-[9px] font-black uppercase tracking-[0.4em] text-black/20">Biological Consensus</span>
                                     </div>
-                                    <p className="text-2xl md:text-3xl font-serif italic text-white/40 leading-tight max-w-xl">
+                                    <p className="text-2xl md:text-3xl font-serif italic text-black/40 leading-tight max-w-xl">
                                         "An essential evolution in self-care. The purity is unmatched in the modern industry."
                                     </p>
                                 </motion.div>

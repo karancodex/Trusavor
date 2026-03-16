@@ -1,5 +1,14 @@
 [
     {
+        "id": "cat_cosmetics",
+        "name": "Personal Care",
+        "slug": "personal-care",
+        "description": "Nature-infused beauty rituals. Potent botanical extracts for radiant, healthy skin and timeless elegance.",
+        "image": "/assets/serum.jpg",
+        "theme": "cosmetics",
+        "accent": "#E2B4BD"
+    },
+    {
         "id": "cat_wellness",
         "name": "Wellness",
         "slug": "wellness",
@@ -7,14 +16,5 @@
         "image": "/assets/hero_product_2.png",
         "theme": "wellness",
         "accent": "#C5A358"
-    },
-    {
-        "id": "cat_cosmetics",
-        "name": "Cosmetics",
-        "slug": "cosmetics",
-        "description": "Nature-infused beauty rituals. Potent botanical extracts for radiant, healthy skin and timeless elegance.",
-        "image": "/assets/serum.jpg",
-        "theme": "cosmetics",
-        "accent": "#E2B4BD"
     }
 ]

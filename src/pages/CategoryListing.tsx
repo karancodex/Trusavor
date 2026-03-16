@@ -52,7 +52,7 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
     const isWellness = theme === 'wellness';
 
     return (
-        <div className="pt-32 pb-20 min-h-screen bg-[#0a0a0a]">
+        <div className="pt-32 pb-20 min-h-screen bg-premium-light">
             {/* Artistic Header Section - Sized down */}
             <div className="container mx-auto px-6 mb-16 relative">
                 <div className="absolute top-0 right-0 w-96 h-96 blur-[150px] rounded-full opacity-10 bg-current" style={{ color: isWellness ? '#1A4D2E' : '#4A1D1F' }} />
@@ -72,7 +72,7 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-white italic leading-[1] tracking-tight mb-8"
+                        className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-premium-text-primary italic leading-[1] tracking-tight mb-8"
                     >
                         {categoryName}
                     </motion.h1>
@@ -81,7 +81,7 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="text-lg text-white/40 font-normal leading-relaxed border-l border-white/5 pl-6 max-w-xl"
+                        className="text-lg text-premium-text-secondary font-normal leading-relaxed border-l border-premium-text-muted/20 pl-6 max-w-xl"
                     >
                         {categoryDesc}
                     </motion.p>
@@ -94,47 +94,47 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                     <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="bg-[#0f0f0f]/80 backdrop-blur-3xl rounded-[24px] border border-white/5 h-16 px-6 lg:px-10 flex items-center justify-between shadow-xl"
+                        className="bg-white/80 backdrop-blur-3xl rounded-[24px] border border-stone-200 h-16 px-6 lg:px-10 flex items-center justify-between shadow-sm"
                     >
                         <div className="flex items-center gap-6 flex-grow">
                             {/* Search - Smaller font */}
                             <div className="relative flex-grow max-w-sm">
-                                <Search className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+                                <Search className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-premium-text-muted" />
                                 <input
                                     type="text"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     placeholder="Seek ritual..."
-                                    className="w-full bg-transparent border-none pl-8 pr-4 py-2 outline-none text-xs font-medium text-white placeholder:text-white/20 tracking-wide"
+                                    className="w-full bg-transparent border-none pl-8 pr-4 py-2 outline-none text-xs font-medium text-premium-text-primary placeholder:text-premium-text-muted/50 tracking-wide"
                                 />
                                 {searchQuery && (
-                                    <button onClick={() => setSearchQuery('')} className="absolute right-0 top-1/2 -translate-y-1/2 text-white/30 hover:text-white">
+                                    <button onClick={() => setSearchQuery('')} className="absolute right-0 top-1/2 -translate-y-1/2 text-premium-text-muted hover:text-premium-text-primary">
                                         <X className="w-3.5 h-3.5" />
                                     </button>
                                 )}
                             </div>
 
-                            <div className="h-6 w-px bg-white/5 hidden md:block" />
+                            <div className="h-6 w-px bg-stone-200 hidden md:block" />
 
                             <div className="hidden lg:flex items-center gap-3">
-                                <TrendingUp className="w-3.5 h-3.5 text-white/20" />
-                                <span className="text-[9px] font-bold uppercase text-white/20 tracking-[0.2em]">{filteredProducts.length} RITUALS</span>
+                                <TrendingUp className="w-3.5 h-3.5 text-premium-text-muted" />
+                                <span className="text-[9px] font-bold uppercase text-premium-text-muted tracking-[0.2em]">{filteredProducts.length} RITUALS</span>
                             </div>
                         </div>
 
                         <div className="flex items-center gap-8">
-                            <div className="relative group/sort cursor-pointer flex items-center gap-3 bg-white/5 px-5 py-2 rounded-full border border-white/5 transition-all hover:bg-white/10">
-                                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-                                    Sort: <span className="text-white">{sortBy}</span>
+                            <div className="relative group/sort cursor-pointer flex items-center gap-3 bg-stone-100/50 px-5 py-2 rounded-full border border-stone-200 transition-all hover:bg-stone-100">
+                                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-premium-text-muted">
+                                    Sort: <span className="text-premium-text-primary">{sortBy}</span>
                                 </span>
-                                <ChevronDown className="w-3.5 h-3.5 text-white/40 group-hover/sort:rotate-180 transition-transform" />
+                                <ChevronDown className="w-3.5 h-3.5 text-premium-text-muted group-hover/sort:rotate-180 transition-transform" />
 
-                                <div className="absolute top-[calc(100%+8px)] right-0 bg-[#121212] backdrop-blur-3xl shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover/sort:opacity-100 group-hover/sort:visible transition-all min-w-[180px] border border-white/10 z-50">
+                                <div className="absolute top-[calc(100%+8px)] right-0 bg-white backdrop-blur-3xl shadow-xl rounded-2xl p-2 opacity-0 invisible group-hover/sort:opacity-100 group-hover/sort:visible transition-all min-w-[180px] border border-stone-100 z-50">
                                     {['Featured', 'Price: Low to High', 'Price: High to Low', 'Top Rated'].map(s => (
                                         <button
                                             key={s}
                                             onClick={() => setSortBy(s)}
-                                            className="w-full text-left px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.1em] hover:bg-white/5 rounded-xl transition-all text-white/50 hover:text-white"
+                                            className="w-full text-left px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.1em] hover:bg-stone-50 rounded-xl transition-all text-premium-text-secondary hover:text-premium-text-primary"
                                         >
                                             {s}
                                         </button>
@@ -161,13 +161,13 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        className="py-32 text-center border border-dashed border-white/5 rounded-[40px]"
+                        className="py-32 text-center border border-dashed border-stone-200 rounded-[40px]"
                     >
-                        <Search className="w-12 h-12 text-white/10 mx-auto mb-6" />
-                        <h3 className="text-2xl font-serif font-bold text-white/20 uppercase italic mb-6">No matching rituals</h3>
+                        <Search className="w-12 h-12 text-stone-300 mx-auto mb-6" />
+                        <h3 className="text-2xl font-serif font-bold text-premium-text-primary uppercase italic mb-6">No matching rituals</h3>
                         <button
                             onClick={() => { setSearchQuery(''); setSortBy('Featured') }}
-                            className="bg-white text-black px-8 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
+                            className="bg-premium-text-primary text-white px-8 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
                         >
                             Reset Exploration
                         </button>
