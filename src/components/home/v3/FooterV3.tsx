@@ -17,7 +17,7 @@ const FooterV3: React.FC = () => {
                                 placeholder="Email Address"
                                 className="bg-transparent border-none outline-none flex-grow text-stone-900 placeholder-stone-600/50"
                             />
-                            <button className="text-stone-900 font-bold uppercase tracking-widest text-xs hover:text-rose-600 transition-colors">
+                            <button className="text-stone-900 font-bold uppercase tracking-widest text-xs hover:text-[#7FB844] transition-colors">
                                 Subscribe
                             </button>
                         </div>
@@ -27,8 +27,8 @@ const FooterV3: React.FC = () => {
                         <div>
                             <h4 className="font-bold uppercase tracking-widest text-stone-500 text-xs mb-6">Shop</h4>
                             <ul className="space-y-4">
-                                {['Wellness', 'Cosmetics', 'Sets', 'Gift Cards'].map(link => (
-                                    <li key={link}><a href="#" className="font-serif text-xl text-stone-900 hover:text-rose-600 transition-colors flex items-center gap-1 group">{link} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+                                {['Wellness', 'Personal Care', 'Sets', 'Gift Cards'].map(link => (
+                                    <li key={link}><a href="#" className="font-serif text-xl text-stone-900 hover:text-[#7FB844] transition-colors flex items-center gap-1 group">{link} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#7FB844]" /></a></li>
                                 ))}
                             </ul>
                         </div>
@@ -36,7 +36,7 @@ const FooterV3: React.FC = () => {
                             <h4 className="font-bold uppercase tracking-widest text-stone-500 text-xs mb-6">About</h4>
                             <ul className="space-y-4">
                                 {['Our Story', 'Ingredients', 'Journal', 'Contact'].map(link => (
-                                    <li key={link}><a href="#" className="font-serif text-xl text-stone-900 hover:text-rose-600 transition-colors flex items-center gap-1 group">{link} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+                                    <li key={link}><a href="#" className="font-serif text-xl text-stone-900 hover:text-[#7FB844] transition-colors flex items-center gap-1 group">{link} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#7FB844]" /></a></li>
                                 ))}
                             </ul>
                         </div>
@@ -50,6 +50,13 @@ const FooterV3: React.FC = () => {
                             alt="Trusavor"
                             className="w-[60vw] md:w-[30vw] h-auto opacity-10 grayscale brightness-0 pointer-events-none select-none"
                         />
+                    </div>
+                    <div className="flex gap-6 mb-6 md:mb-0">
+                        {['Instagram', 'Facebook', 'Twitter'].map(social => (
+                            <a key={social} href="#" className="w-10 h-10 rounded-full border border-stone-800/10 flex items-center justify-center text-stone-900 hover:bg-stone-900 hover:text-white transition-all duration-500">
+                                <span className="text-[10px] font-black uppercase tracking-widest">{social[0]}</span>
+                            </a>
+                        ))}
                     </div>
                     <div className="flex gap-6 text-xs text-stone-600 font-medium uppercase tracking-wider">
                         <a href="#">Privacy</a>

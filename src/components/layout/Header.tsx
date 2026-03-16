@@ -24,8 +24,8 @@ const Header = () => {
     }, []);
 
     const navLinks = [
+        { name: t('header.personal_care'), path: '/personal-care' },
         { name: t('header.wellness'), path: '/wellness' },
-        { name: t('header.cosmetics'), path: '/cosmetics' },
         { name: t('header.collections'), path: '/all-collections' },
     ];
 
@@ -56,7 +56,7 @@ const Header = () => {
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    className={`text-xs font-bold uppercase tracking-widest hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}
+                                    className={`text-xs font-bold uppercase tracking-widest hover:text-[#7FB844] transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}
                                 >
                                     {link.name}
                                 </Link>
@@ -73,24 +73,24 @@ const Header = () => {
 
                             <div className="w-px h-4 bg-stone-300 hidden md:block mx-1"></div>
 
-                            <button className={`hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
+                            <button className={`hover:text-[#7FB844] transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
                                 <Search className="w-5 h-5" />
                             </button>
 
-                            <Link to="/wishlist" className={`relative hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
-                                <Heart className={clsx("w-5 h-5", wishlist.length > 0 && "fill-rose-500 text-rose-500")} />
+                            <Link to="/wishlist" className={`relative hover:text-[#7FB844] transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
+                                <Heart className={clsx("w-5 h-5", wishlist.length > 0 && "fill-[#7FB844] text-[#7FB844]")} />
                                 {wishlist.length > 0 && (
-                                    <span className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-rose-500 text-white text-[8px] font-black rounded-full flex items-center justify-center">
+                                    <span className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-[#7FB844] text-white text-[8px] font-black rounded-full flex items-center justify-center">
                                         {wishlist.length}
                                     </span>
                                 )}
                             </Link>
 
-                            <Link to="/account" className={`hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
+                            <Link to="/account" className={`hover:text-[#7FB844] transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
                                 <User className="w-5 h-5" />
                             </Link>
 
-                            <Link to="/cart" className={`relative hover:text-rose-500 transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
+                            <Link to="/cart" className={`relative hover:text-[#7FB844] transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
                                 <ShoppingBag className="w-5 h-5" />
                                 {totalItems > 0 && (
                                     <span className="absolute -top-2 -right-2 w-4 h-4 bg-stone-900 text-white text-[8px] font-black rounded-full flex items-center justify-center">

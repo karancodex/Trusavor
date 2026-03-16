@@ -38,8 +38,8 @@ export default {
                         hover: "#9A7B4F",
                         light: "#F3EFE9", // Light Gold Wash
                     },
-                    accent: "#D4A373", // Warm accent
-                    dark: "#292524", // Stone-800
+                    accent: "#7FB844", // Logo vibrant green
+                    dark: "#1A4D2E", // Logo dark green
                 }
             },
             fontFamily: {

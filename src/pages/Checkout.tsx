@@ -21,13 +21,13 @@ const Checkout = () => {
             <div className="min-h-screen flex items-center justify-center bg-premium-light px-6 relative overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-wellness-main/5 blur-[150px] rounded-full" />
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-white/80 backdrop-blur-3xl border border-stone-200 p-12 rounded-[48px] shadow-2xl text-center max-w-lg w-full relative z-10">
-                    <div className="w-20 h-20 bg-wellness-accent text-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl">
+                    <div className="w-20 h-20 bg-[#7FB844] text-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl shadow-[#7FB844]/20">
                         <CheckCircle className="w-10 h-10" />
                     </div>
                     <h2 className="text-4xl font-serif font-black text-premium-text-primary italic mb-4 tracking-tighter">Ritual Confirmed</h2>
                     <p className="text-premium-text-secondary text-base font-light italic mb-10">Your selection has been received. Expect transformation soon.</p>
                     <div className="flex flex-col gap-4">
-                        <button onClick={() => navigate('/track-order')} className="w-full bg-white/90 backdrop-blur-xl border border-stone-200 text-premium-text-primary py-5 rounded-[24px] font-black uppercase tracking-widest text-[9px] hover:bg-white hover:scale-105 transition-all shadow-xl">
+                        <button onClick={() => navigate('/track-order')} className="w-full bg-[#7FB844] text-white py-5 rounded-[24px] font-black uppercase tracking-widest text-[9px] hover:bg-stone-900 transition-all shadow-xl shadow-[#7FB844]/20">
                             Track Ritual
                         </button>
                         <button onClick={() => navigate('/')} className="text-premium-text-muted font-black uppercase tracking-widest text-[8px] hover:text-premium-text-primary transition-colors">
@@ -68,31 +68,31 @@ const Checkout = () => {
                                         </div>
                                         <div className="space-y-3">
                                             <label className="text-[9px] font-black uppercase tracking-[0.2em] text-premium-text-muted ml-4">First Name</label>
-                                            <input type="text" required placeholder="John" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
+                                            <input type="text" required placeholder="John" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
                                         </div>
                                         <div className="space-y-3">
                                             <label className="text-[9px] font-black uppercase tracking-[0.2em] text-premium-text-muted ml-4">Last Name</label>
-                                            <input type="text" required placeholder="Doe" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
+                                            <input type="text" required placeholder="Doe" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
                                         </div>
                                         <div className="md:col-span-2 space-y-3">
                                             <label className="text-[9px] font-black uppercase tracking-[0.2em] text-premium-text-muted ml-4">Email Address</label>
-                                            <input type="email" required placeholder="john@example.com" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
+                                            <input type="email" required placeholder="john@example.com" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
                                         </div>
                                         <div className="md:col-span-2 space-y-3">
                                             <label className="text-[9px] font-black uppercase tracking-[0.2em] text-premium-text-muted ml-4">Street Address</label>
-                                            <input type="text" required placeholder="123 Ritual Street" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
+                                            <input type="text" required placeholder="123 Ritual Street" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
                                         </div>
                                         <div className="space-y-3">
                                             <label className="text-[9px] font-black uppercase tracking-[0.2em] text-premium-text-muted ml-4">City</label>
-                                            <input type="text" required placeholder="Himalayas" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
+                                            <input type="text" required placeholder="Himalayas" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
                                         </div>
                                         <div className="space-y-3">
                                             <label className="text-[9px] font-black uppercase tracking-[0.2em] text-premium-text-muted ml-4">Postal Code</label>
-                                            <input type="text" required placeholder="123456" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
+                                            <input type="text" required placeholder="123456" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
                                         </div>
 
                                         <div className="md:col-span-2 mt-8">
-                                            <button type="submit" className="w-full bg-white/90 backdrop-blur-xl border border-stone-200 text-premium-text-primary py-5 rounded-[24px] font-black uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:scale-[1.02] transition-all flex items-center justify-center gap-4 group shadow-xl">
+                                            <button type="submit" className="w-full bg-[#7FB844] text-white py-5 rounded-[24px] font-black uppercase tracking-[0.3em] text-[10px] hover:bg-stone-900 transition-all flex items-center justify-center gap-4 group shadow-xl shadow-[#7FB844]/20">
                                                 Continue Ritual <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                                             </button>
                                         </div>
@@ -105,9 +105,9 @@ const Checkout = () => {
                                             <CreditCard className="w-3.5 h-3.5" /> Essence Authorize
                                         </div>
                                         <div className="flex flex-col sm:flex-row gap-6">
-                                            <label className="flex-1 border-2 border-premium-text-primary bg-stone-50 rounded-[22px] p-6 cursor-pointer transition-all">
+                                            <label className="flex-1 border-2 border-[#7FB844] bg-[#7FB844]/5 rounded-[22px] p-6 cursor-pointer transition-all">
                                                 <input type="radio" name="payment" defaultChecked className="hidden" />
-                                                <span className="text-[10px] font-black uppercase tracking-widest text-premium-text-primary">Universal Card</span>
+                                                <span className="text-[10px] font-black uppercase tracking-widest text-[#1A4D2E]">Universal Card</span>
                                             </label>
                                             <label className="flex-1 border border-stone-200 rounded-[22px] p-6 cursor-pointer hover:border-premium-text-muted transition-all">
                                                 <input type="radio" name="payment" className="hidden" />
@@ -116,10 +116,10 @@ const Checkout = () => {
                                         </div>
 
                                         <div className="space-y-6">
-                                            <input type="text" required placeholder="Card Number" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
+                                            <input type="text" required placeholder="Card Number" className="w-full bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
                                             <div className="grid grid-cols-2 gap-6">
-                                                <input type="text" required placeholder="MM / YY" className="bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
-                                                <input type="text" required placeholder="CVC" className="bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-wellness-accent transition-all placeholder:text-premium-text-muted/30" />
+                                                <input type="text" required placeholder="MM / YY" className="bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
+                                                <input type="text" required placeholder="CVC" className="bg-white border border-stone-200 rounded-[22px] px-8 py-5 text-premium-text-primary text-sm focus:outline-none focus:border-[#7FB844]/50 transition-all placeholder:text-premium-text-muted/30" />
                                             </div>
                                         </div>
 
@@ -127,7 +127,7 @@ const Checkout = () => {
                                             <button type="button" onClick={() => setStep(1)} className="flex-1 border border-stone-200 py-5 rounded-[24px] font-black uppercase text-[9px] tracking-widest text-premium-text-muted hover:text-premium-text-primary transition-all">
                                                 Back
                                             </button>
-                                            <button type="submit" className="flex-1 bg-white/90 backdrop-blur-xl border border-stone-200 text-premium-text-primary py-5 rounded-[24px] font-black uppercase text-[10px] tracking-[0.3em] hover:bg-white hover:scale-[1.02] transition-all shadow-xl">
+                                            <button type="submit" className="flex-1 bg-[#7FB844] text-white py-5 rounded-[24px] font-black uppercase text-[10px] tracking-[0.3em] hover:bg-stone-900 transition-all shadow-xl shadow-[#7FB844]/20">
                                                 Confirm
                                             </button>
                                         </div>

@@ -27,7 +27,7 @@ const Cart = () => {
                     <ShoppingCart className="w-16 h-16 text-premium-text-muted/30 mx-auto mb-8" />
                     <h1 className="text-4xl md:text-5xl font-serif font-black text-premium-text-primary italic mb-6 tracking-tighter">{t('cart.empty')}</h1>
                     <p className="text-premium-text-secondary text-lg font-light italic mb-12">{t('cart.emptyDesc')}</p>
-                    <Link to="/" className="inline-flex items-center gap-4 px-10 py-4 bg-white/80 backdrop-blur-xl border border-stone-200 text-premium-text-primary rounded-full font-black uppercase text-[9px] tracking-widest hover:bg-white hover:scale-105 transition-all shadow-xl">
+                    <Link to="/" className="inline-flex items-center gap-4 px-10 py-4 bg-[#7FB844] text-white rounded-full font-black uppercase text-[9px] tracking-widest hover:bg-stone-900 transition-all shadow-xl shadow-[#7FB844]/20">
                         {t('cart.explore')} <ArrowRight className="w-4 h-4" />
                     </Link>
                 </motion.div>
@@ -114,7 +114,7 @@ const Cart = () => {
 
                             <button
                                 onClick={() => navigate('/checkout')}
-                                className="w-full bg-white/90 backdrop-blur-xl border border-stone-200 text-premium-text-primary py-5 rounded-[24px] font-black uppercase text-[9px] tracking-[0.4em] transition-all hover:bg-white hover:scale-[1.02] shadow-xl flex items-center justify-center gap-4 group"
+                                className="w-full bg-[#7FB844] text-white py-5 rounded-[24px] font-black uppercase text-[9px] tracking-[0.4em] transition-all hover:bg-stone-900 shadow-xl shadow-[#7FB844]/20 flex items-center justify-center gap-4 group"
                             >
                                 {t('cart.checkout')} <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                             </button>

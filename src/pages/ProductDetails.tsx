@@ -169,9 +169,7 @@ const ProductDetails = () => {
                                 {product.oldPrice && <span className="text-lg text-black/20 line-through font-light leading-none">{formatPrice(product.oldPrice)}</span>}
                             </div>
 
-                            <p className="text-black/60 text-sm md:text-base font-light italic leading-relaxed mb-16 max-w-lg border-l-2 border-black/5 pl-8 py-2">
-                                {product.description}
-                            </p>
+
 
                             <div className="space-y-12">
                                 <div className="flex items-center gap-8">

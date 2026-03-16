@@ -268,5 +268,37 @@
         "reviews": 204,
         "isBestSeller": false,
         "isTrending": false
+    },
+    {
+        "id": "prod_17",
+        "name": "Pure Ashwagandha Root Power",
+        "slug": "ashwagandha-root-power",
+        "categoryId": "cat_wellness",
+        "price": 28.00,
+        "oldPrice": 35.00,
+        "description": "Premium KSM-66 Ashwagandha for stress management and biological balance.",
+        "images": [
+            "/website/moringa/1.png"
+        ],
+        "rating": 4.9,
+        "reviews": 420,
+        "isBestSeller": true,
+        "isTrending": true,
+        "discount": 20
+    },
+    {
+        "id": "prod_18",
+        "name": "Organic Turmeric Curcumin",
+        "slug": "turmeric-curcumin",
+        "categoryId": "cat_wellness",
+        "price": 22.00,
+        "description": "High-absorption turmeric with black pepper for anti-inflammatory support.",
+        "images": [
+            "/website/dummy glucoshield/1.png"
+        ],
+        "rating": 4.8,
+        "reviews": 180,
+        "isBestSeller": false,
+        "isTrending": true
     }
 ]

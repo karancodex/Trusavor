@@ -20,6 +20,7 @@ import Wishlist from './pages/Wishlist';
 import ForgotPassword from './pages/ForgotPassword';
 import RefinedLanding from './pages/RefinedLanding';
 import HomeV3 from './pages/HomeV3';
+import Blog from './pages/Blog';
 
 
 const ScrollToTop = () => {
@@ -60,7 +61,8 @@ function App() {
 
                         {/* Specialized Ritual Categories */}
                         <Route path="/wellness" element={<CategoryListing category="wellness" />} />
-                        <Route path="/cosmetics" element={<CategoryListing category="cosmetics" />} />
+                        <Route path="/personal-care" element={<CategoryListing category="personal-care" />} />
+                        <Route path="/cosmetics" element={<CategoryListing category="personal-care" />} />
                         <Route path="/category/:category" element={<CategoryListing />} />
                         <Route path="/all-collections" element={<CategoryListing category="all" />} />
 
@@ -77,6 +79,7 @@ function App() {
 
                         <Route path="/track-order" element={<TrackOrder />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/journal" element={<Blog />} />
                     </Routes>
                 </Layout>
             </SmoothScroll>

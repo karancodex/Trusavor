@@ -140,7 +140,6 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
                             )}
                         >
                             <ShoppingBag className="w-4 h-4" />
-                            Acquire
                         </button>
                     </div>
                 </div>

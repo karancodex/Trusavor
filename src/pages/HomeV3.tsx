@@ -15,7 +15,8 @@ import DiscoveryGrid from '../components/home/DiscoveryGrid';
 import JournalSection from '../components/home/v3/JournalSection';
 import VideoManifesto from '../components/home/v3/VideoManifesto';
 import SocialGrid from '../components/home/v3/SocialGrid';
-import TestimonialSlider from '../components/home/v3/TestimonialSlider'; // New Component
+import TestimonialSlider from '../components/home/v3/TestimonialSlider';
+import ReviewsUGC from '../components/home/v3/ReviewsUGC';
 import Header from '../components/layout/Header';
 
 const HomeV3: React.FC = () => {
@@ -69,7 +70,10 @@ const HomeV3: React.FC = () => {
                 {/* New Testimonial Section */}
                 <TestimonialSlider />
 
-                {/* Editorial Section */}
+                {/* Reviews & UGC Section */}
+                <ReviewsUGC />
+
+                {/* Journal Section (Blog) */}
                 <JournalSection />
 
                 {/* Modified Discovery Section */}

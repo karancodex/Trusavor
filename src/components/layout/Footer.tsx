@@ -29,8 +29,8 @@ const Footer = () => {
                         </div>
                         <div className="flex gap-8">
                             {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                                <a key={i} href="#" className="w-12 h-12 rounded-full border border-stone-200 bg-white flex items-center justify-center text-premium-text-muted hover:text-white hover:bg-premium-gold hover:border-premium-gold transition-all duration-500 hover:-translate-y-1 shadow-sm">
-                                    <Icon className="w-5 h-5" />
+                                <a key={i} href="#" className="group w-12 h-12 rounded-full border border-stone-200 bg-white flex items-center justify-center transition-all duration-500 hover:-translate-y-1 shadow-sm hover:bg-stone-900">
+                                    <Icon className="w-5 h-5 text-stone-400 group-hover:text-white transition-colors" />
                                 </a>
                             ))}
                         </div>
@@ -41,17 +41,17 @@ const Footer = () => {
 
                     {/* Collections */}
                     <div className="lg:col-span-3">
-                        <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-12 text-premium-gold">The Catalog</h4>
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-12 text-premium-accent">The Catalog</h4>
                         <ul className="space-y-8">
                             {[
                                 { name: 'Wellness Rituals', path: '/wellness' },
-                                { name: 'Beauty Radiance', path: '/cosmetics' },
+                                { name: 'Personal Care', path: '/personal-care' },
                                 { name: 'Full Archive', path: '/all-collections' },
                                 { name: 'The Journal', path: '/journal' }
                             ].map((item) => (
                                 <li key={item.name}>
-                                    <Link to={item.path} className="text-sm font-black uppercase tracking-[0.2em] text-premium-text-secondary hover:text-premium-gold transition-all flex items-center gap-4 group">
-                                        <span className="h-px w-0 bg-premium-gold transition-all duration-500 group-hover:w-8" />
+                                    <Link to={item.path} className="text-sm font-black uppercase tracking-[0.2em] text-premium-text-secondary hover:text-premium-accent transition-all flex items-center gap-4 group">
+                                        <span className="h-px w-0 bg-premium-accent transition-all duration-500 group-hover:w-8" />
                                         {item.name}
                                     </Link>
                                 </li>
@@ -61,7 +61,7 @@ const Footer = () => {
 
                     {/* Newsletter High-End */}
                     <div className="lg:col-span-3">
-                        <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-12 text-premium-gold">Manifesto</h4>
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-12 text-premium-accent">Manifesto</h4>
                         <p className="text-sm text-premium-text-muted mb-8 leading-relaxed font-medium">
                             Join the inner circle for exclusive molecular releases and botanical updates.
                         </p>
@@ -69,9 +69,9 @@ const Footer = () => {
                             <input
                                 type="email"
                                 placeholder="Enter coordinates (Email)"
-                                className="w-full bg-white border border-stone-200 py-5 px-8 text-sm focus:outline-none focus:border-premium-gold/50 transition-all placeholder:text-stone-300 italic text-premium-text-primary"
+                                className="w-full bg-white border border-stone-200 py-5 px-8 text-sm focus:outline-none focus:border-premium-accent/50 transition-all placeholder:text-stone-300 italic text-premium-text-primary"
                             />
-                            <button className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-premium-gold text-white rounded-full flex items-center justify-center hover:scale-105 transition-all shadow-xl hover:bg-premium-text-primary">
+                            <button className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-premium-accent text-white rounded-full flex items-center justify-center hover:scale-105 transition-all shadow-xl hover:bg-premium-text-primary">
                                 <Send className="w-4 h-4" />
                             </button>
                         </div>
@@ -86,14 +86,14 @@ const Footer = () => {
 
                     <button
                         onClick={scrollToTop}
-                        className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-premium-text-muted hover:text-premium-gold transition-all group"
+                        className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-premium-text-muted hover:text-premium-accent transition-all group"
                     >
-                        Ascend <ArrowUp className="w-4 h-4 group-hover:-translate-y-2 transition-transform duration-500 text-premium-gold" />
+                        Ascend <ArrowUp className="w-4 h-4 group-hover:-translate-y-2 transition-transform duration-500 text-premium-accent" />
                     </button>
 
                     <div className="flex gap-12 text-[10px] font-black uppercase tracking-[0.3em] text-premium-text-muted/50">
-                        <Link to="/privacy" className="hover:text-premium-gold transition-colors">Privacy</Link>
-                        <Link to="/terms" className="hover:text-premium-gold transition-colors">Legal</Link>
+                        <Link to="/privacy" className="hover:text-premium-accent transition-colors">Privacy</Link>
+                        <Link to="/terms" className="hover:text-premium-accent transition-colors">Legal</Link>
                     </div>
                 </div>
             </div>
