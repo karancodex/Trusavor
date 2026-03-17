@@ -6,7 +6,6 @@ import TrendingV3 from '../components/home/v3/TrendingV3';
 import OfferV3 from '../components/home/v3/OfferV3';
 import BrandsV3 from '../components/home/v3/BrandsV3';
 import HeaderV3 from '../components/home/v3/HeaderV3';
-import FooterV3 from '../components/home/v3/FooterV3';
 import MarqueeSection from '../components/home/v3/MarqueeSection';
 import ScienceStory from '../components/home/v3/ScienceStory';
 import IngredientsScroll from '../components/home/v3/IngredientsScroll';
@@ -17,7 +16,6 @@ import VideoManifesto from '../components/home/v3/VideoManifesto';
 import SocialGrid from '../components/home/v3/SocialGrid';
 import TestimonialSlider from '../components/home/v3/TestimonialSlider';
 import ReviewsUGC from '../components/home/v3/ReviewsUGC';
-import Header from '../components/layout/Header';
 
 const HomeV3: React.FC = () => {
     const products = useStore((state) => state.products);
@@ -39,9 +37,6 @@ const HomeV3: React.FC = () => {
 
     return (
         <div className="bg-[#fafaf9] min-h-screen text-stone-800 font-sans overflow-x-hidden selection:bg-rose-100 selection:text-rose-900">
-            {/* Custom V3 Header */}
-            <Header />
-
             <main>
                 <HeroV3 />
 
@@ -89,9 +84,6 @@ const HomeV3: React.FC = () => {
                 {/* Social Section */}
                 <SocialGrid />
             </main>
-
-            {/* Custom V3 Footer */}
-            <FooterV3 />
         </div>
     );
 };

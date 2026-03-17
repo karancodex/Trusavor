@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Instagram, Facebook, Twitter } from 'lucide-react';
 
 const FooterV3: React.FC = () => {
     return (
@@ -52,9 +52,13 @@ const FooterV3: React.FC = () => {
                         />
                     </div>
                     <div className="flex gap-6 mb-6 md:mb-0">
-                        {['Instagram', 'Facebook', 'Twitter'].map(social => (
-                            <a key={social} href="#" className="w-10 h-10 rounded-full border border-stone-800/10 flex items-center justify-center text-stone-900 hover:bg-stone-900 hover:text-white transition-all duration-500">
-                                <span className="text-[10px] font-black uppercase tracking-widest">{social[0]}</span>
+                        {[
+                            { name: 'Instagram', icon: Instagram },
+                            { name: 'Facebook', icon: Facebook },
+                            { name: 'Twitter', icon: Twitter }
+                        ].map(({ name, icon: Icon }) => (
+                            <a key={name} href="#" className="w-10 h-10 rounded-full border border-stone-800/10 flex items-center justify-center text-stone-900 hover:bg-[#7FB844] hover:text-white hover:border-[#7FB844] transition-all duration-300">
+                                <Icon className="w-4 h-4" />
                             </a>
                         ))}
                     </div>

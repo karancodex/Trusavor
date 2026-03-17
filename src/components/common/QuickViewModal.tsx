@@ -67,21 +67,21 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen, onClos
                                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400 block mb-2">
                                     {product.categoryId === 'cat_wellness' ? 'Wellness Series' : 'Personal Care'}
                                 </span>
-                                <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-4">{name}</h2>
+                                <h2 className="text-3xl md:text-4xl font-serif text-black mb-4">{name}</h2>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="flex items-center gap-1 text-sm font-bold text-stone-900">
-                                        <Star className="w-4 h-4 fill-stone-900" /> 4.9
+                                    <div className="flex items-center gap-1 text-sm font-black text-black">
+                                        <Star className="w-4 h-4 fill-[#7FB844] text-[#7FB844]" /> 4.9
                                     </div>
                                     <span className="text-stone-300">/</span>
-                                    <span className="text-xs font-bold text-stone-400 uppercase tracking-widest">120 Reviews</span>
+                                    <span className="text-xs font-black text-stone-500 uppercase tracking-widest">120 Reviews</span>
                                 </div>
                                 <div className="flex items-baseline gap-4 mb-6">
-                                    <span className="text-3xl font-black text-stone-950">{formatPrice(price)}</span>
+                                    <span className="text-4xl font-black text-[#7FB844] tracking-tight">{formatPrice(price)}</span>
                                     {product.oldPrice && (
-                                        <span className="text-lg text-stone-400 line-through font-bold">{formatPrice(product.oldPrice)}</span>
+                                        <span className="text-lg text-stone-500 line-through font-bold">{formatPrice(product.oldPrice)}</span>
                                     )}
                                 </div>
-                                <p className="text-stone-500 font-light leading-relaxed italic border-l-2 border-stone-100 pl-6">
+                                <p className="text-stone-700 font-medium leading-relaxed italic border-l-2 border-[#7FB844]/30 pl-6">
                                     {description}
                                 </p>
                             </div>

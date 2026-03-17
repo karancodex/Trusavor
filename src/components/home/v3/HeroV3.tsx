@@ -53,13 +53,13 @@ const HeroV3: React.FC = () => {
         <section className="relative h-[90vh] w-full bg-[#f8f7f4] overflow-hidden pt-[80px]"> {/* Adjusted height */}
             <div className="container mx-auto px-6 h-full pb-6">
                 <div className="relative h-full w-full rounded-[48px] overflow-hidden group shadow-2xl">
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence>
                         <motion.div
                             key={current}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                            transition={{ duration: 0.8, ease: "easeInOut" }}
                             className="absolute inset-0"
                         >
                             <img
@@ -84,7 +84,7 @@ const HeroV3: React.FC = () => {
                                     initial={{ y: 20, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ delay: 0.3 }}
-                                    className="text-4xl md:text-7xl font-serif italic mb-6 tracking-tight leading-[1.1]"
+                                    className="text-4xl text-stone-200 md:text-7xl font-serif italic mb-6 tracking-tight leading-[1.1]"
                                 >
                                     {slides[current].title}
                                 </motion.h2>
