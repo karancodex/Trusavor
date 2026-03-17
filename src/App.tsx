@@ -21,6 +21,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import RefinedLanding from './pages/RefinedLanding';
 import HomeV3 from './pages/HomeV3';
 import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 
 
 const ScrollToTop = () => {
@@ -36,12 +37,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     const isV3 = location.pathname === '/v3' || location.pathname === '/v3/' || location.pathname === '/'; // Check for V3 route
 
     return (
-        <div className="bg-premium-light text-premium-text-primary min-h-screen flex flex-col font-serif">
-            {!isV3 && <Header />}
+        <div className="bg-premium-light text-premium-text-primary min-h-screen flex flex-col font-sans">
+            <Header />
             <main className="flex-grow">
                 {children}
             </main>
-            {!isV3 && <Footer />}
+            <Footer />
         </div>
     );
 };
@@ -80,6 +81,7 @@ function App() {
                         <Route path="/track-order" element={<TrackOrder />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/journal" element={<Blog />} />
+                        <Route path="/journal/:slug" element={<BlogDetail />} />
                     </Routes>
                 </Layout>
             </SmoothScroll>

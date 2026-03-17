@@ -53,9 +53,9 @@ const ReviewsUGC: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="group relative"
+                            className="group relative max-w-[320px] mx-auto"
                         >
-                            <div className="relative aspect-[9/16] rounded-[32px] overflow-hidden bg-stone-100 mb-6 group-cursor-pointer">
+                            <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden bg-stone-100 mb-6 group-cursor-pointer">
                                 <img
                                     src={review.thumbnail}
                                     alt={review.user}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useStore } from '../context/store';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Package, MapPin, User, Settings, ShieldCheck, ChevronRight, ShoppingBag } from 'lucide-react';
+import { LogOut, Package, MapPin, User, Settings, ShieldCheck, ChevronRight, ShoppingBag, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 
@@ -10,6 +10,7 @@ const Account = () => {
     const logout = useStore((state) => state.logout);
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState<'profile' | 'orders' | 'addresses' | 'settings'>('profile');
+    const [selectedOrder, setSelectedOrder] = useState<any>(null);
 
     const menuItems = [
         { id: 'profile', label: 'Profile', icon: User },
@@ -17,6 +18,114 @@ const Account = () => {
         { id: 'addresses', label: 'Addresses', icon: MapPin },
         { id: 'settings', label: 'Settings', icon: Settings },
     ];
+
+    const ordersData = [
+        {
+            id: 'TRU-2026-881',
+            date: 'JAN 20, 2026',
+            total: 145.00,
+            status: 'MANIFESTED',
+            items: [
+                { name: 'Ceremonial Matcha Tin', qty: 2, price: 45.00, image: '/website/matcha imperial/1.png' },
+                { name: 'Himalayan Shilajit Resin', qty: 1, price: 55.00, image: '/website/shilajit/1.png' }
+            ],
+            shipping: '742 Ritual Way, High Himalayas, 10293',
+            timeline: [
+                { status: 'Order Placed', date: 'Jan 20, 10:24 AM', completed: true },
+                { status: 'Molecular Processing', date: 'Jan 20, 02:15 PM', completed: true },
+                { status: 'Manifested (Shipped)', date: 'Jan 21, 09:00 AM', completed: true },
+                { status: 'Ritual Delivered', date: 'Jan 23, 04:30 PM', completed: false }
+            ]
+        },
+        {
+            id: 'TRU-2026-882',
+            date: 'JAN 18, 2026',
+            total: 89.00,
+            status: 'COMPLETED',
+            items: [
+                { name: 'Moringa Superfood Powder', qty: 1, price: 34.00, image: '/website/moringa/1.png' },
+                { name: 'Argan Oil Essence', qty: 1, price: 55.00, image: '/website/argan oil/1.png' }
+            ],
+            shipping: '742 Ritual Way, High Himalayas, 10293',
+            timeline: [
+                { status: 'Order Placed', date: 'Jan 18, 11:00 AM', completed: true },
+                { status: 'Delivered', date: 'Jan 21, 02:00 PM', completed: true }
+            ]
+        }
+    ];
+
+    const renderOrderDetails = (order: any) => (
+        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-12">
+            <button
+                onClick={() => setSelectedOrder(null)}
+                className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#7FB844] hover:text-stone-900 transition-colors mb-8"
+            >
+                <ArrowLeft className="w-4 h-4" /> Back to History
+            </button>
+
+            <div className="flex flex-col md:flex-row justify-between items-start gap-8 border-b border-stone-100 pb-12">
+                <div>
+                    <h4 className="text-4xl font-serif font-black italic text-stone-900 mb-2">{order.id}</h4>
+                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-400">Biological Coordinate Log • {order.date}</p>
+                </div>
+                <div className="bg-stone-50 px-8 py-4 rounded-[24px] border border-stone-100">
+                    <span className="block text-[9px] font-black text-stone-400 uppercase tracking-widest mb-1">Total Manifestation</span>
+                    <span className="text-2xl font-black text-stone-900 tracking-tighter">${order.total.toFixed(2)}</span>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div className="lg:col-span-2 space-y-8">
+                    <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">Elemental Breakdown</h5>
+                    <div className="space-y-4">
+                        {order.items.map((item: any, idx: number) => (
+                            <div key={idx} className="flex gap-6 p-6 bg-white border border-stone-100 rounded-[32px] hover:shadow-md transition-shadow">
+                                <div className="w-24 h-24 bg-stone-50 rounded-2xl overflow-hidden flex-shrink-0 border border-stone-100">
+                                    <img src={item.image} className="w-full h-full object-cover" alt={item.name} />
+                                </div>
+                                <div className="flex-1 flex flex-col justify-center">
+                                    <h6 className="text-lg font-serif italic font-black text-stone-900 mb-1">{item.name}</h6>
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-xs font-bold text-stone-400 uppercase tracking-widest">Qty: {item.qty}</span>
+                                        <span className="text-base font-black text-[#7FB844] tracking-tight">${item.price.toFixed(2)}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="space-y-12">
+                    <div className="space-y-6">
+                        <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">Order Timeline</h5>
+                        <div className="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-stone-100">
+                            {order.timeline.map((step: any, idx: number) => (
+                                <div key={idx} className="flex gap-6 relative z-10">
+                                    <div className={clsx(
+                                        "w-6 h-6 rounded-full border-4 border-white shadow-sm flex-shrink-0",
+                                        step.completed ? "bg-[#7FB844]" : "bg-stone-200"
+                                    )} />
+                                    <div>
+                                        <div className={clsx("text-xs font-black uppercase tracking-widest mb-1", step.completed ? "text-stone-900" : "text-stone-400")}>
+                                            {step.status}
+                                        </div>
+                                        <div className="text-[10px] font-bold text-stone-400">{step.date}</div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="p-8 bg-stone-50 rounded-[32px] border border-stone-100 space-y-4">
+                        <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">Shipping Coordinate</h5>
+                        <p className="text-sm font-serif italic text-stone-600 leading-relaxed">
+                            {order.shipping}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+    );
 
     const renderContent = () => {
         switch (activeTab) {
@@ -52,29 +161,34 @@ const Account = () => {
                     </motion.div>
                 );
             case 'orders':
+                if (selectedOrder) return renderOrderDetails(selectedOrder);
                 return (
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
-                        {[1, 2].map((i) => (
-                            <div key={i} className="group bg-white border border-stone-200 rounded-[32px] p-8 transition-all hover:shadow-lg hover:border-premium-gold/30 flex flex-col md:flex-row justify-between items-center gap-8">
+                        {ordersData.map((order, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setSelectedOrder(order)}
+                                className="w-full text-left group bg-white border border-stone-200 rounded-[32px] p-8 transition-all hover:shadow-lg hover:border-[#7FB844]/30 flex flex-col md:flex-row justify-between items-center gap-8"
+                            >
                                 <div className="flex items-center gap-8">
-                                    <div className="w-20 h-20 rounded-2xl bg-stone-50 flex items-center justify-center text-premium-text-muted group-hover:text-premium-text-primary transition-colors border border-stone-100">
+                                    <div className="w-20 h-20 rounded-2xl bg-stone-50 flex items-center justify-center text-premium-text-muted group-hover:text-[#7FB844] transition-colors border border-stone-100">
                                         <ShoppingBag className="w-8 h-8" />
                                     </div>
                                     <div>
-                                        <div className="text-lg font-serif font-black italic text-premium-text-primary mb-2 tracking-tight">Order #TRU-2026-88{i}</div>
-                                        <div className="text-[10px] font-black uppercase tracking-widest text-premium-text-muted">PLACED ON JAN {20 - i}, 2026</div>
+                                        <div className="text-xl font-serif font-black italic text-premium-text-primary mb-2 tracking-tight group-hover:text-[#7FB844] transition-colors">Order #{order.id}</div>
+                                        <div className="text-[10px] font-black uppercase tracking-widest text-stone-400">PLACED ON {order.date}</div>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-12 w-full md:w-auto justify-between md:justify-end">
                                     <div className="text-right">
-                                        <div className="text-2xl font-black text-premium-text-primary tracking-widest mb-1">$145.00</div>
-                                        <div className="text-[9px] font-black uppercase tracking-widest text-wellness-accent">MANIFESTED</div>
+                                        <div className="text-2xl font-black text-premium-text-primary tracking-widest mb-1 group-hover:text-[#7FB844] transition-colors">${order.total.toFixed(2)}</div>
+                                        <div className="text-[9px] font-black uppercase tracking-widest text-[#7FB844]">{order.status}</div>
                                     </div>
-                                    <button className="p-4 rounded-full border border-stone-200 text-premium-text-muted hover:text-white hover:bg-premium-text-primary hover:border-premium-text-primary transition-all">
+                                    <div className="p-4 rounded-full border border-stone-200 text-premium-text-muted group-hover:text-white group-hover:bg-[#7FB844] group-hover:border-[#7FB844] transition-all">
                                         <ChevronRight className="w-5 h-5" />
-                                    </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </button>
                         ))}
                     </motion.div>
                 );

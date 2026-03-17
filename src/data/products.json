@@ -17,7 +17,12 @@
         "stock": 45,
         "isBestSeller": true,
         "isTrending": true,
-        "discount": 22
+        "discount": 22,
+        "availableCountries": [
+            "US",
+            "IN",
+            "SA"
+        ]
     },
     {
         "id": "prod_2",
@@ -38,7 +43,12 @@
         "stock": 20,
         "isBestSeller": true,
         "isTrending": true,
-        "discount": 15
+        "discount": 15,
+        "availableCountries": [
+            "US",
+            "AE",
+            "SA"
+        ]
     },
     {
         "id": "prod_3",

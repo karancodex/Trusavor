@@ -29,8 +29,8 @@ const Footer = () => {
                         </div>
                         <div className="flex gap-8">
                             {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                                <a key={i} href="#" className="group w-12 h-12 rounded-full border border-stone-200 bg-white flex items-center justify-center transition-all duration-500 hover:-translate-y-1 shadow-sm hover:bg-stone-900">
-                                    <Icon className="w-5 h-5 text-stone-400 group-hover:text-white transition-colors" />
+                                <a key={i} href="#" className="group w-12 h-12 rounded-full border border-stone-200 bg-white flex items-center justify-center transition-all duration-300 hover:-translate-y-1 shadow-sm hover:bg-[#7FB844] hover:border-[#7FB844]">
+                                    <Icon className="w-5 h-5 text-stone-600 group-hover:text-white transition-colors duration-300" />
                                 </a>
                             ))}
                         </div>
@@ -80,8 +80,10 @@ const Footer = () => {
 
                 {/* Bottom Legal Section */}
                 <div className="pt-16 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-10">
-                    <div className="text-[9px] font-black uppercase tracking-[0.4em] text-premium-text-muted/50 text-center md:text-left">
-                        © 2026 TRUSAVOR INC. ALL RITUALS SECURED.
+                    <div className="text-[9px] font-black uppercase tracking-[0.4em] text-premium-text-muted/50 text-center md:text-left flex flex-col md:flex-row gap-2">
+                        <span>© 2026 TRUSAVOR INC. ALL RITUALS SECURED.</span>
+                        <span className="hidden md:block">|</span>
+                        <span>Developed by RightBrain Infotech Pvt. Ltd.</span>
                     </div>
 
                     <button

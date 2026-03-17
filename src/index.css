@@ -35,6 +35,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: var(--font-sans);
     }
 
     html {
@@ -44,14 +45,27 @@
     body {
         font-family: var(--font-sans);
         background-color: var(--dark);
-        color: var(--text-primary);
+        color: #000000;
+        /* Denser black */
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
         line-height: 1.6;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #000000;
+        /* Denser headings */
+        font-weight: 900;
+        /* Denser weight */
+    }
+
     .font-serif {
-        font-family: var(--font-serif);
+        font-family: var(--font-serif) !important;
     }
 }
 

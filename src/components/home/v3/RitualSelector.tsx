@@ -63,7 +63,7 @@ const RitualSelector: React.FC = () => {
                     <h2 className="text-4xl md:text-5xl font-serif text-stone-900">Find Your <i className="text-stone-400">Ritual</i></h2>
                 </div>
 
-                <div className="flex flex-col lg:flex-row h-[600px] gap-4">
+                <div className="flex flex-col lg:flex-row h-[500px] gap-4">
                     {rituals.map((ritual) => {
                         const isActive = activeId === ritual.id;
                         return (

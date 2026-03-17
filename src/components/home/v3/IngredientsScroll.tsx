@@ -29,9 +29,9 @@ const IngredientsScroll: React.FC = () => {
                 <p className="text-stone-500 max-w-lg mx-auto text-lg">Accelerated evolution through nature's most powerful compounds.</p>
             </div>
 
-            <motion.div style={{ x }} className="flex gap-8 pl-[10vw] w-max">
+            <motion.div style={{ x }} className="flex gap-6 pl-[10vw] w-max">
                 {ingredients.map((ing, i) => (
-                    <div key={i} className="relative w-[300px] md:w-[350px] aspect-[3/4] rounded-[40px] overflow-hidden group shadow-lg">
+                    <div key={i} className="relative w-[240px] md:w-[280px] aspect-[4/5] rounded-[32px] overflow-hidden group shadow-lg">
                         <img
                             src={ing.img}
                             alt={ing.name}

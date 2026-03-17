@@ -27,6 +27,7 @@ const Header = () => {
         { name: t('header.personal_care'), path: '/personal-care' },
         { name: t('header.wellness'), path: '/wellness' },
         { name: t('header.collections'), path: '/all-collections' },
+        { name: 'Journal', path: '/journal' },
     ];
 
     return (
@@ -73,9 +74,9 @@ const Header = () => {
 
                             <div className="w-px h-4 bg-stone-300 hidden md:block mx-1"></div>
 
-                            <button className={`hover:text-[#7FB844] transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
+                            <Link to="/all-collections" className={`hover:text-[#7FB844] transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
                                 <Search className="w-5 h-5" />
-                            </button>
+                            </Link>
 
                             <Link to="/wishlist" className={`relative hover:text-[#7FB844] transition-colors ${scrolled ? 'text-stone-600' : 'text-stone-800'}`}>
                                 <Heart className={clsx("w-5 h-5", wishlist.length > 0 && "fill-[#7FB844] text-[#7FB844]")} />

@@ -9,10 +9,16 @@ interface TrendingV3Props {
     products: any[];
 }
 
+import { useNavigate } from 'react-router-dom';
+import { useStore } from '../../../context/store';
+import clsx from 'clsx';
+
 const TrendingV3: React.FC<TrendingV3Props> = ({ products }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
     const { formatPrice } = useCurrency();
+    const navigate = useNavigate();
+    const currentCountry = useStore(state => state.country);
     const [selectedProduct, setSelectedProduct] = useState<any>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -27,11 +33,11 @@ const TrendingV3: React.FC<TrendingV3Props> = ({ products }) => {
         <section ref={ref} className="py-16 bg-[#fafaf9] border-t border-stone-200/60">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center justify-between mb-16">
-                    <h2 className="text-4xl md:text-5xl font-serif text-stone-900 leading-tight">
-                        Curated <span className="italic text-stone-500">Highlights</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight">
+                        Curated <span className="italic text-stone-600">Highlights</span>
                     </h2>
-                    <Link to="/all-collections" className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-stone-900 mt-6 md:mt-0">
-                        Shop All <span className="p-2 rounded-full border border-stone-200 group-hover:bg-[#7FB844] group-hover:text-white transition-all group-hover:border-[#7FB844]"><ArrowRight className="w-4 h-4" /></span>
+                    <Link to="/all-collections" className="group flex items-center gap-2 text-xs font-black uppercase tracking-widest text-black mt-6 md:mt-0">
+                        Shop All <span className="p-2 rounded-full border border-stone-300 group-hover:bg-[#7FB844] group-hover:text-white transition-all group-hover:border-[#7FB844]"><ArrowRight className="w-4 h-4" /></span>
                     </Link>
                 </div>
 
@@ -43,60 +49,77 @@ const TrendingV3: React.FC<TrendingV3Props> = ({ products }) => {
                         const price = product.price || 0;
                         const slug = product.slug || product.handle || '#';
 
+                        const isAvailable = !product.availableCountries || product.availableCountries.includes(currentCountry);
+
                         return (
                             <motion.div
                                 key={product.id}
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                                 transition={{ delay: i * 0.1, duration: 0.8 }}
-                                className="group bg-white p-4 rounded-[30px] border border-stone-100 hover:shadow-xl hover:border-[#7FB844]/20 transition-all duration-500"
+                                className={clsx(
+                                    "group bg-white p-4 rounded-[30px] border border-stone-200 hover:shadow-xl hover:border-[#7FB844]/20 transition-all duration-500",
+                                    !isAvailable && "opacity-60 grayscale-[0.5]"
+                                )}
                             >
-                                <Link to={`/product/${slug}`} className="block">
+                                <div
+                                    className="block cursor-pointer"
+                                    onClick={() => navigate(`/product/${slug}`)}
+                                >
                                     <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-[#f4f2ef] mb-6">
                                         <img
                                             src={image}
                                             alt={name}
                                             className="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
                                         />
-                                        <div className="absolute top-3 left-3 bg-white/60 backdrop-blur-md px-2 py-1 rounded-md flex items-center gap-1">
+                                        <div className="absolute top-3 left-3 bg-white/80 backdrop-blur-md px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
                                             <Star className="w-3 h-3 fill-[#7FB844] text-[#7FB844]" />
-                                            <span className="text-[10px] font-bold text-stone-900">4.9</span>
+                                            <span className="text-[10px] font-black text-black">4.9</span>
                                         </div>
 
                                         {/* Quick View Button */}
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-stone-900/5 backdrop-blur-[2px]">
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 backdrop-blur-[2px]">
                                             <button
-                                                onClick={(e) => openQuickView(e, product)}
-                                                className="bg-[#7FB844] text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-stone-900"
+                                                onClick={(e) => {
+                                                    if (isAvailable) openQuickView(e, product);
+                                                    else e.stopPropagation();
+                                                }}
+                                                className={clsx(
+                                                    "bg-white text-stone-900 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-[#7FB844] hover:text-white",
+                                                    !isAvailable && "opacity-50 cursor-not-allowed"
+                                                )}
                                             >
-                                                Quick View
+                                                {isAvailable ? 'Quick View' : 'Not Available'}
                                             </button>
                                         </div>
 
                                         {/* Sale Badge */}
-                                        {product.discount && (
-                                            <div className="absolute top-3 right-3 bg-rose-500 text-white px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest">
+                                        {product.discount && isAvailable && (
+                                            <div className="absolute top-3 right-3 bg-[#7FB844] text-white px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest shadow-lg">
                                                 -{product.discount}%
                                             </div>
                                         )}
                                     </div>
 
-                                    <h3 className="text-xl font-serif text-stone-900 mb-2 truncate group-hover:text-[#7FB844] transition-colors uppercase tracking-tight">{name}</h3>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-stone-400 mb-4">
+                                    <h3 className="text-xl font-serif text-black mb-2 truncate group-hover:text-[#7FB844] transition-colors uppercase tracking-tight">{name}</h3>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-stone-500 mb-4">
                                         {product.categoryId === 'cat_wellness' ? 'Wellness Series' : 'Personal Care'}
                                     </p>
-                                    <div className="flex items-center justify-between border-t border-stone-100 pt-4">
+                                    <div className="flex items-center justify-between border-t border-stone-200 pt-4">
                                         <div className="flex flex-col">
-                                            <span className="text-lg font-black text-stone-950">{formatPrice(price)}</span>
+                                            <span className="text-xl font-black text-[#7FB844] tracking-tight">{formatPrice(price)}</span>
                                             {product.oldPrice && (
-                                                <span className="text-xs text-stone-400 line-through font-bold">{formatPrice(product.oldPrice)}</span>
+                                                <span className="text-xs text-stone-500 line-through font-bold">{formatPrice(product.oldPrice)}</span>
                                             )}
                                         </div>
-                                        <span className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center group-hover:bg-[#7FB844] group-hover:text-white transition-colors">
+                                        {!isAvailable && (
+                                            <span className="text-[8px] font-bold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded uppercase">Unavailable</span>
+                                        )}
+                                        <span className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center group-hover:bg-[#7FB844] group-hover:text-white transition-colors border border-stone-200">
                                             <ArrowRight className="w-4 h-4" />
                                         </span>
                                     </div>
-                                </Link>
+                                </div>
                             </motion.div>
                         );
                     })}

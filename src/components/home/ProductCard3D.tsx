@@ -65,24 +65,21 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
                 rotateY,
                 transformStyle: "preserve-3d",
             }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
-            className={clsx(
-                "group relative w-full perspective-2000",
-                !disableStagger && index % 2 !== 0 ? "lg:mt-24" : "lg:mt-0"
-            )}
+            transition={{ duration: 0.8 }}
+            className="group relative w-full perspective-2000"
         >
             <Link
                 to={`/product/${product.slug}`}
                 className={clsx(
-                    "block relative bg-white/80 backdrop-blur-3xl border border-stone-200 rounded-[40px] p-8 transition-all duration-700 hover:border-premium-gold/30 shadow-lg hover:shadow-2xl preserve-3d cursor-pointer",
+                    "block relative bg-white/80 backdrop-blur-3xl border border-stone-200 rounded-[32px] p-5 transition-all duration-700 hover:border-[#7FB844]/30 shadow-lg hover:shadow-2xl preserve-3d cursor-pointer",
                     isWellness ? "hover:shadow-wellness-main/10" : "hover:shadow-cosmetics-main/10"
                 )}
             >
                 {/* Product Image Stage */}
-                <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden mb-8 transition-all duration-1000 group-hover:scale-[1.02] transform-gpu preserve-3d border border-stone-100">
+                <div className="relative aspect-square rounded-[20px] overflow-hidden mb-5 transition-all duration-1000 group-hover:scale-[1.02] transform-gpu preserve-3d border border-stone-100 bg-[#f4f2ef]">
                     <div className={clsx(
                         "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity",
                         isWellness ? "bg-wellness-main" : "bg-cosmetics-main"
@@ -91,52 +88,51 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
                     <motion.img
                         src={product.images[0]}
                         alt={product.name}
-                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
-                        style={{ transform: "translateZ(50px)" }}
+                        className="w-full h-full object-cover mix-blend-multiply opacity-95 transition-all duration-1000 group-hover:scale-110"
+                        style={{ transform: "translateZ(30px)" }}
                     />
 
                     {/* Quick Labels */}
-                    <div className="absolute top-6 left-6 z-10" style={{ transform: "translateZ(60px)" }}>
-                        <div className="bg-white/80 backdrop-blur-md border border-stone-200 px-4 py-1.5 rounded-full text-[8px] font-black uppercase tracking-widest text-premium-text-secondary">
+                    <div className="absolute top-4 left-4 z-10" style={{ transform: "translateZ(40px)" }}>
+                        <div className="bg-white/90 backdrop-blur-md border border-stone-200 px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest text-[#7FB844]">
                             {isWellness ? "Wellness" : "Cosmetics"}
                         </div>
                     </div>
 
                     <button
                         onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleWishlist(product.id); }}
-                        className="absolute top-6 right-6 z-10 p-4 rounded-full bg-white/80 backdrop-blur-md border border-stone-200 text-premium-text-muted hover:text-red-500 transition-all duration-500"
-                        style={{ transform: "translateZ(60px)" }}
+                        className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-white/90 backdrop-blur-md border border-stone-200 text-stone-400 hover:text-red-500 transition-all duration-300"
+                        style={{ transform: "translateZ(40px)" }}
                     >
-                        <Heart className={clsx("w-4 h-4", isWishlisted && "fill-current text-red-500")} />
+                        <Heart className={clsx("w-3.5 h-3.5", isWishlisted && "fill-current text-red-500")} />
                     </button>
                 </div>
 
                 {/* Content Area */}
-                <div className="space-y-6" style={{ transform: "translateZ(30px)" }}>
-                    <div className="flex items-center gap-1 opacity-60">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className={clsx("w-3 h-3 text-premium-text-primary", i < Math.floor(product.rating) && "fill-current")} />
-                        ))}
+                <div className="space-y-4" style={{ transform: "translateZ(20px)" }}>
+                    <div className="flex items-center justify-between gap-4">
+                        <div className="min-w-0 flex-grow">
+                            <h3 className="text-sm font-black text-black group-hover:text-[#7FB844] transition-colors truncate uppercase tracking-tight">
+                                {product.name}
+                            </h3>
+                            <div className="flex items-center gap-1 opacity-60 mt-1">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} className={clsx("w-2.5 h-2.5", i < Math.floor(product.rating) ? "fill-[#7FB844] text-[#7FB844]" : "text-stone-300")} />
+                                ))}
+                            </div>
+                        </div>
+                        <div className="flex-shrink-0">
+                            <span className="text-base font-black text-[#7FB844] tracking-tight">{formatPrice(product.price)}</span>
+                        </div>
                     </div>
 
-                    <h3 className="text-2xl font-serif font-black text-premium-text-primary italic tracking-tight leading-none group-hover:text-premium-gold transition-all duration-500">
-                        {product.name}
-                    </h3>
-
-                    <p className="text-premium-text-secondary text-sm line-clamp-2 font-medium leading-relaxed">
-                        {product.description || "Experimental biological ritual for the modern consciousness."}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-8 border-t border-stone-200">
-                        <span className="text-2xl font-black text-premium-text-primary tracking-widest">{formatPrice(product.price)}</span>
-
+                    <div className="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">View Ritual</span>
                         <button
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); addToCart(product); }}
                             className={clsx(
-                                "flex items-center gap-3 px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-700 shadow-md",
-                                isWellness
-                                    ? "bg-wellness-main text-white hover:bg-premium-text-primary hover:text-white"
-                                    : "bg-cosmetics-main text-white hover:bg-premium-text-primary hover:text-white"
+                                "flex items-center gap-2 p-2.5 rounded-full text-white transition-all duration-300 shadow-md",
+                                isWellness ? "bg-stone-900 hover:bg-[#7FB844]" : "bg-stone-900 hover:bg-[#7FB844]"
                             )}
                         >
                             <ShoppingBag className="w-4 h-4" />

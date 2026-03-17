@@ -19,6 +19,7 @@ export interface Product {
     isTrending?: boolean;
     oldPrice?: number;
     discount?: number;
+    availableCountries?: CountryCode[];
 }
 
 export interface Category {
