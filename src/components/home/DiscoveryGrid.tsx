@@ -11,7 +11,7 @@ interface DiscoveryGridProps {
 const DiscoveryGrid: React.FC<DiscoveryGridProps> = ({ products }) => {
     return (
         <section className="py-20 bg-premium-light">
-            <div className="container mx-auto px-6">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8">
                 <div className="text-center mb-16">
                     <span className="text-[9px] font-black uppercase tracking-[0.6em] text-premium-gold block mb-6">Discovery</span>
                     <h2 className="text-4xl md:text-6xl font-serif italic text-premium-text-primary mb-8">Functional <span className="text-wellness-accent font-serif italic">Essentials</span></h2>

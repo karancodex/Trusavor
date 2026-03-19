@@ -22,6 +22,12 @@ import RefinedLanding from './pages/RefinedLanding';
 import HomeV3 from './pages/HomeV3';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
+import About from './pages/About';
+import FAQ from './pages/FAQ';
+import WhyTrusavor from './pages/WhyTrusavor';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import Returns from './pages/Returns';
 
 
 const ScrollToTop = () => {
@@ -82,6 +88,14 @@ function App() {
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/journal" element={<Blog />} />
                         <Route path="/journal/:slug" element={<BlogDetail />} />
+
+                        {/* New Information Pages */}
+                        <Route path="/about" element={<About />} />
+                        <Route path="/faq" element={<FAQ />} />
+                        <Route path="/why-trusavor" element={<WhyTrusavor />} />
+                        <Route path="/terms" element={<Terms />} />
+                        <Route path="/privacy" element={<Privacy />} />
+                        <Route path="/returns" element={<Returns />} />
                     </Routes>
                 </Layout>
             </SmoothScroll>

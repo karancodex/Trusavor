@@ -23,8 +23,8 @@ const IngredientsScroll: React.FC = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="py-24 bg-[#fafaf9] overflow-hidden min-h-[80vh] flex flex-col justify-center">
-            <div className="container mx-auto px-6 mb-16 text-center">
+        <section ref={sectionRef} className="py-24 bg-[#fafaf9] overflow-hidden min-h-[480px] md:min-h-[600px] flex flex-col justify-center">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8 mb-16 text-center">
                 <h2 className="text-5xl font-serif text-stone-900 mb-4">Potent <i className="text-stone-500">Origins</i></h2>
                 <p className="text-stone-500 max-w-lg mx-auto text-lg">Accelerated evolution through nature's most powerful compounds.</p>
             </div>

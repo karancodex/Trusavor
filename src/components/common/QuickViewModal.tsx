@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ShoppingBag, Star, ShieldCheck } from 'lucide-react';
+import { X, ShoppingBag, Star, ShieldCheck, Heart } from 'lucide-react';
+import clsx from 'clsx';
 import { useCurrency } from '../../hooks/useCurrency';
 import { useStore } from '../../context/store';
 
@@ -13,13 +14,15 @@ interface QuickViewModalProps {
 const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen, onClose }) => {
     const { formatPrice } = useCurrency();
     const addToCart = useStore(state => state.addToCart);
+    const { wishlist, toggleWishlist } = useStore();
+    const isInWishlist = wishlist.includes(product?.id);
 
     if (!product) return null;
 
-    const image = product.images?.[0] || product.thumbnail || '/placeholder.png';
-    const name = product.name || product.title || 'Untitled';
-    const price = product.price || 0;
-    const description = product.description || 'No description available.';
+    const image = product?.images?.[0] || product?.thumbnail || '/placeholder.png';
+    const name = product?.name || product?.title || 'Untitled';
+    const price = product?.price || 0;
+    const description = product?.description || 'No description available.';
 
     return (
         <AnimatePresence>
@@ -90,15 +93,28 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen, onClos
                                 <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-stone-400">
                                     <ShieldCheck className="w-4 h-4" /> Molecularly Tested & Certified
                                 </div>
-                                <button
-                                    onClick={() => {
-                                        addToCart(product);
-                                        onClose();
-                                    }}
-                                    className="w-full bg-[#7FB844] text-white py-5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] hover:bg-stone-900 transition-all flex items-center justify-center gap-4 shadow-lg shadow-[#7FB844]/20"
-                                >
-                                    <ShoppingBag className="w-4 h-4" /> Add to Ritual
-                                </button>
+                                <div className="flex gap-4">
+                                    <button
+                                        onClick={() => {
+                                            addToCart(product);
+                                            onClose();
+                                        }}
+                                        className="flex-grow bg-[#7FB844] text-white py-5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] hover:bg-stone-900 transition-all flex items-center justify-center gap-4 shadow-lg shadow-[#7FB844]/20"
+                                    >
+                                        <ShoppingBag className="w-4 h-4" /> Add to Ritual
+                                    </button>
+                                    <button
+                                        onClick={() => toggleWishlist(product.id)}
+                                        className={clsx(
+                                            "w-16 h-16 rounded-full border flex items-center justify-center transition-all duration-300",
+                                            isInWishlist
+                                                ? "bg-rose-50 border-rose-100 text-rose-500 shadow-inner"
+                                                : "bg-stone-50 border-stone-100 text-stone-400 hover:text-rose-500 hover:bg-rose-50"
+                                        )}
+                                    >
+                                        <Heart className={clsx("w-6 h-6 transition-transform duration-300", isInWishlist && "fill-current scale-110")} />
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </motion.div>

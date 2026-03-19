@@ -37,7 +37,7 @@ const TestimonialSlider: React.FC = () => {
 
     return (
         <section className="py-16 bg-[#fafaf9] overflow-hidden">
-            <div className="container mx-auto px-6 relative">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8 relative">
 
                 {/* Header */}
                 <div className="flex flex-col items-center text-center mb-12">

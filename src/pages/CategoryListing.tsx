@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import clsx from 'clsx';
 import ProductCard3D from '../components/home/ProductCard3D';
+import QuickViewModal from '../components/common/QuickViewModal';
 
 interface CategoryListingProps {
     category?: string;
@@ -24,6 +25,13 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
 
     const [searchQuery, setSearchQuery] = useState('');
     const [sortBy, setSortBy] = useState('Featured');
+    const [selectedProduct, setSelectedProduct] = useState<any>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleQuickView = (product: any) => {
+        setSelectedProduct(product);
+        setIsModalOpen(true);
+    };
 
     const filteredProducts = useMemo(() => {
         let items = products.filter(p => isAll || p.categoryId === activeCategory?.id || (activeCategorySlug === 'wellness' && p.categoryId === 'cat_wellness') || (activeCategorySlug === 'cosmetics' && p.categoryId === 'cat_cosmetics'));
@@ -151,7 +159,12 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
                     <AnimatePresence mode='popLayout'>
                         {filteredProducts.map((product, idx) => (
-                            <ProductCard3D key={product.id} product={product} index={idx} />
+                            <ProductCard3D
+                                key={product.id}
+                                product={product}
+                                index={idx}
+                                onQuickView={handleQuickView}
+                            />
                         ))}
                     </AnimatePresence>
                 </div>
@@ -174,6 +187,12 @@ const CategoryListing: React.FC<CategoryListingProps> = ({ category: propCategor
                     </motion.div>
                 )}
             </div>
+
+            <QuickViewModal
+                product={selectedProduct}
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
         </div>
     );
 };

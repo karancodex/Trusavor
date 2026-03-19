@@ -50,9 +50,9 @@ const HeroV3: React.FC = () => {
     const prev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
     return (
-        <section className="relative h-[90vh] w-full bg-[#f8f7f4] overflow-hidden pt-[80px]"> {/* Adjusted height */}
-            <div className="container mx-auto px-6 h-full pb-6">
-                <div className="relative h-full w-full rounded-[48px] overflow-hidden group shadow-2xl">
+        <section className="relative h-[480px] md:h-[540px] lg:h-[600px] w-full bg-[#f8f7f4] overflow-hidden pt-[80px]"> {/* Refined fixed height */}
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8 h-full pb-6">
+                <div className="relative h-full w-full rounded-[30px] md:rounded-[48px] overflow-hidden group shadow-2xl">
                     <AnimatePresence>
                         <motion.div
                             key={current}
@@ -84,7 +84,7 @@ const HeroV3: React.FC = () => {
                                     initial={{ y: 20, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ delay: 0.3 }}
-                                    className="text-4xl text-stone-200 md:text-7xl font-serif italic mb-6 tracking-tight leading-[1.1]"
+                                    className="text-3xl text-stone-200 md:text-5xl font-serif italic mb-6 tracking-tight leading-[1.2]"
                                 >
                                     {slides[current].title}
                                 </motion.h2>
