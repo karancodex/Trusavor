@@ -46,6 +46,15 @@ const CompactProductCard: React.FC<CompactProductCardProps> = ({ product, theme 
                         </button>
                     </div>
 
+                    {product.discount && (
+                        <div className="absolute top-0 right-4 z-20 pointer-events-none">
+                            <div className="bg-[#7FB844] text-white px-2.5 pt-3 pb-5 flex flex-col items-center leading-none shadow-xl [clip-path:polygon(0%_0%,100%_0%,100%_100%,50%_85%,0%_100%)] min-w-[36px]">
+                                <span className="text-sm font-black tracking-tighter">{product.discount}%</span>
+                                <span className="text-[7px] font-black uppercase tracking-[0.1em] mt-1.5 opacity-90">OFF</span>
+                            </div>
+                        </div>
+                    )}
+
                     {/* Quick Add Button */}
                     <button
                         onClick={(e) => { e.preventDefault(); e.stopPropagation(); addToCart(product); }}

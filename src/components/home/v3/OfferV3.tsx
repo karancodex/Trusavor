@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const OfferV3: React.FC = () => {
     return (
-        <section className="py-20 px-6 bg-white">
-            <div className="container mx-auto">
+        <section className="py-20 bg-white">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8">
                 <div className="bg-[#E8DFCA] rounded-[40px] overflow-hidden flex flex-col lg:flex-row relative">
 
                     {/* Content */}

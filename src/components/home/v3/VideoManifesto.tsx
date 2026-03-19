@@ -13,7 +13,7 @@ const VideoManifesto: React.FC = () => {
     const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
     return (
-        <section ref={containerRef} className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-stone-900">
+        <section ref={containerRef} className="relative h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden flex items-center justify-center bg-stone-900">
             {/* Background Video */}
             <motion.div style={{ y }} className="absolute inset-0 z-0">
                 <video

@@ -5,11 +5,11 @@ import { Database, Activity, Sparkles } from 'lucide-react';
 const ScienceStory: React.FC = () => {
     return (
         <section className="py-16 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8">
+                <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
                     {/* Visual Side */}
-                    <div className="w-full lg:w-1/2 relative">
-                        <div className="aspect-[4/5] rounded-t-full rounded-b-[200px] overflow-hidden bg-stone-100 relative shadow-2xl">
+                    <div className="w-full lg:w-[40%] relative">
+                        <div className="aspect-[4/5] rounded-t-full rounded-b-[200px] overflow-hidden bg-stone-100 relative shadow-2xl max-w-lg mx-auto">
                             <img
                                 src="/website/argan oil/3.png"
                                 alt="Laboratory"
@@ -38,7 +38,7 @@ const ScienceStory: React.FC = () => {
                     </div>
 
                     {/* Content Side */}
-                    <div className="w-full lg:w-1/2">
+                    <div className="w-full lg:w-[60%]">
                         <span className="text-rose-600 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Our Philosophy</span>
                         <h2 className="text-5xl md:text-7xl font-serif text-stone-900 mb-8 leading-tight">
                             Beyond <br /> <i className="text-stone-400">Surface Level.</i>

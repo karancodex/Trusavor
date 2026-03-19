@@ -11,9 +11,10 @@ interface ProductCard3DProps {
     index: number;
     variant?: 'organic' | 'minimal';
     disableStagger?: boolean;
+    onQuickView?: (product: any) => void;
 }
 
-const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = false }: ProductCard3DProps) => {
+const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = false, onQuickView }: ProductCard3DProps) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const addToCart = useStore(state => state.addToCart);
     const toggleWishlist = useStore(state => state.toggleWishlist);
@@ -91,6 +92,23 @@ const ProductCard3D = ({ product, index, variant = 'organic', disableStagger = f
                         className="w-full h-full object-cover mix-blend-multiply opacity-95 transition-all duration-1000 group-hover:scale-110"
                         style={{ transform: "translateZ(30px)" }}
                     />
+
+                    {/* Quick View Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/5 backdrop-blur-[2px] z-20">
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                onQuickView?.(product);
+                            }}
+                            className={clsx(
+                                "bg-white text-stone-900 px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest shadow-xl transition-all duration-300 hover:bg-[#7FB844] hover:text-white"
+                            )}
+                            style={{ transform: "translateZ(50px)" }}
+                        >
+                            Quick View
+                        </button>
+                    </div>
 
                     {/* Quick Labels */}
                     <div className="absolute top-4 left-4 z-10" style={{ transform: "translateZ(40px)" }}>

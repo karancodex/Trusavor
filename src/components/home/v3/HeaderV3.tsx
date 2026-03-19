@@ -33,11 +33,11 @@ const HeaderV3: React.FC = () => {
                 animate={{ y: 0 }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}
             >
-                <div className="container mx-auto px-6 flex justify-center">
+                <div className="max-w-[1800px] mx-auto px-4 md:px-8 flex justify-center">
                     <div className={`
                          relative flex items-center justify-between transition-all duration-500
                          ${scrolled
-                            ? 'w-full max-w-7xl bg-white/100 backdrop-blur-md rounded-full px-8 py-3 shadow-lg border border-white/40' // Increased width and opacity
+                            ? 'w-full bg-white/100 backdrop-blur-md rounded-full px-8 py-3 shadow-lg border border-white/40' // Removed max-w-7xl to let it fill the container
                             : 'w-full bg-transparent px-0'
                         }
                     `}>

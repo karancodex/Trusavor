@@ -31,7 +31,7 @@ const TrendingV3: React.FC<TrendingV3Props> = ({ products }) => {
 
     return (
         <section ref={ref} className="py-16 bg-[#fafaf9] border-t border-stone-200/60">
-            <div className="container mx-auto px-6">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8">
                 <div className="flex flex-col md:flex-row items-center justify-between mb-16">
                     <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight">
                         Curated <span className="italic text-stone-600">Highlights</span>
@@ -95,8 +95,11 @@ const TrendingV3: React.FC<TrendingV3Props> = ({ products }) => {
 
                                         {/* Sale Badge */}
                                         {product.discount && isAvailable && (
-                                            <div className="absolute top-3 right-3 bg-[#7FB844] text-white px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest shadow-lg">
-                                                -{product.discount}%
+                                            <div className="absolute top-0 right-4 z-20 pointer-events-none">
+                                                <div className="bg-[#7FB844] text-white px-2.5 pt-3 pb-5 flex flex-col items-center leading-none shadow-xl [clip-path:polygon(0%_0%,100%_0%,100%_100%,50%_85%,0%_100%)] min-w-[36px]">
+                                                    <span className="text-sm font-black tracking-tighter">{product.discount}%</span>
+                                                    <span className="text-[7px] font-black uppercase tracking-[0.1em] mt-1.5 opacity-90">OFF</span>
+                                                </div>
                                             </div>
                                         )}
                                     </div>

@@ -42,7 +42,6 @@ const HomeV3: React.FC = () => {
 
                 <MarqueeSection />
 
-                <BrandsV3 />
 
                 <CollectionsV3
                     wellnessProducts={finalWellness}
@@ -72,14 +71,7 @@ const HomeV3: React.FC = () => {
                 <JournalSection />
 
                 {/* Modified Discovery Section */}
-                <section className="py-16 bg-[#fafaf9] border-t border-stone-200">
-                    <div className="container mx-auto px-6 mb-12 text-center">
-                        <span className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-4 block">The Full Spectrum</span>
-                        <h2 className="text-5xl font-serif text-stone-900">Discovery</h2>
-                    </div>
-                    {/* Check if discovery needs mapping fix inside component, passing props mostly works if component logic is sound */}
-                    <DiscoveryGrid products={discoveryProducts} />
-                </section>
+                <DiscoveryGrid products={discoveryProducts} />
 
                 {/* Social Section */}
                 <SocialGrid />

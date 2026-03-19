@@ -57,7 +57,7 @@ const RitualSelector: React.FC = () => {
 
     return (
         <section className="py-24 bg-white">
-            <div className="container mx-auto px-6">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8">
                 <div className="text-center mb-16">
                     <span className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-4 block">Concierge</span>
                     <h2 className="text-4xl md:text-5xl font-serif text-stone-900">Find Your <i className="text-stone-400">Ritual</i></h2>

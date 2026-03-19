@@ -29,7 +29,7 @@ const JournalSection: React.FC = () => {
 
     return (
         <section className="py-16 bg-stone-50 border-t border-stone-200">
-            <div className="container mx-auto px-6">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-8">
                 <div className="flex justify-between items-end mb-16">
                     <div>
                         <span className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-4 block">Editorial</span>
