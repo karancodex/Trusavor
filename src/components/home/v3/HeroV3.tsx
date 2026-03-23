@@ -5,19 +5,39 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
     {
+        id: 4,
+        title: "Pure Personal Care",
+        subtitle: "01 · Natural Radiance",
+        description: "Embrace the purity of nature with our botanical-infused skincare essentials. Crafted for timeless beauty.",
+        image: "/website/hero/PersonalCare.png",
+        link: "/personal-care",
+        theme: "cosmetics",
+        accent: "rose"
+    },
+    {
+        id: 5,
+        title: "Wellness Reimagined",
+        subtitle: "02 · Holistic Living",
+        description: "Transform your daily routine into a sacred ritual with our curated wellness collection. Balance mind and soul.",
+        image: "/website/hero/Wellness.png",
+        link: "/wellness",
+        theme: "wellness",
+        accent: "emerald"
+    },
+    {
         id: 1,
         title: "The Essence of Himalayas",
-        subtitle: "01 · Pure Shilajit",
+        subtitle: "03 · Pure Shilajit",
         description: "Experience the molecular power of wild-harvested minerals. Embossed with the mark of purity.",
         image: "/website/hero/banner_shilajit.png",
-        link: "/product/himalayan-shilajit",
+        link: "/wellness",
         theme: "wellness",
         accent: "emerald"
     },
     {
         id: 2,
         title: "Luminous Glass Skin",
-        subtitle: "02 · Ethereal Serum",
+        subtitle: "04 · Ethereal Serum",
         description: "Transform your ritual with iridescent hydration and rose gold elegance.",
         image: "/website/hero/banner_serum.png",
         link: "/personal-care",
@@ -27,10 +47,10 @@ const slides = [
     {
         id: 3,
         title: "Zen Ceremonial Matcha",
-        subtitle: "03 · Mindful Purity",
+        subtitle: "05 · Mindful Purity",
         description: "Vibrant emerald energy meet minimalist gold-marked artisan tins.",
         image: "/website/hero/banner_matcha.png",
-        link: "/product/matcha-imperial",
+        link: "/wellness",
         theme: "wellness",
         accent: "stone"
     }
